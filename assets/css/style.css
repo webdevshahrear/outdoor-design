@@ -868,3 +868,14 @@ input[type=range].form-range:focus::-webkit-slider-runnable-track {
     padding-right: 0.75rem !important;
   }
 }
+/* Project Showcase Banner Responsive */
+.project-showcase-banner {
+  aspect-ratio: 4/3;
+  min-height: 380px;
+}
+@media (min-width: 768px) {
+  .project-showcase-banner {
+    aspect-ratio: 21/9;
+    min-height: 450px;
+  }
+}
