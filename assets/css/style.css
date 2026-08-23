@@ -1077,3 +1077,180 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
 /* Transition helper */
 .transition-all { transition: all 0.3s ease; }
 .hover-border-gold:hover { border-color: var(--gold) !important; }
+
+/* ============================================================
+   HERO FULLSCREEN v5.3 + ROYAL BLUE COLOR SYSTEM
+   ============================================================ */
+
+/* Royal Blue Primary Colors */
+:root {
+  --royal-blue:       #1B3A6B;
+  --royal-blue-mid:   #25508C;
+  --royal-blue-light: #3B6EA8;
+  --royal-blue-pale:  #E8EEF7;
+  --royal-blue-glow:  rgba(27, 58, 107, 0.15);
+
+  /* Override primary to Royal Blue */
+  --primary:          #1B3A6B;
+  --primary-hover:    #25508C;
+}
+
+/* Hero Fullscreen */
+.hero-fullscreen { isolation: isolate; }
+.hero-slide-img {
+  transition: transform 12s ease;
+  transform: scale(1.08);
+}
+.carousel-item.active .hero-slide-img {
+  transform: scale(1.0);
+}
+
+/* Hero Gradient Overlay — Royal Blue + Black */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(27, 58, 107, 0.88) 0%,
+      rgba(27, 58, 107, 0.55) 50%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6) 0%,
+      transparent 50%
+    );
+}
+
+/* Hero CTA buttons */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.hero-btn-primary:hover {
+  background: var(--gold-light);
+  color: var(--charcoal);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184,150,46,0.4);
+}
+
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+.hero-btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.7);
+  transform: translateY(-2px);
+}
+
+/* Hero Slide Dots */
+.hero-dot {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, width 0.4s;
+}
+.hero-dot.active,
+.hero-dot:hover {
+  background: var(--gold-light);
+  width: 44px;
+}
+
+/* Hero Arrow Nav */
+.hero-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s, transform 0.2s;
+}
+.hero-nav-btn:hover {
+  background: rgba(255,255,255,0.22);
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Scroll Line animation */
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--gold-light), transparent);
+  animation: scroll-anim 2s ease-in-out infinite;
+}
+@keyframes scroll-anim {
+  0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  50% { opacity: 0.4; transform: scaleY(0.6); }
+}
+
+/* Primary Button — Royal Blue (site-wide) */
+.btn-primary-luxury {
+  background: var(--royal-blue) !important;
+  color: white !important;
+  border: none !important;
+}
+.btn-primary-luxury:hover {
+  background: var(--royal-blue-mid) !important;
+  box-shadow: 0 8px 24px rgba(27,58,107,0.35) !important;
+}
+
+/* Outline button — Royal Blue */
+.btn-outline-luxury {
+  border: 1px solid var(--royal-blue) !important;
+  color: var(--royal-blue) !important;
+}
+.btn-outline-luxury:hover {
+  background: var(--royal-blue-pale) !important;
+}
+
+/* Navbar active link — Royal Blue */
+.navbar .nav-link.active { color: var(--royal-blue) !important; }
+.navbar .nav-link:hover { color: var(--royal-blue-mid) !important; }
+
+/* Gold accent stays gold — only primary changes to blue */
+.text-gold, .text-primary-gold { color: var(--gold) !important; }
+.bg-gold { background: var(--gold) !important; }
+
+/* Mobile hero responsive */
+@media (max-width: 767.98px) {
+  .hero-fullscreen { height: 100svh !important; }
+  .hero-fullscreen h1 { font-size: clamp(2.5rem,11vw,4rem) !important; }
+  .hero-nav-btn { display: none !important; }
+}

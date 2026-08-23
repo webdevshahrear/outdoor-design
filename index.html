@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=5.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=5.3">
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -171,52 +171,121 @@
   <!-- ================= MAIN CONTENT (HOME PAGE) ================= -->
   <main class="flex-grow-1">
 
-    <!-- 1. HERO ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Editorial Split Layout -->
-    <section class="hero-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:92vh;background:var(--ivory);">
-      <!-- Left: Image -->
-      <div class="position-relative overflow-hidden" style="min-height:92vh;">
-        <div id="heroCarousel" class="carousel slide carousel-fade h-100 position-absolute w-100 top-0 start-0" data-bs-ride="carousel" data-bs-interval="6500">
-          <div class="carousel-inner h-100">
-            <div class="carousel-item active h-100"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=90" class="w-100 h-100 object-fit-cover" alt="Luxury Villa Gate Dubai"></div>
-            <div class="carousel-item h-100"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=90" class="w-100 h-100 object-fit-cover" alt="Architectural Gates"></div>
-            <div class="carousel-item h-100"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=90" class="w-100 h-100 object-fit-cover" alt="Bioclimatic Pergola"></div>
+    <!-- 1. HERO Ã¢â‚¬â€ Full Screen Cinematic Slider -->
+    <section class="hero-fullscreen position-relative overflow-hidden" style="height:100vh;min-height:600px;background:var(--royal-blue);">
+
+      <!-- Slide Background Images -->
+      <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100 position-absolute top-0 start-0" data-bs-ride="carousel" data-bs-interval="7000" style="z-index:0;">
+        <div class="carousel-inner h-100">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active h-100">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90" class="w-100 h-100 object-fit-cover hero-slide-img" alt="Luxury Villa Gate Dubai">
+            <div class="hero-overlay"></div>
           </div>
-        </div>
-        <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to right,rgba(0,0,0,0.15),rgba(0,0,0,0.02));z-index:2;"></div>
-        <!-- Prev/Next Controls -->
-        <div class="position-absolute top-0 end-0 m-4 d-none d-md-flex gap-2" style="z-index:5;">
-          <button class="d-flex align-items-center justify-content-center" data-bs-target="#heroCarousel" data-bs-slide="prev" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,0.88);cursor:pointer;backdrop-filter:blur(6px);"><i class="fa-solid fa-chevron-left" style="font-size:0.75rem;color:var(--charcoal);"></i></button>
-          <button class="d-flex align-items-center justify-content-center" data-bs-target="#heroCarousel" data-bs-slide="next" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,0.88);cursor:pointer;backdrop-filter:blur(6px);"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;color:var(--charcoal);"></i></button>
-        </div>
-        <!-- Live Badge -->
-        <div class="position-absolute bottom-0 start-0 m-3 m-md-5 d-flex align-items-center gap-2 px-3 py-2 rounded-1 border border-luxury shadow-sm" style="background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);z-index:5;" data-aos="fade-up" data-aos-delay="500">
-          <span class="pulse-anim d-inline-block flex-shrink-0" style="width:8px;height:8px;border-radius:50%;background:var(--gold);"></span>
-          <span style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);">Dubai Hub Ãƒâ€šÃ‚Â· Live Fabrication</span>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item h-100">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=90" class="w-100 h-100 object-fit-cover hero-slide-img" alt="Architectural Pivot Door">
+            <div class="hero-overlay"></div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item h-100">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=90" class="w-100 h-100 object-fit-cover hero-slide-img" alt="Bioclimatic Pergola Dubai">
+            <div class="hero-overlay"></div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item h-100">
+            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=90" class="w-100 h-100 object-fit-cover hero-slide-img" alt="Premium Villa Entrance">
+            <div class="hero-overlay"></div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Right: Content Panel -->
-      <div class="d-flex flex-column justify-content-center px-4 px-md-5 py-5 hero-content-panel" style="background:var(--ivory);">
-        <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-left" data-aos-delay="100">
-          <span style="width:28px;height:1px;background:var(--gold);flex-shrink:0;display:block;"></span>
-          <span style="font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">Bespoke Villa Architecture Ãƒâ€šÃ‚Â· Dubai</span>
+      <!-- Hero Content Ã¢â‚¬â€ Centered Overlay -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center" style="z-index:3;padding:0 clamp(1.5rem,5vw,7rem);padding-top:6rem;">
+
+        <!-- Eyebrow -->
+        <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-up" data-aos-delay="150">
+          <span style="width:32px;height:1px;background:var(--gold-light);flex-shrink:0;display:block;"></span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-light);">Bespoke Villa Architecture &nbsp;&#9670;&nbsp; Dubai, UAE</span>
+          <span style="width:32px;height:1px;background:var(--gold-light);flex-shrink:0;display:block;"></span>
         </div>
-        <h1 class="font-display mb-4 hero-headline" style="font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:1.05;letter-spacing:-0.02em;color:var(--charcoal);" data-aos="fade-left" data-aos-delay="200">
-          Make Your<br><em style="color:var(--gold);font-style:italic;">Entrance</em><br>Unforgettable.
+
+        <!-- Main Headline -->
+        <h1 class="font-display text-white" style="font-size:clamp(3rem,8vw,7rem);font-weight:300;line-height:1.02;letter-spacing:-0.02em;max-width:900px;" data-aos="fade-up" data-aos-delay="250">
+          Make Your<br>
+          <em style="color:var(--gold-light);font-style:italic;">Entrance</em><br>
+          <span style="opacity:0.85;">Unforgettable.</span>
         </h1>
-        <p class="mb-5" style="font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:420px;" data-aos="fade-left" data-aos-delay="300">
-          Monumental pivot doors, automated estate gates, and bioclimatic pergolas ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â engineered for Dubai's finest villas with German pivots, marine-grade coatings, and biometric smart access.
+
+        <!-- Sub text -->
+        <p class="text-white mt-4 mb-5" style="font-size:clamp(0.9rem,1.5vw,1.05rem);opacity:0.72;line-height:1.8;max-width:520px;" data-aos="fade-up" data-aos-delay="350">
+          Monumental pivot doors, automated estate gates &amp; bioclimatic pergolas &mdash; precision-engineered for Dubai's finest villas.
         </p>
-        <div class="d-flex flex-column flex-sm-row gap-3 mb-5" data-aos="fade-left" data-aos-delay="400">
-          <a href="shop.html" class="btn-primary-luxury d-inline-flex align-items-center gap-2 justify-content-center">Explore Collections <i class="fa-solid fa-arrow-right"></i></a>
-          <button class="btn-outline-luxury d-inline-flex align-items-center gap-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#consultationModal"><i class="fa-solid fa-sparkles" style="color:var(--gold);"></i> Free Site Survey</button>
+
+        <!-- CTA Buttons -->
+        <div class="d-flex flex-column flex-sm-row gap-3 mb-5" data-aos="fade-up" data-aos-delay="450">
+          <a href="shop.html" class="hero-btn-primary d-inline-flex align-items-center gap-2">
+            Explore Collections <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="hero-btn-outline d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#consultationModal">
+            <i class="fa-solid fa-sparkles" style="color:var(--gold-light);"></i> Free Site Survey
+          </button>
         </div>
-        <div class="d-flex flex-wrap gap-4" style="border-top:1px solid var(--border);padding-top:1.5rem;" data-aos="fade-left" data-aos-delay="500">
-          <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check" style="color:var(--gold);font-size:0.85rem;"></i><span style="font-size:0.75rem;font-weight:600;color:var(--charcoal);">15-Yr Marine Warranty</span></div>
-          <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-ruler" style="color:var(--gold);font-size:0.85rem;"></i><span style="font-size:0.75rem;font-weight:600;color:var(--charcoal);">Laser Survey Included</span></div>
-          <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-building" style="color:var(--gold);font-size:0.85rem;"></i><span style="font-size:0.75rem;font-weight:600;color:var(--charcoal);">DM Certified</span></div>
+
+        <!-- Trust Badges -->
+        <div class="d-flex flex-wrap gap-4 gap-md-5" data-aos="fade-up" data-aos-delay="550" style="border-top:1px solid rgba(255,255,255,0.12);padding-top:1.5rem;">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-shield-check" style="color:var(--gold-light);font-size:0.85rem;"></i>
+            <span style="font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.04em;">15-Yr Marine Warranty</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-ruler" style="color:var(--gold-light);font-size:0.85rem;"></i>
+            <span style="font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.04em;">Free Laser Survey</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-building" style="color:var(--gold-light);font-size:0.85rem;"></i>
+            <span style="font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.04em;">DM Certified</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <i class="fa-solid fa-star" style="color:var(--gold-light);font-size:0.85rem;"></i>
+            <span style="font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.04em;">4.98 / 5.0 Rating</span>
+          </div>
         </div>
       </div>
+
+      <!-- Slide Indicators / Dots (bottom center) -->
+      <div class="position-absolute bottom-0 start-50 translate-middle-x mb-5 d-flex align-items-center gap-3" style="z-index:5;">
+        <button class="hero-dot active" data-bs-target="#heroCarousel" data-bs-slide-to="0" aria-current="true"></button>
+        <button class="hero-dot" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button class="hero-dot" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        <button class="hero-dot" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+      </div>
+
+      <!-- Prev / Next Arrow Controls -->
+      <button class="hero-nav-btn position-absolute" style="left:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);z-index:5;" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left" style="font-size:0.9rem;"></i>
+      </button>
+      <button class="hero-nav-btn position-absolute" style="right:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);z-index:5;" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next">
+        <i class="fa-solid fa-chevron-right" style="font-size:0.9rem;"></i>
+      </button>
+
+      <!-- Scroll Down Cue -->
+      <div class="position-absolute bottom-0 end-0 mb-4 me-4 me-md-5 d-none d-md-flex flex-column align-items-center gap-2" style="z-index:5;">
+        <span style="font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);writing-mode:vertical-rl;">Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+
+      <!-- Live Badge -->
+      <div class="position-absolute top-0 start-50 translate-middle-x mt-4 d-none d-md-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="z-index:5;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);">
+        <span class="pulse-anim d-inline-block flex-shrink-0" style="width:7px;height:7px;border-radius:50%;background:#4ade80;"></span>
+        <span style="font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.85);">Dubai Hub &nbsp;&#183;&nbsp; Live Fabrication</span>
+      </div>
+
     </section>
 
     <!-- 2. GOLD TICKER -->
@@ -358,7 +427,7 @@
             <div class="position-absolute bottom-0 start-0 end-0 p-4 p-md-5">
               <div class="mb-4" style="width:40px;height:1px;background:var(--gold);"></div>
               <h3 class="font-display fw-light text-white mb-3" style="font-size:1.55rem;line-height:1.3;">Sub-Millimeter<br><span class="fw-medium">3D Laser Site Survey</span></h3>
-              <p class="mb-4" style="font-size:0.82rem;color:rgba(255,255,255,0.55);max-width:440px;line-height:1.75;">Before cutting a single beam, our field engineers conduct a 3D LiDAR point-cloud scan ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ensuring zero-tolerance installation without wall modifications.</p>
+              <p class="mb-4" style="font-size:0.82rem;color:rgba(255,255,255,0.55);max-width:440px;line-height:1.75;">Before cutting a single beam, our field engineers conduct a 3D LiDAR point-cloud scan ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ensuring zero-tolerance installation without wall modifications.</p>
               <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 pt-4" style="border-top:1px solid rgba(255,255,255,0.1);">
                 <span style="font-size:0.7rem;color:rgba(255,255,255,0.4);"><i class="fa-solid fa-location-dot me-2" style="color:var(--gold-light);font-size:0.65rem;"></i>Complimentary across all 7 Emirates</span>
                 <button class="d-inline-flex align-items-center gap-2 fw-semibold text-uppercase" style="font-size:0.68rem;letter-spacing:0.1em;color:var(--gold-light);background:none;border:none;cursor:pointer;" data-bs-toggle="modal" data-bs-target="#consultationModal">Book Survey <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></button>
@@ -444,7 +513,7 @@
       </div>
     </section>
 
-    <!-- 9. PROCESS STEPS Ã¢â‚¬â€ How It Works -->
+    <!-- 9. PROCESS STEPS ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â How It Works -->
     <section class="process-steps-section py-5" style="background:var(--ivory);border-top:1px solid var(--border);">
       <div class="container-fluid px-4 px-lg-5 max-w-7xl">
         <div class="text-center mb-5" data-aos="fade-up">
