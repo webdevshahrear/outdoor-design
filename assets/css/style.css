@@ -1,0 +1,807 @@
+/* ============================================================
+   AL-MANZIL LUXE — NEXT.JS ENTERPRISE DESIGN SYSTEM v4.0
+   Ultra-Modern | High Contrast | Minimalist Tech Luxury
+   ============================================================ */
+
+/* Google Fonts - Inter for that ultimate Next.js Vercel vibe */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ============================================================
+   1. DESIGN TOKENS (VERCEL / NEXT.JS STYLE)
+   ============================================================ */
+:root {
+  /* Fonts */
+  --font-sans:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-heading:  'Inter', sans-serif; /* Completely drop serif for main headings to get the tech feel */
+  --font-serif:    'Playfair Display', serif; /* Only for very specific luxury accents */
+
+  /* Background Scale - Stark, high contrast */
+  --bg-white:      #FFFFFF;
+  --bg-paper:      #FAFAFA; /* Very light gray, almost white */
+  --bg-cream:      #F5F5F5;
+  --bg-silk:       #EAEAEA;
+  --bg-charcoal:   #000000; /* Pure black */
+
+  /* Text Scale - High Contrast */
+  --text-primary:  #000000;
+  --text-secondary:#444444;
+  --text-muted:    #666666;
+  --text-subtle:   #999999;
+
+  /* Gold System - Adjusted to be slightly cooler/sleeker */
+  --gold:          #C29B57; 
+  --gold-light:    #D8B880;
+  --gold-pale:     #F3EBE0;
+  --gold-subtle:   rgba(194, 155, 87, 0.1);
+
+  /* Border - Ultra subtle */
+  --border-light:  #EAEAEA;
+  --border-medium: #D1D1D1;
+  --border-gold:   rgba(194, 155, 87, 0.4);
+
+  /* Shadow System - Next.js style diffuse shadows */
+  --shadow-xs:     0 1px 2px rgba(0,0,0,0.03);
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02);
+  --shadow-lg:     0 12px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+  --shadow-gold:   0 8px 30px rgba(194, 155, 87, 0.15);
+
+  /* Radius - Slightly sharper */
+  --radius-sm:     6px;
+  --radius-md:     12px;
+  --radius-lg:     24px;
+  --radius-pill:   999px;
+
+  /* Spacing */
+  --section-gap:   8rem;
+
+  /* Transitions */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.15s;
+  --duration-base: 0.3s;
+  --duration-slow: 0.5s;
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-white); /* Pure white base */
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   3. TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.035em; /* Tight Next.js heading style */
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.font-serif-luxury { font-family: var(--font-serif); letter-spacing: 0; }
+
+/* Fluid Display Sizes */
+.display-1 { font-size: clamp(3.5rem, 8vw, 7rem) !important; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+.display-2 { font-size: clamp(2.8rem, 6vw, 5.5rem) !important; font-weight: 700; line-height: 1.05; letter-spacing: -0.03em;}
+.display-3 { font-size: clamp(2.2rem, 5vw, 4.5rem) !important; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.display-4 { font-size: clamp(1.8rem, 4vw, 3.5rem) !important; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
+.display-5 { font-size: clamp(1.5rem, 3vw, 2.5rem) !important; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em;  }
+.display-6 { font-size: clamp(1.25rem, 2.5vw, 2rem) !important; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+
+/* Letter Spacing Utilities */
+.tracking-widest { letter-spacing: 0.25em !important; }
+.tracking-wider  { letter-spacing: 0.15em !important; }
+.tracking-wide   { letter-spacing: 0.05em !important; }
+.tracking-tight  { letter-spacing: -0.04em !important; }
+
+/* ============================================================
+   4. COLOR UTILITIES
+   ============================================================ */
+.bg-paper       { background-color: var(--bg-paper)    !important; }
+.bg-cream       { background-color: var(--bg-cream)    !important; }
+.bg-silk        { background-color: var(--bg-silk)     !important; }
+.bg-ivory       { background-color: var(--bg-white)    !important; }
+.bg-warm-beige  { background-color: var(--bg-paper)    !important; }
+.bg-warm-white  { background-color: var(--bg-white)    !important; }
+.bg-charcoal    { background-color: var(--bg-charcoal) !important; }
+.bg-gold        { background-color: var(--gold)        !important; }
+.bg-gold-soft   { background-color: var(--gold-pale)   !important; }
+.bg-obsidian    { background-color: #000000            !important; color: #FFFFFF; }
+
+.text-primary-lx   { color: var(--text-primary)   !important; }
+.text-secondary-lx { color: var(--text-secondary) !important; }
+.text-charcoal     { color: var(--text-primary)   !important; }
+.text-muted-luxury { color: var(--text-muted)     !important; }
+
+.text-gold { color: var(--gold) !important; }
+
+/* Gradient text for Next.js style glow */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #000000 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+.hover-gold:hover  { color: var(--gold) !important; }
+.hover-border-gold:hover { border-color: var(--gold) !important; }
+
+/* Border Utilities */
+.border-luxury    { border-color: var(--border-light)  !important; border-style: solid; border-width: 1px; }
+.border-medium    { border-color: var(--border-medium) !important; border-style: solid; border-width: 1px; }
+.border-gold      { border-color: var(--gold)          !important; border-style: solid; border-width: 1px; }
+
+/* ============================================================
+   5. LAYOUT
+   ============================================================ */
+.max-w-7xl  { max-width: 1400px; margin-left: auto; margin-right: auto; }
+.max-w-5xl  { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.max-w-3xl  { max-width: 768px;  margin-left: auto; margin-right: auto; }
+
+.aspect-16-9  { aspect-ratio: 16/9; }
+.aspect-16-10 { aspect-ratio: 16/10; }
+.aspect-4-3   { aspect-ratio: 4/3;  }
+.aspect-3-4   { aspect-ratio: 3/4;  }
+.aspect-21-9  { aspect-ratio: 21/9; }
+.aspect-square{ aspect-ratio: 1/1;  }
+
+/* ============================================================
+   6. SECTION DIVIDERS & EYEBROWS
+   ============================================================ */
+.section-gap { padding-top: var(--section-gap); padding-bottom: var(--section-gap); }
+.section-gap-sm { padding-top: 4rem; padding-bottom: 4rem; }
+
+/* Modern Tech Eyebrow */
+.eyebrow-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  background: var(--bg-paper);
+  border: 1px solid var(--border-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+.eyebrow-label::before { display: none; } /* Remove the line */
+
+.hr-luxury {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 0;
+}
+
+/* ============================================================
+   7. BUTTONS — NEXT.JS SYSTEM
+   ============================================================ */
+
+/* Primary — Sharp Black */
+.btn-primary-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--text-primary);
+  color: var(--bg-white);
+  border: 1px solid var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-primary-luxury:hover {
+  background-color: #222;
+  border-color: #222;
+  color: var(--bg-white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Outline — Clean border */
+.btn-outline-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow-xs);
+}
+.btn-outline-luxury:hover {
+  background-color: var(--bg-paper);
+  border-color: var(--border-medium);
+  transform: translateY(-1px);
+}
+
+/* Ghost */
+.btn-ghost-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all var(--duration-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-ghost-luxury:hover {
+  color: var(--text-primary);
+  gap: 0.5rem;
+}
+
+.btn-gold-solid {
+  background-color: var(--text-primary);
+  color: var(--bg-white);
+  border: 1px solid var(--text-primary);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+.btn-gold-solid:hover { background-color: #222; color: #fff; }
+
+/* ============================================================
+   8. CARDS — TECH BENTO GRID
+   ============================================================ */
+
+/* Base Luxury Card */
+.luxury-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-base) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.luxury-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Product Card */
+.product-card-inner {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--duration-base) var(--ease-out);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+.product-card-inner:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.product-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background-color: var(--bg-paper);
+}
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+.product-card-inner:hover .product-img-wrap img { transform: scale(1.04); }
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.05); /* Very clean, minimal overlay */
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(2px);
+}
+.product-card-inner:hover .product-overlay { opacity: 1; }
+
+.product-overlay .overlay-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  transform: translateY(4px);
+  opacity: 0;
+  background: rgba(255,255,255,0.9);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+.product-card-inner:hover .overlay-btn { transform: translateY(0); opacity: 1; }
+.product-card-inner:hover .overlay-btn:nth-child(1) { transition-delay: 0.05s; }
+.product-card-inner:hover .overlay-btn:nth-child(2) { transition-delay: 0.1s;  }
+.overlay-btn:hover { background: #fff; transform: scale(1.05) !important; }
+
+.product-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.product-category-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  margin-bottom: 0.5rem;
+}
+.product-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.product-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1; margin-bottom: 1.5rem; }
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+.product-price small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+  margin-bottom: 0.1rem;
+}
+
+/* Badge Tags */
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+/* Bento/Feature Cards */
+.bento-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  transition: all var(--duration-base) var(--ease-out);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+.bento-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================
+   9. NAVBAR — ULTRA CLEAN GLASS
+   ============================================================ */
+.navbar.sticky-top {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  transition: all var(--duration-base);
+}
+.navbar.sticky-top.shadow-sm {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04) !important;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none; /* Tech aesthetic prefers Title Case over UPPERCASE */
+  color: var(--text-secondary) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius-pill);
+  transition: all var(--duration-fast);
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--text-primary) !important;
+  background: var(--bg-paper);
+}
+/* override the gold active class from old design */
+.navbar-nav .nav-link.active.text-gold {
+  color: var(--text-primary) !important;
+  background: var(--bg-paper);
+  font-weight: 600;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+  font-size: 1.25rem !important;
+}
+.navbar-brand .text-gold {
+  color: var(--text-primary) !important; /* Pure monochrome */
+  font-style: normal !important;
+}
+
+/* Cart Badge - Pill style */
+.cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 0px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--radius-pill);
+  background: var(--text-primary);
+  color: var(--bg-white);
+  font-size: 0.65rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid var(--bg-white); /* Cutout effect */
+}
+
+/* ============================================================
+   10. HERO - CLEAN & HUGE
+   ============================================================ */
+.bg-gradient-hero {
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 40%, transparent 100%);
+}
+
+.scale-img {
+  transform: scale(1.05);
+  transition: transform 14s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.carousel-item.active .scale-img { transform: scale(1); }
+
+/* Slide animations */
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.carousel-item.active .slide-in-up,
+.slide-in-up.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ============================================================
+   11. FOOTER — VERCEL STYLE
+   ============================================================ */
+footer.footer-luxury {
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding-top: 5rem !important;
+}
+footer.footer-luxury h2 {
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+}
+footer.footer-luxury h6,
+footer.footer-luxury .footer-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+footer.footer-luxury a,
+footer.footer-luxury li {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+footer.footer-luxury a:hover { color: var(--text-primary) !important; }
+
+/* ============================================================
+   12. OFFCANVAS / CART DRAWER
+   ============================================================ */
+.offcanvas { --bs-offcanvas-width: 400px !important; border-left: 1px solid var(--border-light) !important; }
+@media (max-width: 576px) { .offcanvas { --bs-offcanvas-width: 100% !important; } }
+#cartDrawer {
+  background-color: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(24px);
+}
+.offcanvas-header { border-bottom: 1px solid var(--border-light) !important; }
+.offcanvas-title, #cartDrawerLabel { font-weight: 600 !important; letter-spacing: -0.02em; }
+
+/* ============================================================
+   13. NOISE & BACKGROUND EFFECTS
+   ============================================================ */
+#noise {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03; /* Very faint */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg-grid-light {
+  background-image:
+    linear-gradient(var(--border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ============================================================
+   CART DRAWER WIDTH OVERRIDE
+   ============================================================ */
+#cartDrawer.offcanvas {
+  width: 340px !important;
+  max-width: 95vw;
+}
+
+
+/* ============================================================
+   14. CUSTOM CURSOR - Premium Dual (Dot + Ring)
+   ============================================================ */
+body.hide-native { cursor: none !important; }
+body.hide-native * { cursor: none !important; }
+
+/* ── Outer Ring (lerp / lags behind) ── */
+#custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  border: 1.5px solid rgba(28, 28, 30, 0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999997;
+  opacity: 0;
+  background-color: transparent;
+  will-change: left, top, width, height, border-color, background-color;
+  transition:
+    width            0.25s cubic-bezier(0.23, 1, 0.32, 1),
+    height           0.25s cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 0.25s ease,
+    border-color     0.25s ease,
+    opacity          0.35s ease,
+    transform        0.12s ease;
+}
+
+/* Hover: expand ring + gold tint */
+#custom-cursor.hover-state {
+  width: 44px; height: 44px;
+  background-color: rgba(198, 161, 91, 0.12);
+  border-color: #C6A15B;
+  border-width: 1.5px;
+}
+
+/* Click: compress ring */
+#custom-cursor.click-state {
+  transform: scale(0.6);
+  background-color: rgba(198, 161, 91, 0.2);
+  border-color: #C6A15B;
+}
+
+/* Text mode: ring collapses into a thin vertical pill */
+#custom-cursor.text-mode {
+  width: 3px; height: 26px;
+  border-radius: 2px;
+  border-color: rgba(28, 28, 30, 0.4);
+  background-color: rgba(28, 28, 30, 0.08);
+}
+
+#custom-cursor.hidden { opacity: 0 !important; }
+
+/* ── Inner Dot (follows instantly) ── */
+#cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background-color: #1C1C1E;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  will-change: left, top, transform, background-color;
+  transition: transform 0.12s ease, background-color 0.2s ease, opacity 0.35s ease;
+}
+
+/* Dot hover: gold fill + slightly larger */
+#cursor-dot.dot-hover {
+  background-color: #C6A15B;
+  transform: scale(1.5);
+}
+
+/* Dot click: compress */
+#cursor-dot.dot-click {
+  transform: scale(0.4);
+}
+
+/* ── Click Ripple Rings ── */
+.cursor-ripple {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999996;
+  width: 6px; height: 6px;
+  border: 1.5px solid rgba(198, 161, 91, 0.75);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  animation: cursorRipple 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes cursorRipple {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(7);   opacity: 0;   }
+}
+
+/* ── Trail Dots (on fast movement) ── */
+.cursor-trail {
+  position: fixed;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background-color: rgba(198, 161, 91, 0.5);
+  pointer-events: none;
+  z-index: 999995;
+  transform: translate(-50%, -50%);
+  animation: cursorTrailFade 0.4s ease-out forwards;
+}
+@keyframes cursorTrailFade {
+  0%   { opacity: 0.7; transform: translate(-50%, -50%) scale(1);   }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0.2); }
+}
+
+/* ── Disable on touch devices ── */
+@media (hover: none) and (pointer: coarse) {
+  body, body * { cursor: auto !important; }
+  #custom-cursor, #cursor-dot { display: none !important; }
+}
+
+/* ============================================================
+   15. SCROLL PROGRESS BAR - Thin Black Line
+   ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--text-primary);
+  z-index: 99999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ============================================================
+   16. FORMS - Modern Focus
+   ============================================================ */
+.form-control, .form-select {
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  transition: all var(--duration-fast);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--text-primary) !important;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.05) !important;
+  outline: none;
+}
+
+/* ============================================================
+   17. HELPERS
+   ============================================================ */
+.group { }
+.group-hover-scale:hover { transform: scale(1.02); }
+.transition-transform { transition: transform var(--duration-slow) var(--ease-out); }
+.transition-all { transition: all var(--duration-base) var(--ease-out); }
+.transition-colors { transition: color var(--duration-fast), border-color var(--duration-fast), background-color var(--duration-fast); }
+
+/* Ensure bootstrap text utilities override properly */
+.fs-1 { font-size: 2.5rem !important; letter-spacing: -0.03em; }
+.fs-2 { font-size: 2rem !important; letter-spacing: -0.02em; }
+.fs-3 { font-size: 1.75rem !important; letter-spacing: -0.02em; }
+.fs-4 { font-size: 1.5rem !important; letter-spacing: -0.01em; }
+.fs-5 { font-size: 1.25rem !important; letter-spacing: -0.01em; }
+.fs-6 { font-size: 1rem !important; letter-spacing: -0.01em; }
+
+/* Sub-millimeter / Micro aesthetics */
+.micro-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+}
+
+/* Custom Range Slider for Configurator */
+input[type=range].form-range {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+input[type=range].form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #C6A15B;
+  cursor: pointer;
+  margin-top: -6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+input[type=range].form-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+input[type=range].form-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #e9ecef;
+  border-radius: 2px;
+}
+input[type=range].form-range:focus::-webkit-slider-runnable-track {
+  background: #dee2e6;
+}
+

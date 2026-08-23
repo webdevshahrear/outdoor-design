@@ -1,0 +1,167 @@
+<!-- SEARCH MODAL -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-luxury rounded-1 shadow-lg">
+      <div class="modal-header bg-warm-beige border-bottom border-luxury py-3">
+        <i class="fa-solid fa-magnifying-glass text-gold me-3 fs-5"></i>
+        <input type="text" class="form-control bg-transparent border-0 shadow-none p-0 fs-6 text-charcoal" placeholder="Search gates, pivot doors, acoustic windows, bioclimatic pergolas, materials..." id="searchInput">
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 p-md-5 bg-white">
+        <span class="text-uppercase fw-bold text-gold d-block mb-3" style="font-size: 0.65rem; letter-spacing: 0.1em;">Popular Architectural Queries</span>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Automatic Gate</button>
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Villa Gate</button>
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Pivot Door</button>
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Bioclimatic Pergola</button>
+        </div>
+        
+        <hr class="border-luxury my-4">
+        
+        <span class="text-uppercase fw-bold text-gold d-block mb-3" style="font-size: 0.65rem; letter-spacing: 0.1em;">Explore by Architectural Category</span>
+        <div class="row g-2">
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Gates & Automation &rarr;</a>
+          </div>
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Pivot & Sliding Doors &rarr;</a>
+          </div>
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Slim Windows &rarr;</a>
+          </div>
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Bioclimatic Pergolas &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONSULTATION MODAL -->
+<div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-luxury rounded-1 shadow-lg">
+      <div class="modal-header bg-ivory border-bottom border-luxury">
+        <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
+          <i class="fa-solid fa-sparkles text-gold"></i> Book Complimentary Villa Site Survey
+        </h5>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p class="text-muted mb-4" style="font-size: 0.8rem;">Includes sub-millimeter 3D laser opening scans, load-bearing verification, Dubai Municipality regulation checks, and material finish swatches.</p>
+        
+        <form id="consultationForm">
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
+            <input type="text" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;" required placeholder="e.g. Dr. Rashid Al-Nuaimi">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">UAE Mobile / WhatsApp *</label>
+            <input type="tel" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;" required value="+971 ">
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Villa Community</label>
+              <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+                <option>Palm Jumeirah</option>
+                <option>Emirates Hills</option>
+                <option>Dubai Hills Estate</option>
+                <option>Al Barari</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Preferred Date</label>
+              <input type="date" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Preferred Time Window</label>
+            <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+              <option>Morning (09:00 - 12:00)</option>
+              <option>Afternoon (12:00 - 15:00)</option>
+              <option>Evening (15:00 - 18:00)</option>
+            </select>
+          </div>
+          
+          <div class="d-flex justify-content-between align-items-center">
+            <button type="button" class="btn btn-link text-muted text-decoration-none" data-bs-dismiss="modal" style="font-size: 0.8rem;">Cancel</button>
+            <button type="submit" class="btn btn-primary-luxury">Confirm Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART DRAWER (OFFCANVAS) -->
+<div class="offcanvas offcanvas-end bg-ivory" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
+  <div class="offcanvas-header bg-white border-bottom border-luxury py-3">
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center justify-content-center bg-ivory border border-luxury rounded-1 text-gold" style="width: 32px; height: 32px;">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+      <div>
+        <h5 class="font-display fw-semibold m-0 text-charcoal fs-6" id="cartDrawerLabel">Architectural Cart</h5>
+        <span class="text-muted" style="font-size: 0.65rem;">0 Commissions in Specification</span>
+      </div>
+    </div>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body p-4 d-flex flex-column h-100">
+    <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
+      <div class="d-flex align-items-center justify-content-center bg-white border border-luxury rounded-circle text-gold mb-3" style="width: 64px; height: 64px;">
+        <i class="fa-solid fa-bag-shopping fs-4"></i>
+      </div>
+      <h3 class="font-display fw-medium text-charcoal fs-5 mb-2">Your Cart is Empty</h3>
+      <p class="text-muted mb-4" style="font-size: 0.8rem; max-width: 250px;">Select from our bespoke gates, monumental pivot doors, or bioclimatic pergolas.</p>
+      
+      <div class="w-100 d-flex flex-column gap-2">
+        <a href="shop.html" class="btn btn-primary-luxury w-100">Browse Collections</a>
+        <a href="custom-design.html" class="btn btn-outline-luxury w-100">Open 3D Configurator</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE MODAL -->
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-luxury rounded-1 shadow-lg">
+      <div class="modal-header bg-ivory border-bottom border-luxury py-3">
+        <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
+          <i class="fa-solid fa-file-invoice text-gold"></i> Request Official Project Quotation
+        </h5>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 p-md-5">
+        <p class="text-muted mb-4" style="font-size: 0.85rem;">Our Senior Estimator & CAD Engineering Team will provide a bespoke proposal within 24 hours.</p>
+        
+        <form>
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
+              <input type="text" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Phone / WhatsApp *</label>
+              <input type="tel" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required value="+971 ">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Project Requirements & Dimensions</label>
+              <textarea class="form-control bg-white border-luxury rounded-1" rows="3" style="font-size: 0.8rem;" placeholder="e.g. Need a 5x2m sliding gate for a villa in Palm Jumeirah..."></textarea>
+            </div>
+          </div>
+          
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top border-luxury">
+            <div class="d-flex align-items-center gap-2 text-muted" style="font-size: 0.75rem;">
+              <i class="fa-solid fa-shield-check text-gold"></i> Complimentary Laser Survey Included
+            </div>
+            <button type="submit" class="btn btn-primary-luxury px-4 py-2 text-uppercase fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.1em;">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

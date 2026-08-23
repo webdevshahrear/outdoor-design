@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed | Al-Manzil Luxe Dubai</title>
+  <meta name="description" content="Your architectural commission has been confirmed. Al-Manzil Luxe will contact you within 24 hours to schedule your free 3D laser survey.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    @keyframes draw-check {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes scale-in-circle {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .success-circle { animation: scale-in-circle 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+    .check-path {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: draw-check 0.8s ease 0.5s forwards;
+    }
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 30px;
+      bottom: -1rem;
+      width: 1px;
+      background: var(--border-luxury);
+    }
+    .timeline-step:last-child::before { display: none; }
+  </style>
+</head>
+<body class="bg-ivory text-charcoal">
+  <!-- UI UX Pro Max Elements -->
+  <div id="scroll-progress"></div>
+  <div id="noise"></div>
+  <div id="custom-cursor"></div>
+
+  
+  
+  
+
+    <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container-fluid px-4 px-lg-5 max-w-7xl">
+      
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler border-0 shadow-none d-lg-none p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="fa-solid fa-bars" style="font-size: 1.1rem;"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand font-display fs-4 fw-light text-charcoal m-0 me-lg-5" href="index.html">
+        Al-Manzil Luxe <span class="text-gold" style="font-style: italic;">.</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
+        <ul class="navbar-nav gap-2 gap-xl-3">
+          <li class="nav-item">
+            <a class="nav-link active text-gold" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Collections
+            </a>
+            <ul class="dropdown-menu mt-2">
+              <li><a class="dropdown-item py-2" href="shop.html">Luxury Gates &amp; Automation</a></li>
+              <li><a class="dropdown-item py-2" href="shop.html">Monumental Pivot Doors</a></li>
+              <li><a class="dropdown-item py-2" href="shop.html">Slim-Profile Windows</a></li>
+              <li><a class="dropdown-item py-2" href="shop.html">Bioclimatic Pergolas</a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item py-2 fw-semibold" style="color: var(--gold) !important;" href="shop.html">View All Collections &rarr;</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link text-gold fw-semibold text-nowrap" href="custom-design.html"><i class="fa-solid fa-cube me-1"></i> 3D Studio</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Actions -->
+      <div class="d-flex align-items-center gap-1 gap-md-2 ms-auto">
+        <button class="btn btn-link text-charcoal p-2" style="font-size: 0.95rem;" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="account.html" class="btn btn-link text-charcoal p-2" style="font-size: 0.95rem;" title="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <a href="wishlist.html" class="btn btn-link text-charcoal p-2" style="font-size: 0.95rem;" title="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <button class="btn btn-link text-charcoal p-2 position-relative" style="font-size: 0.95rem;" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" title="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">0</span>
+        </button>
+        <div class="vr mx-1 d-none d-sm-block" style="height: 20px; opacity: 0.15;"></div>
+        <button class="btn btn-primary-luxury d-none d-sm-flex align-items-center gap-2 ms-1" data-bs-toggle="modal" data-bs-target="#consultationModal" style="padding: 0.6rem 1.25rem; font-size: 0.65rem;">
+          <i class="fa-solid fa-sparkles" style="color: var(--gold);"></i> Book Survey
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN ================= -->
+  <main class="bg-ivory min-vh-100 pb-5">
+    
+    <!-- Hero Success Section -->
+    <section class="container px-4 px-lg-5 max-w-7xl pt-5 mt-4">
+      <div class="row g-5 align-items-start">
+        
+        <!-- Left: Confirmation -->
+        <div class="col-lg-7" data-aos="fade-right">
+          
+          <!-- Success Animation -->
+          <div class="d-flex align-items-center gap-4 mb-5">
+            <div class="success-circle flex-shrink-0 d-flex align-items-center justify-content-center rounded-circle" 
+              style="width: 80px; height: 80px; background: linear-gradient(135deg, #C6A15B, #9e7f41); box-shadow: 0 12px 35px rgba(198,161,91,0.35);">
+              <svg width="36" height="36" viewBox="0 0 52 52" fill="none">
+                <path class="check-path" d="M14 27L22 35L38 18" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="d-block text-gold fw-bold text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 0.25em;">Commission Authorized</span>
+              <h1 class="font-display fw-light display-6 text-charcoal m-0">Your Order is Confirmed</h1>
+            </div>
+          </div>
+          
+          <!-- Order Number -->
+          <div class="bg-white border border-luxury rounded-1 p-4 mb-4 shadow-sm">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+              <div>
+                <span class="text-muted d-block mb-1" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;">Commission Reference</span>
+                <span class="font-display fw-semibold text-charcoal fs-5" id="orderNumber">#ALM-2026-0000</span>
+              </div>
+              <div class="text-end">
+                <span class="text-muted d-block mb-1" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;">Confirmed On</span>
+                <span class="fw-semibold text-charcoal" id="orderDate" style="font-size: 0.85rem;"></span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Message -->
+          <div class="bg-warm-beige border border-luxury rounded-1 p-4 mb-5">
+            <div class="d-flex gap-3">
+              <i class="fa-solid fa-envelope text-gold mt-1 flex-shrink-0"></i>
+              <div>
+                <p class="fw-semibold text-charcoal mb-1" style="font-size: 0.85rem;">Our Senior Concierge Team Has Been Notified</p>
+                <p class="text-muted m-0" style="font-size: 0.8rem; line-height: 1.6;">
+                  A detailed commission confirmation has been dispatched to your inbox. Our Senior Project Manager will contact you within <strong class="text-charcoal">24 hours</strong> to schedule your complimentary <strong class="text-charcoal">3D Laser Site Survey</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline -->
+          <h2 class="font-display fw-medium fs-5 text-charcoal mb-4">What Happens Next</h2>
+          <div class="d-flex flex-column gap-4">
+            
+            <div class="d-flex gap-4 position-relative timeline-step" data-aos="fade-up" data-aos-delay="100">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-gold flex-shrink-0 fw-bold text-white" style="width: 30px; height: 30px; font-size: 0.75rem; z-index:1;">1</div>
+              <div class="pt-1">
+                <strong class="text-charcoal d-block mb-1" style="font-size: 0.85rem;">Concierge Contact — Within 24 Hours</strong>
+                <p class="text-muted m-0" style="font-size: 0.8rem;">Your dedicated project concierge calls to confirm requirements, dimensions, and site access.</p>
+              </div>
+            </div>
+            
+            <div class="d-flex gap-4 position-relative timeline-step" data-aos="fade-up" data-aos-delay="200">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-white border border-luxury flex-shrink-0 fw-bold text-charcoal" style="width: 30px; height: 30px; font-size: 0.75rem; z-index:1;">2</div>
+              <div class="pt-1">
+                <strong class="text-charcoal d-block mb-1" style="font-size: 0.85rem;">Free 3D Laser Site Survey — Day 2-3</strong>
+                <p class="text-muted m-0" style="font-size: 0.8rem;">Our CAD engineer visits your villa for precision measurements and structural assessment.</p>
+              </div>
+            </div>
+            
+            <div class="d-flex gap-4 position-relative timeline-step" data-aos="fade-up" data-aos-delay="300">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-white border border-luxury flex-shrink-0 fw-bold text-charcoal" style="width: 30px; height: 30px; font-size: 0.75rem; z-index:1;">3</div>
+              <div class="pt-1">
+                <strong class="text-charcoal d-block mb-1" style="font-size: 0.85rem;">Bespoke Fabrication — Week 2–5</strong>
+                <p class="text-muted m-0" style="font-size: 0.8rem;">Your architectural piece is precision-fabricated in our Dubai Al Quoz facility.</p>
+              </div>
+            </div>
+            
+            <div class="d-flex gap-4 position-relative timeline-step" data-aos="fade-up" data-aos-delay="400">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-white border border-luxury flex-shrink-0 fw-bold text-charcoal" style="width: 30px; height: 30px; font-size: 0.75rem; z-index:1;">4</div>
+              <div class="pt-1">
+                <strong class="text-charcoal d-block mb-1" style="font-size: 0.85rem;">White-Glove Installation & Handover</strong>
+                <p class="text-muted m-0" style="font-size: 0.8rem;">Professional installation team installs, programs, and commissions your new architectural element. 2-year warranty.</p>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+        <!-- Right: Order Summary -->
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="bg-white border border-luxury rounded-1 p-4 shadow-sm position-sticky" style="top: 100px;">
+            <h3 class="font-display fw-medium fs-6 text-charcoal pb-3 border-bottom border-luxury mb-4">Commission Summary</h3>
+            
+            <div id="successCartItems" class="d-flex flex-column gap-2 mb-4">
+              <!-- Injected by JS -->
+            </div>
+            
+            <div class="d-flex flex-column gap-2 text-muted pt-3 border-top border-luxury mb-4" style="font-size: 0.75rem;">
+              <div class="d-flex justify-content-between">
+                <span>Subtotal</span>
+                <span class="text-charcoal fw-medium" id="successSubtotal">AED 0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>UAE Installation</span>
+                <span class="text-success fw-semibold">COMPLIMENTARY</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Dubai 5% VAT</span>
+                <span class="text-charcoal" id="successVat">AED 0</span>
+              </div>
+              <div class="d-flex justify-content-between text-charcoal pt-2 border-top border-luxury fw-bold fs-6">
+                <span>Total Authorized</span>
+                <span id="successTotal">AED 0</span>
+              </div>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="d-flex flex-column gap-2">
+              <a href="shop.html" class="btn btn-primary-luxury w-100 text-center">
+                <i class="fa-solid fa-bag-shopping me-2"></i> Continue Shopping
+              </a>
+              <a href="projects.html" class="btn btn-outline-luxury w-100 text-center">
+                View Our Portfolio
+              </a>
+            </div>
+            
+            <!-- WhatsApp -->
+            <div class="mt-4 pt-3 border-top border-luxury">
+              <p class="text-muted text-center mb-2" style="font-size: 0.7rem;">Have questions about your commission?</p>
+              <a href="https://wa.me/971800LUXE" target="_blank" class="btn btn-success w-100 rounded-1 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                <i class="fa-brands fa-whatsapp fs-5"></i> WhatsApp Concierge
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer-luxury pt-4 pb-4 border-top border-dark">
+    <div class="container px-4 max-w-7xl text-center">
+      <div class="text-muted" style="font-size: 0.75rem;">
+        &copy; 2026 Al-Manzil Luxe Architectural Systems LLC · Dubai, UAE.
+      </div>
+    </div>
+  </footer>
+
+  
+<!-- SEARCH MODAL -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-luxury rounded-1 shadow-lg">
+      <div class="modal-header bg-warm-beige border-bottom border-luxury py-3">
+        <i class="fa-solid fa-magnifying-glass text-gold me-3 fs-5"></i>
+        <input type="text" class="form-control bg-transparent border-0 shadow-none p-0 fs-6 text-charcoal" placeholder="Search gates, pivot doors, acoustic windows, bioclimatic pergolas, materials..." id="searchInput">
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 p-md-5 bg-white">
+        <span class="text-uppercase fw-bold text-gold d-block mb-3" style="font-size: 0.65rem; letter-spacing: 0.1em;">Popular Architectural Queries</span>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Automatic Gate</button>
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Villa Gate</button>
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Pivot Door</button>
+          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Bioclimatic Pergola</button>
+        </div>
+        
+        <hr class="border-luxury my-4">
+        
+        <span class="text-uppercase fw-bold text-gold d-block mb-3" style="font-size: 0.65rem; letter-spacing: 0.1em;">Explore by Architectural Category</span>
+        <div class="row g-2">
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Gates & Automation &rarr;</a>
+          </div>
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Pivot & Sliding Doors &rarr;</a>
+          </div>
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Slim Windows &rarr;</a>
+          </div>
+          <div class="col-6 col-sm-3">
+            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Bioclimatic Pergolas &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONSULTATION MODAL -->
+<div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-luxury rounded-1 shadow-lg">
+      <div class="modal-header bg-ivory border-bottom border-luxury">
+        <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
+          <i class="fa-solid fa-sparkles text-gold"></i> Book Complimentary Villa Site Survey
+        </h5>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <p class="text-muted mb-4" style="font-size: 0.8rem;">Includes sub-millimeter 3D laser opening scans, load-bearing verification, Dubai Municipality regulation checks, and material finish swatches.</p>
+        
+        <form id="consultationForm">
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
+            <input type="text" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;" required placeholder="e.g. Dr. Rashid Al-Nuaimi">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">UAE Mobile / WhatsApp *</label>
+            <input type="tel" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;" required value="+971 ">
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Villa Community</label>
+              <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+                <option>Palm Jumeirah</option>
+                <option>Emirates Hills</option>
+                <option>Dubai Hills Estate</option>
+                <option>Al Barari</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Preferred Date</label>
+              <input type="date" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Preferred Time Window</label>
+            <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+              <option>Morning (09:00 - 12:00)</option>
+              <option>Afternoon (12:00 - 15:00)</option>
+              <option>Evening (15:00 - 18:00)</option>
+            </select>
+          </div>
+          
+          <div class="d-flex justify-content-between align-items-center">
+            <button type="button" class="btn btn-link text-muted text-decoration-none" data-bs-dismiss="modal" style="font-size: 0.8rem;">Cancel</button>
+            <button type="submit" class="btn btn-primary-luxury">Confirm Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART DRAWER (OFFCANVAS) -->
+<div class="offcanvas offcanvas-end bg-ivory" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
+  <div class="offcanvas-header bg-white border-bottom border-luxury py-3">
+    <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center justify-content-center bg-ivory border border-luxury rounded-1 text-gold" style="width: 32px; height: 32px;">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+      <div>
+        <h5 class="font-display fw-semibold m-0 text-charcoal fs-6" id="cartDrawerLabel">Architectural Cart</h5>
+        <span class="text-muted" style="font-size: 0.65rem;">0 Commissions in Specification</span>
+      </div>
+    </div>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body p-4 d-flex flex-column h-100">
+    <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
+      <div class="d-flex align-items-center justify-content-center bg-white border border-luxury rounded-circle text-gold mb-3" style="width: 64px; height: 64px;">
+        <i class="fa-solid fa-bag-shopping fs-4"></i>
+      </div>
+      <h3 class="font-display fw-medium text-charcoal fs-5 mb-2">Your Cart is Empty</h3>
+      <p class="text-muted mb-4" style="font-size: 0.8rem; max-width: 250px;">Select from our bespoke gates, monumental pivot doors, or bioclimatic pergolas.</p>
+      
+      <div class="w-100 d-flex flex-column gap-2">
+        <a href="shop.html" class="btn btn-primary-luxury w-100">Browse Collections</a>
+        <a href="custom-design.html" class="btn btn-outline-luxury w-100">Open 3D Configurator</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE MODAL -->
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-luxury rounded-1 shadow-lg">
+      <div class="modal-header bg-ivory border-bottom border-luxury py-3">
+        <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
+          <i class="fa-solid fa-file-invoice text-gold"></i> Request Official Project Quotation
+        </h5>
+        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 p-md-5">
+        <p class="text-muted mb-4" style="font-size: 0.85rem;">Our Senior Estimator & CAD Engineering Team will provide a bespoke proposal within 24 hours.</p>
+        
+        <form>
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
+              <input type="text" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Phone / WhatsApp *</label>
+              <input type="tel" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required value="+971 ">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Project Requirements & Dimensions</label>
+              <textarea class="form-control bg-white border-luxury rounded-1" rows="3" style="font-size: 0.8rem;" placeholder="e.g. Need a 5x2m sliding gate for a villa in Palm Jumeirah..."></textarea>
+            </div>
+          </div>
+          
+          <div class="d-flex justify-content-between align-items-center pt-3 border-top border-luxury">
+            <div class="d-flex align-items-center gap-2 text-muted" style="font-size: 0.75rem;">
+              <i class="fa-solid fa-shield-check text-gold"></i> Complimentary Laser Survey Included
+            </div>
+            <button type="submit" class="btn btn-primary-luxury px-4 py-2 text-uppercase fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.1em;">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js?v=4.0"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- VanillaTilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      // Generate order number
+      const orderId = '#ALM-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+      $('#orderNumber').text(orderId);
+      
+      // Date
+      const now = new Date();
+      $('#orderDate').text(now.toLocaleDateString('en-AE', { day:'numeric', month:'long', year:'numeric' }));
+      
+      // Populate cart summary from localStorage
+      const items = JSON.parse(localStorage.getItem('luxeCart')) || [];
+      if (items.length > 0) {
+        let html = '';
+        let subtotal = 0;
+        items.forEach(item => {
+          subtotal += item.price * item.qty;
+          html += `<div class="d-flex gap-3 align-items-center">
+            <img src="${item.image}" class="rounded-1 object-fit-cover flex-shrink-0 border border-luxury" style="width:48px;height:48px;">
+            <div class="flex-grow-1">
+              <div class="fw-medium text-charcoal" style="font-size: 0.75rem; line-height: 1.3;">${item.qty}x ${item.name}</div>
+              <div class="text-muted" style="font-size: 0.65rem; text-transform:capitalize;">${item.category}</div>
+            </div>
+            <span class="fw-semibold text-charcoal flex-shrink-0" style="font-size:0.75rem;">AED ${(item.price*item.qty).toLocaleString()}</span>
+          </div>`;
+        });
+        $('#successCartItems').html(html);
+        const vat = subtotal * 0.05;
+        $('#successSubtotal').text('AED ' + subtotal.toLocaleString());
+        $('#successVat').text('AED ' + vat.toLocaleString());
+        $('#successTotal').text('AED ' + (subtotal + vat).toLocaleString());
+        
+        // Clear the cart after successful order
+        localStorage.removeItem('luxeCart');
+      } else {
+        $('#successCartItems').html('<p class="text-muted text-center py-3" style="font-size:0.8rem;">No items found. <a href="shop.html">Browse collections</a></p>');
+      }
+      
+      if (typeof AOS !== 'undefined') { AOS.init({ once: true, duration: 800 }); }
+    });
+  </script>
+  
+</body>
+</html>

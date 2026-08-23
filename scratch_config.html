@@ -1,0 +1,231 @@
+
+    <!-- 9. INTERACTIVE 3D CONFIGURATOR TEASER: Studio Experience -->
+    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
+      <div class="bg-white border border-luxury rounded-1 p-4 p-md-5 shadow-sm">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 border-bottom border-luxury pb-4 mb-4">
+          <div>
+            <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.25em;">
+              <i class="fa-solid fa-sliders"></i>
+              <span>INTERACTIVE 3D DESIGN STUDIO</span>
+            </div>
+            <h2 class="font-display fw-light display-6 text-charcoal m-0">
+              Configure Your Custom Villa Gate & Pergola
+            </h2>
+          </div>
+          <button class="btn btn-dark text-uppercase fw-semibold px-4 py-2 rounded-1 align-self-start align-self-md-auto" style="font-size: 0.75rem; letter-spacing: 0.1em;" onclick="window.location.href='custom-design.html'">
+            Open Full Studio <i class="fa-solid fa-arrow-right ms-2"></i>
+          </button>
+        </div>
+
+        <div class="bg-ivory border border-luxury rounded-1 p-4 p-md-5">
+          <!-- Top Header -->
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 border-bottom border-luxury pb-4 mb-4">
+            <div>
+              <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.25em;">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Interactive 3D Architectural Studio</span>
+              </div>
+              <h3 class="font-display fw-medium fs-4 text-charcoal m-0">Real-Time Villa Gate & Pergola Configurator</h3>
+              <p class="text-muted m-0 mt-1" style="font-size: 0.8rem;">Dynamic dimension scaling, finish rendering, and instantaneous Dubai turnkey pricing.</p>
+            </div>
+
+            <!-- Model Type Selector -->
+            <div class="bg-white p-1 border border-luxury rounded-1 d-flex shadow-sm">
+              <button class="btn config-type-btn active px-3 py-1 text-uppercase fw-semibold" data-type="gate" style="font-size: 0.75rem;">Villa Gate</button>
+              <button class="btn config-type-btn px-3 py-1 text-uppercase fw-semibold" data-type="pergola" style="font-size: 0.75rem;">Bioclimatic Pergola</button>
+              <button class="btn config-type-btn px-3 py-1 text-uppercase fw-semibold" data-type="door" style="font-size: 0.75rem;">Pivot Door</button>
+            </div>
+          </div>
+
+          <!-- Main Studio Workspace -->
+          <div class="row g-5">
+            
+            <!-- Left: Dynamic Visual Simulator Canvas (7 Cols) -->
+            <div class="col-lg-7 d-flex flex-column gap-4">
+              <div id="configCanvas" class="position-relative w-100 rounded-1 border border-luxury d-flex align-items-center justify-content-center p-5 overflow-hidden transition-all bg-warm-beige" style="aspect-ratio: 16/10;">
+                <!-- Architectural Grid Motif -->
+                <div class="position-absolute w-100 h-100 top-0 start-0 opacity-25" style="background-image: radial-gradient(#171717 1px, transparent 1px); background-size: 16px 16px;"></div>
+
+                <!-- Time of Day & Action Toggles -->
+                <div class="position-absolute top-0 start-0 m-3 m-md-4 d-flex gap-2 z-10">
+                  <button id="toggleNightMode" class="btn btn-white border border-luxury shadow-sm px-3 py-1 text-charcoal text-uppercase fw-semibold d-flex align-items-center gap-2" style="font-size: 0.7rem;">
+                    <i class="fa-solid fa-sun text-warning mode-icon"></i>
+                    <span class="mode-text">Daylight Simulation</span>
+                  </button>
+                  <button id="toggleSimulate" class="btn btn-white border border-luxury shadow-sm px-3 py-1 text-charcoal text-uppercase fw-semibold d-flex align-items-center gap-2" style="font-size: 0.7rem;">
+                    Simulate Opening Drive
+                  </button>
+                </div>
+
+                <!-- Dimension Scale Indicator -->
+                <div class="position-absolute bottom-0 start-0 m-3 m-md-4 bg-white border border-luxury shadow-sm px-3 py-1 rounded-1 text-muted fw-medium d-flex align-items-center gap-2 z-10" style="font-size: 0.75rem;">
+                  <i class="fa-solid fa-ruler text-gold"></i>
+                  <span id="scaleIndicator">Scale: 500cm (W)  240cm (H)</span>
+                </div>
+
+                <!-- Visual Graphic Representation -->
+                <div id="visualizer" class="position-relative w-100 d-flex align-items-center justify-content-center transition-all z-1" style="max-width: 400px; height: 250px;">
+                  <!-- Dynamically populated via JS -->
+                </div>
+              </div>
+
+              <!-- Included UAE Assurance Badges -->
+              <div class="row g-3 text-center text-muted">
+                <div class="col-4">
+                  <div class="bg-white p-3 rounded-1 border border-luxury shadow-sm">
+                    <i class="fa-solid fa-shield-check text-gold mb-2 fs-5"></i>
+                    <span class="d-block fw-semibold text-charcoal" style="font-size: 0.75rem;">15-Yr Warranty</span>
+                    <span style="font-size: 0.65rem;">Zero Gulf Corrosion</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="bg-white p-3 rounded-1 border border-luxury shadow-sm">
+                    <i class="fa-solid fa-bolt text-gold mb-2 fs-5"></i>
+                    <span class="d-block fw-semibold text-charcoal" style="font-size: 0.75rem;">FAAC Italian Drive</span>
+                    <span style="font-size: 0.65rem;">Heavy Hydraulic Torque</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="bg-white p-3 rounded-1 border border-luxury shadow-sm">
+                    <i class="fa-solid fa-layer-group text-gold mb-2 fs-5"></i>
+                    <span class="d-block fw-semibold text-charcoal" style="font-size: 0.75rem;">Laser 3D Survey</span>
+                    <span style="font-size: 0.65rem;">Free Dubai Site Visit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Controls & Live Price Summary (5 Cols) -->
+            <div class="col-lg-5 d-flex flex-column gap-3">
+              <!-- Dimension Sliders -->
+              <div class="bg-white p-4 rounded-1 border border-luxury shadow-sm">
+                <h4 class="font-display fw-bold text-uppercase text-charcoal mb-3 d-flex align-items-center gap-2" style="font-size: 0.8rem; letter-spacing: 0.1em;">
+                  <i class="fa-solid fa-sliders text-gold"></i> 1. Dimensions & Span
+                </h4>
+                
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between text-muted mb-1" style="font-size: 0.8rem;">
+                    <span>Width Span:</span>
+                    <span class="fw-bold text-charcoal" id="widthLabel">500 cm (16.4 ft)</span>
+                  </div>
+                  <input type="range" class="form-range" id="widthSlider" min="300" max="1000" step="10" value="500">
+                </div>
+                
+                <div>
+                  <div class="d-flex justify-content-between text-muted mb-1" style="font-size: 0.8rem;">
+                    <span>Height Clear:</span>
+                    <span class="fw-bold text-charcoal" id="heightLabel">240 cm (7.9 ft)</span>
+                  </div>
+                  <input type="range" class="form-range" id="heightSlider" min="180" max="400" step="10" value="240">
+                </div>
+              </div>
+
+              <!-- Finishes -->
+              <div class="bg-white p-4 rounded-1 border border-luxury shadow-sm">
+                <h4 class="font-display fw-bold text-uppercase text-charcoal mb-3" style="font-size: 0.8rem; letter-spacing: 0.1em;">
+                  2. Architectural Finishes
+                </h4>
+                <div class="row g-2">
+                  <div class="col-6">
+                    <div class="finish-btn active p-2 border border-luxury rounded-1 cursor-pointer transition-all h-100" data-finish="Matt Charcoal & Brushed Gold" data-price="0" data-primary="#1C1C1E" data-accent="#C6A15B">
+                      <div class="d-flex gap-2 mb-2">
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #1C1C1E;"></span>
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #C6A15B;"></span>
+                      </div>
+                      <span class="d-block text-truncate" style="font-size: 0.75rem;">Matt Charcoal & Gold</span>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="finish-btn p-2 border border-luxury rounded-1 cursor-pointer transition-all h-100" data-finish="Warm Cream & Champagne" data-price="2000" data-primary="#EAE6DF" data-accent="#D4B87C">
+                      <div class="d-flex gap-2 mb-2">
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #EAE6DF;"></span>
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #D4B87C;"></span>
+                      </div>
+                      <span class="d-block text-truncate" style="font-size: 0.75rem;">Cream & Champagne</span>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="finish-btn p-2 border border-luxury rounded-1 cursor-pointer transition-all h-100" data-finish="Aged Patina Bronze" data-price="4500" data-primary="#3D3228" data-accent="#B8934A">
+                      <div class="d-flex gap-2 mb-2">
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #3D3228;"></span>
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #B8934A;"></span>
+                      </div>
+                      <span class="d-block text-truncate" style="font-size: 0.75rem;">Aged Patina Bronze</span>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="finish-btn p-2 border border-luxury rounded-1 cursor-pointer transition-all h-100" data-finish="Architectural Anthracite" data-price="3000" data-primary="#2C3038" data-accent="#C6A15B">
+                      <div class="d-flex gap-2 mb-2">
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #2C3038;"></span>
+                        <span class="rounded-circle border" style="width: 14px; height: 14px; background-color: #C6A15B;"></span>
+                      </div>
+                      <span class="d-block text-truncate" style="font-size: 0.75rem;">Anthracite</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Smart Features -->
+              <div class="bg-white p-4 rounded-1 border border-luxury shadow-sm">
+                <h4 class="font-display fw-bold text-uppercase text-charcoal mb-3" style="font-size: 0.8rem; letter-spacing: 0.1em;">
+                  3. Automation & Inclusions
+                </h4>
+                
+                <label class="d-flex justify-content-between align-items-center p-2 hover-bg-ivory rounded-1 cursor-pointer mb-2 transition-all">
+                  <div class="d-flex align-items-center gap-2">
+                    <input type="checkbox" id="cbBiometrics" class="form-check-input mt-0 accent-gold" checked>
+                    <span class="text-charcoal" style="font-size: 0.8rem;">Biometric Keypad + Smart Intercom</span>
+                  </div>
+                  <span class="text-gold fw-semibold" style="font-size: 0.75rem;">+AED 3,500</span>
+                </label>
+                
+                <label class="d-flex justify-content-between align-items-center p-2 hover-bg-ivory rounded-1 cursor-pointer mb-2 transition-all">
+                  <div class="d-flex align-items-center gap-2">
+                    <input type="checkbox" id="cbLed" class="form-check-input mt-0 accent-gold" checked>
+                    <span class="text-charcoal" style="font-size: 0.8rem;">Warm LED Architectural Glow</span>
+                  </div>
+                  <span class="text-gold fw-semibold" style="font-size: 0.75rem;">+AED 2,200</span>
+                </label>
+                
+                <label class="d-flex justify-content-between align-items-center p-2 hover-bg-ivory rounded-1 cursor-pointer transition-all" id="mistSystemOption" style="display: none;">
+                  <div class="d-flex align-items-center gap-2">
+                    <input type="checkbox" id="cbMist" class="form-check-input mt-0 accent-gold">
+                    <span class="text-charcoal" style="font-size: 0.8rem;">High-Pressure Micro-Mist Cooling</span>
+                  </div>
+                  <span class="text-gold fw-semibold" style="font-size: 0.75rem;">+AED 5,500</span>
+                </label>
+              </div>
+
+              <!-- Pricing Box & Final CTAs -->
+              <div class="bg-white p-4 p-md-5 rounded-1 border border-gold shadow-sm mt-2">
+                <div class="d-flex justify-content-between align-items-end border-bottom border-luxury pb-3 mb-4">
+                  <div>
+                    <span class="d-block text-uppercase fw-bold text-muted mb-1" style="font-size: 0.65rem; letter-spacing: 0.2em;">Turnkey Dubai Estimate</span>
+                    <span id="livePrice" class="font-display fw-semibold text-charcoal display-6 m-0">AED 37,700</span>
+                  </div>
+                  <span class="fw-semibold text-success" style="font-size: 0.75rem;"><i class="fa-solid fa-check me-1"></i> Free UAE Installation Included</span>
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <button class="btn btn-dark w-100 py-3 text-uppercase fw-semibold d-flex align-items-center justify-content-center gap-2 rounded-1 shadow-sm" style="font-size: 0.75rem;" onclick="alert('Added to Project Cart');">
+                      <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-outline-luxury w-100 py-3 text-uppercase fw-semibold d-flex align-items-center justify-content-center gap-2 rounded-1 bg-transparent hover-bg-ivory" style="font-size: 0.75rem;" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                      <i class="fa-solid fa-file-invoice text-gold"></i> Request CAD
+                    </button>
+                  </div>
+                </div>
+
+                <button class="btn w-100 py-3 text-uppercase fw-bold text-white d-flex align-items-center justify-content-center gap-2 rounded-1 shadow-sm" style="background-color: #25D366; font-size: 0.75rem;">
+                  <i class="fa-brands fa-whatsapp fs-5"></i> Share Config on WhatsApp
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
