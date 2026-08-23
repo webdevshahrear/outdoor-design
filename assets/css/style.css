@@ -879,3 +879,14 @@ input[type=range].form-range::-webkit-slider-runnable-track {
 /* pulse animation */
 .pulse-anim { animation: pulse 2.5s ease-in-out infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.85); } }
+/* Hero Split Mobile Responsive */
+@media (max-width: 767.98px) {
+  .hero-split {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 55vh auto;
+    min-height: unset !important;
+  }
+  .hero-split > div:first-child { min-height: 55vh !important; }
+  .hero-content-panel { padding-top: 2.5rem !important; padding-bottom: 3.5rem !important; }
+  .hero-headline { font-size: clamp(2.4rem,10vw,3.5rem) !important; }
+}

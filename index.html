@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=5.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=5.1">
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -170,1215 +170,314 @@
 
   <!-- ================= MAIN CONTENT (HOME PAGE) ================= -->
   <main class="flex-grow-1">
-    
-    <!-- 1. HERO CAROUSEL -->
-    <div id="heroCarousel" class="carousel slide carousel-fade position-relative border-bottom border-luxury user-select-none" data-bs-ride="carousel" data-bs-interval="7000" style="min-height: 85vh; background-color: #FAF9F6;">
-      
-      <!-- Coordinate Watermark -->
-      <div class="d-none d-xl-flex position-absolute top-0 end-0 mt-4 me-5 z-10 align-items-center gap-2 font-monospace text-muted tracking-widest text-uppercase" style="font-size: 0.7rem; z-index: 10;">
-        <i class="fa-solid fa-compass text-gold"></i>
-        <span>25.2048ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° N, 55.2708ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° E ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· DUBAI UAE</span>
+
+    <!-- 1. HERO â€” Editorial Split Layout -->
+    <section class="hero-split" style="display:grid;grid-template-columns:1fr 1fr;min-height:92vh;background:var(--ivory);">
+      <!-- Left: Image -->
+      <div class="position-relative overflow-hidden" style="min-height:92vh;">
+        <div id="heroCarousel" class="carousel slide carousel-fade h-100 position-absolute w-100 top-0 start-0" data-bs-ride="carousel" data-bs-interval="6500">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=90" class="w-100 h-100 object-fit-cover" alt="Luxury Villa Gate Dubai"></div>
+            <div class="carousel-item h-100"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=90" class="w-100 h-100 object-fit-cover" alt="Architectural Gates"></div>
+            <div class="carousel-item h-100"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=90" class="w-100 h-100 object-fit-cover" alt="Bioclimatic Pergola"></div>
+          </div>
+        </div>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to right,rgba(0,0,0,0.15),rgba(0,0,0,0.02));z-index:2;"></div>
+        <!-- Prev/Next Controls -->
+        <div class="position-absolute top-0 end-0 m-4 d-none d-md-flex gap-2" style="z-index:5;">
+          <button class="d-flex align-items-center justify-content-center" data-bs-target="#heroCarousel" data-bs-slide="prev" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,0.88);cursor:pointer;backdrop-filter:blur(6px);"><i class="fa-solid fa-chevron-left" style="font-size:0.75rem;color:var(--charcoal);"></i></button>
+          <button class="d-flex align-items-center justify-content-center" data-bs-target="#heroCarousel" data-bs-slide="next" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,0.88);cursor:pointer;backdrop-filter:blur(6px);"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;color:var(--charcoal);"></i></button>
+        </div>
+        <!-- Live Badge -->
+        <div class="position-absolute bottom-0 start-0 m-3 m-md-5 d-flex align-items-center gap-2 px-3 py-2 rounded-1 border border-luxury shadow-sm" style="background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);z-index:5;" data-aos="fade-up" data-aos-delay="500">
+          <span class="pulse-anim d-inline-block flex-shrink-0" style="width:8px;height:8px;border-radius:50%;background:var(--gold);"></span>
+          <span style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);">Dubai Hub Â· Live Fabrication</span>
+        </div>
       </div>
 
-      <div class="carousel-inner h-100 position-absolute w-100 top-0 start-0 z-0">
-        <!-- Slide 1 -->
-        <div class="carousel-item active h-100">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2600&q=85" class="d-block w-100 h-100 object-fit-cover scale-img" alt="doors">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-hero"></div>
-          
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="padding-top: 5rem; padding-bottom: 5rem;">
-            <div class="container-fluid max-w-7xl px-4 px-lg-5 w-100">
-              <div class="row align-items-center g-4 g-lg-5">
-                
-                <!-- Left Column (7 cols) -->
-                <div class="col-lg-7 d-flex flex-column gap-3">
-                  <!-- Eyebrow -->
-                  <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider slide-in-left delay-0" style="font-size: 0.7rem; letter-spacing: 0.25em;">
-                    <span class="bg-gold" style="width: 20px; height: 1px;"></span>
-                    <span>BESPOKE VILLA ARCHITECTURE</span>
-                    <span class="text-muted-luxury">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <span class="text-secondary fw-normal tracking-wide d-none d-sm-inline">Palm Jumeirah & Emirates Hills ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Dubai</span>
-                  </div>
-                  <!-- Title -->
-                  <h1 class="font-display fw-light text-charcoal display-3 lh-1 mb-2 slide-in-left delay-1">
-                    Make Your <br>
-                    <span class="fst-italic text-gold-gradient">Entrance</span> <br>
-                    <span class="fw-normal">Unforgettable.</span>
-                  </h1>
-                  <!-- Desc -->
-                  <p class="text-muted fs-6 max-w-md slide-in-left delay-2">Monumental pivot entrance doors with German concealed pivot engineering, integrated biometric access, and aeronautical-grade thermal insulation.</p>
-                  
-                  <!-- CTAs -->
-                  <div class="d-flex flex-column flex-sm-row gap-3 mt-2 slide-in-left delay-3">
-                    <a href="shop.html" class="btn btn-dark rounded-1 text-uppercase fw-semibold shadow-sm px-4 py-3" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-                      EXPLORE PIVOT DOORS <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </a>
-                    <button class="btn btn-outline-luxury bg-white rounded-1 text-uppercase fw-semibold px-4 py-3 shadow-sm text-charcoal hover-gold" style="font-size: 0.75rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#quoteModal">REQUEST CAD & QUOTE</button>
-                  </div>
+      <!-- Right: Content Panel -->
+      <div class="d-flex flex-column justify-content-center px-4 px-md-5 py-5 hero-content-panel" style="background:var(--ivory);">
+        <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-left" data-aos-delay="100">
+          <span style="width:28px;height:1px;background:var(--gold);flex-shrink:0;display:block;"></span>
+          <span style="font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);">Bespoke Villa Architecture Â· Dubai</span>
+        </div>
+        <h1 class="font-display mb-4 hero-headline" style="font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:1.05;letter-spacing:-0.02em;color:var(--charcoal);" data-aos="fade-left" data-aos-delay="200">
+          Make Your<br><em style="color:var(--gold);font-style:italic;">Entrance</em><br>Unforgettable.
+        </h1>
+        <p class="mb-5" style="font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:420px;" data-aos="fade-left" data-aos-delay="300">
+          Monumental pivot doors, automated estate gates, and bioclimatic pergolas â€” engineered for Dubai's finest villas with German pivots, marine-grade coatings, and biometric smart access.
+        </p>
+        <div class="d-flex flex-column flex-sm-row gap-3 mb-5" data-aos="fade-left" data-aos-delay="400">
+          <a href="shop.html" class="btn-primary-luxury d-inline-flex align-items-center gap-2 justify-content-center">Explore Collections <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="btn-outline-luxury d-inline-flex align-items-center gap-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#consultationModal"><i class="fa-solid fa-sparkles" style="color:var(--gold);"></i> Free Site Survey</button>
+        </div>
+        <div class="d-flex flex-wrap gap-4" style="border-top:1px solid var(--border);padding-top:1.5rem;" data-aos="fade-left" data-aos-delay="500">
+          <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check" style="color:var(--gold);font-size:0.85rem;"></i><span style="font-size:0.75rem;font-weight:600;color:var(--charcoal);">15-Yr Marine Warranty</span></div>
+          <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-ruler" style="color:var(--gold);font-size:0.85rem;"></i><span style="font-size:0.75rem;font-weight:600;color:var(--charcoal);">Laser Survey Included</span></div>
+          <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-building" style="color:var(--gold);font-size:0.85rem;"></i><span style="font-size:0.75rem;font-weight:600;color:var(--charcoal);">DM Certified</span></div>
+        </div>
+      </div>
+    </section>
 
-                  <!-- Badges -->
-                  <div class="d-flex flex-wrap align-items-center gap-3 mt-3 text-muted slide-in-left delay-4" style="font-size: 0.75rem;">
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check text-gold"></i><span class="fw-medium">15-Year Marine Warranty</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-ruler text-gold"></i><span class="fw-medium">Laser Site Survey Included</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-building text-gold"></i><span class="fw-medium">Dubai Municipality Certified</span></div>
-                  </div>
-                </div>
+    <!-- 2. GOLD TICKER -->
+    <div class="gold-ticker">
+      <div class="gold-ticker-inner">
+        <span>850+ Completed Projects</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>15-Year Marine Warranty</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>3-Day CAD Delivery</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>Dubai Municipality Certified</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>+-0.5mm Fabrication Tolerance</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>FAAC and Somfy Smart Integration</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>Complimentary Laser Site Survey</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>850+ Completed Projects</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>15-Year Marine Warranty</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>3-Day CAD Delivery</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>Dubai Municipality Certified</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>+-0.5mm Fabrication Tolerance</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>FAAC and Somfy Smart Integration</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+        <span>Complimentary Laser Site Survey</span><span style="color:var(--gold-light);padding:0 1rem;">&#9670;</span>
+      </div>
+    </div>
 
-                <!-- Right Column (5 cols) -->
-                <div class="col-lg-5 d-none d-lg-block slide-in-right delay-2">
-                  <div class="bg-white bg-opacity-95 border border-luxury p-4 rounded-1 shadow-sm" style="backdrop-filter: blur(10px);">
-                    <!-- Header -->
-                    <div class="d-flex align-items-center justify-content-between border-bottom border-luxury pb-3 mb-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="bg-gold rounded-circle d-inline-block opacity-75 pulse-anim" style="width: 8px; height: 8px;"></span>
-                        <span class="text-charcoal fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.2em;">Architectural Specifications</span>
-                      </div>
-                      <span class="text-gold bg-ivory border border-luxury px-2 py-1 rounded-1 font-monospace fw-semibold" style="font-size: 0.6rem;">REV. 2026-DXB</span>
-                    </div>
-                    <!-- Specs -->
-                    <div class="d-flex flex-column gap-2 mb-4">
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Max Dimensions</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Up to 4.8m ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â 2.4m</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Hinge System</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Concealed German 500kg Pivot</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Thermal U-Value</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">0.82 W/mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â²K (Aeronautical)</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Smart Access</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Biometric + RFID + Somfy</span>
-                      </div>
-                    </div>
-                    <!-- Quick Actions -->
-                    <div class="d-flex gap-2">
-                      <a href="custom-design.html" class="btn btn-ivory hover-btn-dark flex-grow-1 border border-luxury text-uppercase fw-semibold py-2" style="font-size: 0.65rem; letter-spacing: 0.1em;"><i class="fa-solid fa-expand text-gold me-1"></i> Launch 3D Studio</a>
-                      <button class="btn btn-gold text-charcoal flex-grow-1 text-uppercase fw-bold py-2 shadow-sm" style="font-size: 0.65rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#quoteModal">Instant Estimate</button>
-                    </div>
-                    <div class="text-center text-muted mt-3 tracking-wide" style="font-size: 0.6rem;">* Engineered specifically for extreme UAE solar heat & coastal marine salinity.</div>
-                  </div>
-                </div>
+    <!-- 3. STATS BAR -->
+    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-4 py-lg-5">
+      <div class="row g-0 border border-luxury rounded-1 overflow-hidden bg-white shadow-sm" data-aos="fade-up">
+        <div class="col-6 col-md-3 p-4 p-lg-5 border-end border-luxury text-center text-md-start">
+          <div class="font-display mb-1" style="font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--charcoal);line-height:1;">850<span style="color:var(--gold);">+</span></div>
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Completed Projects</div>
+          <div style="font-size:0.65rem;color:var(--subtle);margin-top:0.25rem;">Palm, Hills and Pearl</div>
+        </div>
+        <div class="col-6 col-md-3 p-4 p-lg-5 border-end border-luxury text-center text-md-start">
+          <div class="font-display mb-1" style="font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--charcoal);line-height:1;">2,500<span style="color:var(--gold);">+</span></div>
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Distinguished Clients</div>
+          <div style="font-size:0.65rem;color:var(--subtle);margin-top:0.25rem;">Villa Owners and Architects</div>
+        </div>
+        <div class="col-6 col-md-3 p-4 p-lg-5 border-end border-luxury text-center text-md-start">
+          <div class="font-display mb-1" style="font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--charcoal);line-height:1;">12<span style="color:var(--gold);">+</span></div>
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Years Experience</div>
+          <div style="font-size:0.65rem;color:var(--subtle);margin-top:0.25rem;">Dubai Manufacturing Hub</div>
+        </div>
+        <div class="col-6 col-md-3 p-4 p-lg-5 text-center text-md-start">
+          <div class="font-display mb-1" style="font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--charcoal);line-height:1;">100<span style="color:var(--gold);">%</span></div>
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Premium Materials</div>
+          <div style="font-size:0.65rem;color:var(--subtle);margin-top:0.25rem;">Marine and Aerospace Grade</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CATEGORY SECTION -->
+    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
+      <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 border-bottom border-luxury pb-4 mb-5" data-aos="fade-up">
+        <div>
+          <div class="eyebrow-label mb-3">Curated Collections</div>
+          <h2 class="font-display m-0" style="font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--charcoal);">Architectural Systems<br><em style="color:var(--gold);">by Category</em></h2>
+        </div>
+        <a href="shop.html" class="btn-ghost-luxury d-inline-flex align-items-center gap-2 flex-shrink-0" style="font-size:0.78rem;">View All Collections <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="row g-4">
+        <!-- Gates Big Card -->
+        <div class="col-lg-8" data-aos="fade-up">
+          <a href="shop.html?category=gates" class="d-block text-decoration-none position-relative overflow-hidden" style="border-radius:12px;aspect-ratio:16/9;background:var(--charcoal);">
+            <div id="catGatesCarousel" class="carousel slide carousel-fade h-100 position-absolute top-0 start-0 w-100" data-bs-ride="carousel" data-bs-interval="4200">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100"><img src="https://images.unsplash.com/photo-1531257240678-d5b1922e672d?auto=format&fit=crop&w=1400&q=80" class="w-100 h-100 object-fit-cover" alt="Luxury Gates" style="opacity:0.8;"></div>
+                <div class="carousel-item h-100"><img src="https://images.unsplash.com/photo-1615484398374-529a69c53a09?auto=format&fit=crop&w=1400&q=80" class="w-100 h-100 object-fit-cover" alt="Luxury Gates 2" style="opacity:0.8;"></div>
+                <div class="carousel-item h-100"><img src="https://images.unsplash.com/photo-1774013825006-bc025e087839?auto=format&fit=crop&w=1400&q=80" class="w-100 h-100 object-fit-cover" alt="Luxury Gates 3" style="opacity:0.8;"></div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item h-100">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2600&q=85" class="d-block w-100 h-100 object-fit-cover scale-img" alt="gates">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-hero"></div>
-          
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="padding-top: 5rem; padding-bottom: 5rem;">
-            <div class="container-fluid max-w-7xl px-4 px-lg-5 w-100">
-              <div class="row align-items-center g-4 g-lg-5">
-                <!-- Left Column (7 cols) -->
-                <div class="col-lg-7 d-flex flex-column gap-3">
-                  <!-- Eyebrow -->
-                  <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider slide-in-left delay-0" style="font-size: 0.7rem; letter-spacing: 0.25em;">
-                    <span class="bg-gold" style="width: 20px; height: 1px;"></span>
-                    <span>INTELLIGENT ESTATE SECURITY</span>
-                    <span class="text-muted-luxury">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <span class="text-secondary fw-normal tracking-wide d-none d-sm-inline">Dubai Hills Estate & District One</span>
-                  </div>
-                  <!-- Title -->
-                  <h1 class="font-display fw-light text-charcoal display-3 lh-1 mb-2 slide-in-left delay-1">
-                    Engineered <br>
-                    <span class="fst-italic text-gold-gradient">Perfection</span> <br>
-                    <span class="fw-normal">At Every Gate.</span>
-                  </h1>
-                  <!-- Desc -->
-                  <p class="text-muted fs-6 max-w-md slide-in-left delay-2">Automated estate sliding and cantilever gates powered by Italian high-speed brushless motors with laser-cut marine aluminum and smart smartphone integration.</p>
-                  <!-- CTAs -->
-                  <div class="d-flex flex-column flex-sm-row gap-3 mt-2 slide-in-left delay-3">
-                    <a href="custom-design.html" class="btn btn-dark rounded-1 text-uppercase fw-semibold shadow-sm px-4 py-3" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-                      CUSTOMIZE 3D GATE <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </a>
-                    <a href="projects.html" class="btn btn-outline-luxury bg-white rounded-1 text-uppercase fw-semibold px-4 py-3 shadow-sm text-charcoal hover-gold" style="font-size: 0.75rem; letter-spacing: 0.1em;">VIEW GATE PORTFOLIO</a>
-                  </div>
-                  <!-- Badges -->
-                  <div class="d-flex flex-wrap align-items-center gap-3 mt-3 text-muted slide-in-left delay-4" style="font-size: 0.75rem;">
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-microchip text-gold"></i><span class="fw-medium">Italian Brushless Motors</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check text-gold"></i><span class="fw-medium">FAAC & Somfy Smart Access</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-ruler text-gold"></i><span class="fw-medium">Custom CAD Engineering</span></div>
-                  </div>
-                </div>
-
-                <!-- Right Column (5 cols) -->
-                <div class="col-lg-5 d-none d-lg-block slide-in-right delay-2">
-                  <div class="bg-white bg-opacity-95 border border-luxury p-4 rounded-1 shadow-sm" style="backdrop-filter: blur(10px);">
-                    <!-- Header -->
-                    <div class="d-flex align-items-center justify-content-between border-bottom border-luxury pb-3 mb-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="bg-gold rounded-circle d-inline-block opacity-75 pulse-anim" style="width: 8px; height: 8px;"></span>
-                        <span class="text-charcoal fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.2em;">Architectural Specifications</span>
-                      </div>
-                      <span class="text-gold bg-ivory border border-luxury px-2 py-1 rounded-1 font-monospace fw-semibold" style="font-size: 0.6rem;">REV. 2026-DXB</span>
-                    </div>
-                    <!-- Specs -->
-                    <div class="d-flex flex-column gap-2 mb-4">
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Motor Automation</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Italian Brushless 24V DC</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Span Capacity</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Up to 14.0m Single Leaf</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Material Grade</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Marine Aluminum 6063-T6</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Open Speed</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Ultra-Fast 0.35 m/s</span>
-                      </div>
-                    </div>
-                    <!-- Quick Actions -->
-                    <div class="d-flex gap-2">
-                      <a href="custom-design.html" class="btn btn-ivory hover-btn-dark flex-grow-1 border border-luxury text-uppercase fw-semibold py-2" style="font-size: 0.65rem; letter-spacing: 0.1em;"><i class="fa-solid fa-expand text-gold me-1"></i> Launch 3D Studio</a>
-                      <button class="btn btn-gold text-charcoal flex-grow-1 text-uppercase fw-bold py-2 shadow-sm" style="font-size: 0.65rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#quoteModal">Instant Estimate</button>
-                    </div>
-                    <div class="text-center text-muted mt-3 tracking-wide" style="font-size: 0.6rem;">* Engineered specifically for extreme UAE solar heat & coastal marine salinity.</div>
-                  </div>
-                </div>
-              </div>
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 60%,transparent 100%);z-index:2;"></div>
+            <div class="position-absolute bottom-0 start-0 p-4 p-md-5" style="z-index:3;">
+              <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);">01 / Collection</span>
+              <h3 class="font-display text-white mt-1 mb-2" style="font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;">Luxury Gates</h3>
+              <p class="text-white mb-3 d-none d-md-block" style="font-size:0.82rem;opacity:0.65;max-width:360px;line-height:1.7;">Automated estate sliding and cantilever gates with laser-cut marine aluminum and Italian brushless motors.</p>
+              <span class="d-inline-flex align-items-center gap-2" style="font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
             </div>
-          </div>
+            <div class="position-absolute top-0 start-0 m-3" style="z-index:3;"><span style="font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.18);padding:0.25rem 0.65rem;border-radius:999px;">10 Designs</span></div>
+          </a>
         </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item h-100">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2600&q=85" class="d-block w-100 h-100 object-fit-cover scale-img" alt="pergolas">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-hero"></div>
-          
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="padding-top: 5rem; padding-bottom: 5rem;">
-            <div class="container-fluid max-w-7xl px-4 px-lg-5 w-100">
-              <div class="row align-items-center g-4 g-lg-5">
-                <!-- Left Column (7 cols) -->
-                <div class="col-lg-7 d-flex flex-column gap-3">
-                  <!-- Eyebrow -->
-                  <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider slide-in-left delay-0" style="font-size: 0.7rem; letter-spacing: 0.25em;">
-                    <span class="bg-gold" style="width: 20px; height: 1px;"></span>
-                    <span>CLIMATE-RESPONSIVE LIVING</span>
-                    <span class="text-muted-luxury">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <span class="text-secondary fw-normal tracking-wide d-none d-sm-inline">Al Barari & Jumeirah Islands</span>
-                  </div>
-                  <!-- Title -->
-                  <h1 class="font-display fw-light text-charcoal display-3 lh-1 mb-2 slide-in-left delay-1">
-                    Bioclimatic <br>
-                    <span class="fst-italic text-gold-gradient">Luxury</span> <br>
-                    <span class="fw-normal">Outdoor Living.</span>
-                  </h1>
-                  <!-- Desc -->
-                  <p class="text-muted fs-6 max-w-md slide-in-left delay-2">Motorized dual-louvered pergolas featuring integrated evaporative mist cooling, architectural linear lighting, and weather-automated rain sensors.</p>
-                  <!-- CTAs -->
-                  <div class="d-flex flex-column flex-sm-row gap-3 mt-2 slide-in-left delay-3">
-                    <a href="shop.html" class="btn btn-dark rounded-1 text-uppercase fw-semibold shadow-sm px-4 py-3" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-                      DISCOVER PERGOLAS <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </a>
-                    <button class="btn btn-outline-luxury bg-white rounded-1 text-uppercase fw-semibold px-4 py-3 shadow-sm text-charcoal hover-gold" style="font-size: 0.75rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK SITE CONSULTATION</button>
-                  </div>
-                  <!-- Badges -->
-                  <div class="d-flex flex-wrap align-items-center gap-3 mt-3 text-muted slide-in-left delay-4" style="font-size: 0.75rem;">
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-sun text-gold"></i><span class="fw-medium">Evaporative Mist Cooling</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-layer-group text-gold"></i><span class="fw-medium">160 km/h Wind Certified</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check text-gold"></i><span class="fw-medium">Somfy Wireless Control</span></div>
-                  </div>
-                </div>
-
-                <!-- Right Column (5 cols) -->
-                <div class="col-lg-5 d-none d-lg-block slide-in-right delay-2">
-                  <div class="bg-white bg-opacity-95 border border-luxury p-4 rounded-1 shadow-sm" style="backdrop-filter: blur(10px);">
-                    <!-- Header -->
-                    <div class="d-flex align-items-center justify-content-between border-bottom border-luxury pb-3 mb-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="bg-gold rounded-circle d-inline-block opacity-75 pulse-anim" style="width: 8px; height: 8px;"></span>
-                        <span class="text-charcoal fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.2em;">Architectural Specifications</span>
-                      </div>
-                      <span class="text-gold bg-ivory border border-luxury px-2 py-1 rounded-1 font-monospace fw-semibold" style="font-size: 0.6rem;">REV. 2026-DXB</span>
-                    </div>
-                    <!-- Specs -->
-                    <div class="d-flex flex-column gap-2 mb-4">
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Louver Rotation</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">0ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° to 135ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° Motorized</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Climate Tech</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Integrated 70-Bar Mist Cooling</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Wind Resistance</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Class 6 (160 km/h Tested)</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Smart Automation</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Somfy io-homecontrolÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â®</span>
-                      </div>
-                    </div>
-                    <!-- Quick Actions -->
-                    <div class="d-flex gap-2">
-                      <a href="custom-design.html" class="btn btn-ivory hover-btn-dark flex-grow-1 border border-luxury text-uppercase fw-semibold py-2" style="font-size: 0.65rem; letter-spacing: 0.1em;"><i class="fa-solid fa-expand text-gold me-1"></i> Launch 3D Studio</a>
-                      <button class="btn btn-gold text-charcoal flex-grow-1 text-uppercase fw-bold py-2 shadow-sm" style="font-size: 0.65rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#quoteModal">Instant Estimate</button>
-                    </div>
-                    <div class="text-center text-muted mt-3 tracking-wide" style="font-size: 0.6rem;">* Engineered specifically for extreme UAE solar heat & coastal marine salinity.</div>
-                  </div>
-                </div>
-              </div>
+        <!-- Small: Doors + Pergolas -->
+        <div class="col-lg-4 d-flex flex-column gap-4">
+          <a href="shop.html?category=doors" class="d-block text-decoration-none position-relative overflow-hidden flex-grow-1" style="border-radius:12px;min-height:220px;">
+            <img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=700&q=80" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Pivot Doors" style="transition:transform 0.7s;" data-aos="fade-up" data-aos-delay="100">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,transparent 55%);"></div>
+            <div class="position-absolute bottom-0 start-0 p-3 p-md-4" style="z-index:3;">
+              <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);">02 / Collection</span>
+              <h3 class="font-display text-white mt-1 mb-1" style="font-size:1.5rem;font-weight:300;">Pivot Doors</h3>
+              <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);">Explore <i class="fa-solid fa-arrow-right ms-1"></i></span>
             </div>
-          </div>
+          </a>
+          <a href="shop.html?category=pergolas" class="d-block text-decoration-none position-relative overflow-hidden flex-grow-1" style="border-radius:12px;min-height:220px;">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Bioclimatic Pergolas" style="transition:transform 0.7s;" data-aos="fade-up" data-aos-delay="200">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,transparent 55%);"></div>
+            <div class="position-absolute bottom-0 start-0 p-3 p-md-4" style="z-index:3;">
+              <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);">03 / Collection</span>
+              <h3 class="font-display text-white mt-1 mb-1" style="font-size:1.5rem;font-weight:300;">Pergolas</h3>
+              <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);">Explore <i class="fa-solid fa-arrow-right ms-1"></i></span>
+            </div>
+          </a>
         </div>
-
-        <!-- Slide 4 -->
-        <div class="carousel-item h-100">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2600&q=85" class="d-block w-100 h-100 object-fit-cover scale-img" alt="windows">
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-hero"></div>
-          
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="padding-top: 5rem; padding-bottom: 5rem;">
-            <div class="container-fluid max-w-7xl px-4 px-lg-5 w-100">
-              <div class="row align-items-center g-4 g-lg-5">
-                <!-- Left Column (7 cols) -->
-                <div class="col-lg-7 d-flex flex-column gap-3">
-                  <!-- Eyebrow -->
-                  <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider slide-in-left delay-0" style="font-size: 0.7rem; letter-spacing: 0.25em;">
-                    <span class="bg-gold" style="width: 20px; height: 1px;"></span>
-                    <span>MINIMALIST PANORAMIC SYSTEMS</span>
-                    <span class="text-muted-luxury">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <span class="text-secondary fw-normal tracking-wide d-none d-sm-inline">La Mer & Pearl Jumeirah Waterfront</span>
-                  </div>
-                  <!-- Title -->
-                  <h1 class="font-display fw-light text-charcoal display-3 lh-1 mb-2 slide-in-left delay-1">
-                    Floor-To-Ceiling <br>
-                    <span class="fst-italic text-gold-gradient">Seamless</span> <br>
-                    <span class="fw-normal">Glass Horizons.</span>
-                  </h1>
-                  <!-- Desc -->
-                  <p class="text-muted fs-6 max-w-md slide-in-left delay-2">Ultra-slim 18mm sightline sliding glass walls and thermal-break windows delivering maximum solar protection and zero-threshold indoor-outdoor flow.</p>
-                  <!-- CTAs -->
-                  <div class="d-flex flex-column flex-sm-row gap-3 mt-2 slide-in-left delay-3">
-                    <a href="shop.html" class="btn btn-dark rounded-1 text-uppercase fw-semibold shadow-sm px-4 py-3" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-                      VIEW SLIM GLASS FACADES <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </a>
-                    <button class="btn btn-outline-luxury bg-white rounded-1 text-uppercase fw-semibold px-4 py-3 shadow-sm text-charcoal hover-gold" style="font-size: 0.75rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#quoteModal">REQUEST TECHNICAL SPEC</button>
-                  </div>
-                  <!-- Badges -->
-                  <div class="d-flex flex-wrap align-items-center gap-3 mt-3 text-muted slide-in-left delay-4" style="font-size: 0.75rem;">
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-layer-group text-gold"></i><span class="fw-medium">18mm Ultra-Slim Profile</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-sun text-gold"></i><span class="fw-medium">Solar Low-E 0.14 Coating</span></div>
-                    <span class="text-muted-luxury d-none d-sm-inline">ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢</span>
-                    <div class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check text-gold"></i><span class="fw-medium">Acoustic Soundproofing 48dB</span></div>
-                  </div>
-                </div>
-
-                <!-- Right Column (5 cols) -->
-                <div class="col-lg-5 d-none d-lg-block slide-in-right delay-2">
-                  <div class="bg-white bg-opacity-95 border border-luxury p-4 rounded-1 shadow-sm" style="backdrop-filter: blur(10px);">
-                    <!-- Header -->
-                    <div class="d-flex align-items-center justify-content-between border-bottom border-luxury pb-3 mb-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="bg-gold rounded-circle d-inline-block opacity-75 pulse-anim" style="width: 8px; height: 8px;"></span>
-                        <span class="text-charcoal fw-bold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.2em;">Architectural Specifications</span>
-                      </div>
-                      <span class="text-gold bg-ivory border border-luxury px-2 py-1 rounded-1 font-monospace fw-semibold" style="font-size: 0.6rem;">REV. 2026-DXB</span>
-                    </div>
-                    <!-- Specs -->
-                    <div class="d-flex flex-column gap-2 mb-4">
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Interlock Sightline</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">18mm Ultra-Slim Profile</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Glass Structure</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Triple Glazed Low-E 0.14</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Acoustic Rating</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">Sound Reduction 48 dB</span>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-ivory" style="font-size: 0.75rem;">
-                        <span class="text-muted fw-medium d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i>Threshold System</span>
-                        <span class="text-charcoal fw-semibold text-end tracking-tight">100% Flush Concealed Track</span>
-                      </div>
-                    </div>
-                    <!-- Quick Actions -->
-                    <div class="d-flex gap-2">
-                      <a href="custom-design.html" class="btn btn-ivory hover-btn-dark flex-grow-1 border border-luxury text-uppercase fw-semibold py-2" style="font-size: 0.65rem; letter-spacing: 0.1em;"><i class="fa-solid fa-expand text-gold me-1"></i> Launch 3D Studio</a>
-                      <button class="btn btn-gold text-charcoal flex-grow-1 text-uppercase fw-bold py-2 shadow-sm" style="font-size: 0.65rem; letter-spacing: 0.1em;" data-bs-toggle="modal" data-bs-target="#quoteModal">Instant Estimate</button>
-                    </div>
-                    <div class="text-center text-muted mt-3 tracking-wide" style="font-size: 0.6rem;">* Engineered specifically for extreme UAE solar heat & coastal marine salinity.</div>
-                  </div>
-                </div>
-              </div>
+        <!-- Bottom: Windows + 3D Studio -->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <a href="shop.html?category=windows" class="d-block text-decoration-none position-relative overflow-hidden" style="border-radius:12px;aspect-ratio:16/9;">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" class="w-100 h-100 object-fit-cover" alt="Luxury Windows" style="transition:transform 0.7s;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.78) 0%,transparent 55%);"></div>
+            <div class="position-absolute bottom-0 start-0 p-3 p-md-4" style="z-index:3;">
+              <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);">04 / Collection</span>
+              <h3 class="font-display text-white mt-1 mb-1" style="font-size:1.5rem;font-weight:300;">Luxury Windows</h3>
+              <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);">Explore <i class="fa-solid fa-arrow-right ms-1"></i></span>
             </div>
-          </div>
+          </a>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <a href="custom-design.html" class="d-flex flex-column justify-content-between text-decoration-none p-4 p-md-5" style="background:var(--charcoal);border-radius:12px;min-height:260px;aspect-ratio:16/9;">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-4"><i class="fa-solid fa-cube" style="color:var(--gold);font-size:1rem;"></i><span style="font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Interactive Studio</span></div>
+              <h3 class="font-display text-white mb-2" style="font-size:clamp(1.6rem,2.5vw,2rem);font-weight:300;line-height:1.15;">3D Gate and Door<br>Configurator</h3>
+              <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.7;max-width:300px;">Configure exact dimensions, finishes, smart features, and get an instant price estimate.</p>
+            </div>
+            <div class="d-flex align-items-center gap-2 mt-3" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);">Launch Studio <i class="fa-solid fa-arrow-right"></i></div>
+          </a>
         </div>
       </div>
+    </section>
 
-      <!-- Floating Category Jump Pills (Bottom Left) -->
-      <div class="d-none d-xxl-flex position-absolute bottom-0 start-0 mb-4 ms-5 z-10 gap-3 slide-in-up delay-4" style="z-index: 10;">
-        <button class="btn btn-sm btn-white border border-luxury rounded-1 px-3 py-2 text-charcoal text-uppercase fw-semibold shadow-sm hover-border-gold slide-jump-btn" data-bs-target="#heroCarousel" data-bs-slide-to="0" style="font-size: 0.7rem; letter-spacing: 0.1em;">
-          <span class="text-gold me-1">01.</span> Pivot Doors
-        </button>
-        <button class="btn btn-sm btn-white border border-luxury rounded-1 px-3 py-2 text-charcoal text-uppercase fw-semibold shadow-sm hover-border-gold slide-jump-btn" data-bs-target="#heroCarousel" data-bs-slide-to="1" style="font-size: 0.7rem; letter-spacing: 0.1em;">
-          <span class="text-gold me-1">02.</span> Estate Gates
-        </button>
-        <button class="btn btn-sm btn-white border border-luxury rounded-1 px-3 py-2 text-charcoal text-uppercase fw-semibold shadow-sm hover-border-gold slide-jump-btn" data-bs-target="#heroCarousel" data-bs-slide-to="2" style="font-size: 0.7rem; letter-spacing: 0.1em;">
-          <span class="text-gold me-1">03.</span> Bioclimatic Pergolas
-        </button>
+    <!-- 5. SERVICES BENTO -->
+    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
+      <div class="d-flex flex-column flex-md-row align-items-md-end gap-3 border-bottom border-luxury pb-4 mb-5" data-aos="fade-up">
+        <div><div class="eyebrow-label mb-3">Engineering Excellence</div><h2 class="font-display m-0" style="font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--charcoal);">Precision at Every<br><em style="color:var(--gold);">Stage</em></h2></div>
       </div>
-
-      <!-- Custom Slider Navigation Controls (Bottom Right) -->
-      <div class="position-absolute bottom-0 end-0 mb-4 me-4 me-sm-5 z-10 d-flex align-items-center gap-3 gap-sm-4 bg-white bg-opacity-95 px-3 px-sm-4 py-2 rounded-1 border border-luxury shadow-sm" style="backdrop-filter: blur(8px); z-index: 10;">
-        
-        <!-- Play / Pause Toggle -->
-        <button id="heroPlayPauseBtn" class="btn btn-link text-charcoal p-1 hover-gold text-decoration-none">
-          <i class="fa-solid fa-pause"></i>
-        </button>
-
-        <div class="bg-ivory" style="width: 1px; height: 24px;"></div>
-
-        <!-- Next/Prev Buttons -->
-        <div class="d-flex align-items-center gap-2">
-          <button class="btn btn-white border border-luxury rounded-1 d-flex align-items-center justify-content-center hover-border-gold hover-gold text-charcoal p-0 custom-prev" data-bs-target="#heroCarousel" data-bs-slide="prev" style="width: 32px; height: 32px; transition: all 0.3s;">
-            <i class="fa-solid fa-chevron-left" style="font-size: 0.8rem;"></i>
-          </button>
-          <button class="btn btn-white border border-luxury rounded-1 d-flex align-items-center justify-content-center hover-border-gold hover-gold text-charcoal p-0 custom-next" data-bs-target="#heroCarousel" data-bs-slide="next" style="width: 32px; height: 32px; transition: all 0.3s;">
-            <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i>
-          </button>
-        </div>
-
-        <div class="bg-ivory" style="width: 1px; height: 24px;"></div>
-
-        <!-- Slide Counter & Dots -->
-        <div class="d-flex flex-column gap-1" style="min-width: 60px;">
-          <div class="d-flex justify-content-between align-items-center font-monospace fw-medium tracking-widest text-muted" style="font-size: 0.65rem;">
-            <span id="heroSlideCurrent" class="text-charcoal">01</span>
-            <span>/</span>
-            <span>04</span>
-          </div>
-          
-          <div class="d-flex gap-1">
-            <div class="flex-grow-1 rounded-pill bg-ivory overflow-hidden" style="height: 4px; cursor: pointer;" data-bs-target="#heroCarousel" data-bs-slide-to="0">
-              <div class="h-100 bg-gold slide-progress-bar" style="width: 0%; transition: width 0.1s linear;"></div>
-            </div>
-            <div class="flex-grow-1 rounded-pill bg-ivory overflow-hidden" style="height: 4px; cursor: pointer;" data-bs-target="#heroCarousel" data-bs-slide-to="1">
-              <div class="h-100 bg-gold slide-progress-bar" style="width: 0%; transition: width 0.1s linear;"></div>
-            </div>
-            <div class="flex-grow-1 rounded-pill bg-ivory overflow-hidden" style="height: 4px; cursor: pointer;" data-bs-target="#heroCarousel" data-bs-slide-to="2">
-              <div class="h-100 bg-gold slide-progress-bar" style="width: 0%; transition: width 0.1s linear;"></div>
-            </div>
-            <div class="flex-grow-1 rounded-pill bg-ivory overflow-hidden" style="height: 4px; cursor: pointer;" data-bs-target="#heroCarousel" data-bs-slide-to="3">
-              <div class="h-100 bg-gold slide-progress-bar" style="width: 0%; transition: width 0.1s linear;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /#heroCarousel -->
-
-    <!-- 2. PRECISION ENGINEERING BENTO GRID -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5 mt-3">
-      <!-- Section Header -->
-      <div class="mb-4">
-        <div class="eyebrow-label mb-3">NEXT-GEN ARCHITECTURAL STANDARD</div>
-        <div class="row align-items-end g-3">
-          <div class="col-md-7">
-            <h2 class="font-display fw-light display-5 text-charcoal m-0">
-              Precision Engineering <br>
-              <span class="fw-normal fst-italic text-gold">for Prime Gulf Residences.</span>
-            </h2>
-          </div>
-          <div class="col-md-5 text-md-end">
-            <p class="text-muted m-0" style="font-size: 0.875rem; line-height: 1.7;">
-              Fabricated in our 45,000 sq. ft. Al Quoz facility to meet Dubai Municipality &amp; international structural standards.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bento Grid -->
       <div class="row g-3">
-
-        <!-- HERO CARD: Dark image overlay (col-lg-8) -->
-        <div class="col-lg-8" data-aos="fade-up" data-aos-duration="800">
-          <div class="position-relative rounded-1 overflow-hidden" style="min-height: 380px; background: #1C1C1E;">
-            <!-- Background image -->
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80"
-                 alt="LiDAR Site Survey" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                 style="opacity: 0.35; filter: grayscale(20%);">
-            <!-- Gradient overlay -->
-            <div class="position-absolute top-0 start-0 w-100 h-100"
-                 style="background: linear-gradient(135deg, rgba(28,28,30,0.92) 0%, rgba(28,28,30,0.6) 60%, rgba(198,161,91,0.12) 100%);"></div>
-
-            <!-- Top row: badge + icon -->
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="position-relative rounded-1 overflow-hidden" style="min-height:380px;background:#1C1C1E;">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="LiDAR Survey" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="opacity:0.32;">
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(135deg,rgba(28,28,30,0.94),rgba(28,28,30,0.6) 60%,rgba(184,150,46,0.08));"></div>
             <div class="position-absolute top-0 start-0 end-0 d-flex justify-content-between align-items-start p-4 p-md-5">
-              <span class="d-inline-flex align-items-center gap-2 border border-gold text-gold fw-semibold text-uppercase px-3 py-1 rounded-1"
-                    style="font-size: 0.58rem; letter-spacing: 0.12em; border-color: rgba(198,161,91,0.5) !important; background: rgba(198,161,91,0.08);">
-                <i class="fa-solid fa-ruler"></i> &#177;0.5mm Accuracy
-              </span>
-              <div class="d-flex align-items-center justify-content-center rounded-1 border"
-                   style="width: 38px; height: 38px; border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.06);">
-                <i class="fa-solid fa-crosshairs text-gold" style="font-size: 0.85rem;"></i>
-              </div>
+              <span class="d-inline-flex align-items-center gap-2 text-uppercase fw-semibold px-3 py-1 rounded-1" style="font-size:0.58rem;letter-spacing:0.12em;border:1px solid rgba(184,150,46,0.4);background:rgba(184,150,46,0.08);color:var(--gold-light);"><i class="fa-solid fa-ruler"></i> 0.5mm Accuracy</span>
+              <div class="d-flex align-items-center justify-content-center rounded-1" style="width:38px;height:38px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);"><i class="fa-solid fa-crosshairs" style="font-size:0.85rem;color:var(--gold-light);"></i></div>
             </div>
-
-            <!-- Bottom content -->
             <div class="position-absolute bottom-0 start-0 end-0 p-4 p-md-5">
-              <!-- Thin gold divider -->
-              <div class="mb-4" style="width: 40px; height: 1px; background: #C6A15B;"></div>
-              <h3 class="font-display fw-light text-white mb-3" style="font-size: 1.55rem; line-height: 1.3;">
-                Sub-Millimeter<br><span class="fw-medium">3D Laser Site Survey</span>
-              </h3>
-              <p class="mb-4" style="font-size: 0.82rem; color: rgba(255,255,255,0.6); max-width: 440px; line-height: 1.75;">
-                Before cutting a single beam, our field engineers conduct a 3D LiDAR point-cloud scan of your villa opening ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ensuring zero-tolerance installation without wall modifications.
-              </p>
-              <!-- Footer row -->
-              <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 pt-4"
-                   style="border-top: 1px solid rgba(255,255,255,0.1);">
-                <div class="d-flex align-items-center gap-2" style="font-size: 0.7rem; color: rgba(255,255,255,0.45);">
-                  <i class="fa-solid fa-location-dot text-gold" style="font-size: 0.65rem;"></i>
-                  <span>Complimentary across all 7 Emirates</span>
-                </div>
-                <a href="#" class="d-inline-flex align-items-center gap-2 text-decoration-none fw-semibold text-uppercase"
-                   style="font-size: 0.68rem; letter-spacing: 0.1em; color: #C6A15B;"
-                   data-bs-toggle="modal" data-bs-target="#consultationModal">
-                  Book Survey <i class="fa-solid fa-arrow-right" style="font-size: 0.6rem;"></i>
-                </a>
+              <div class="mb-4" style="width:40px;height:1px;background:var(--gold);"></div>
+              <h3 class="font-display fw-light text-white mb-3" style="font-size:1.55rem;line-height:1.3;">Sub-Millimeter<br><span class="fw-medium">3D Laser Site Survey</span></h3>
+              <p class="mb-4" style="font-size:0.82rem;color:rgba(255,255,255,0.55);max-width:440px;line-height:1.75;">Before cutting a single beam, our field engineers conduct a 3D LiDAR point-cloud scan â€” ensuring zero-tolerance installation without wall modifications.</p>
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 pt-4" style="border-top:1px solid rgba(255,255,255,0.1);">
+                <span style="font-size:0.7rem;color:rgba(255,255,255,0.4);"><i class="fa-solid fa-location-dot me-2" style="color:var(--gold-light);font-size:0.65rem;"></i>Complimentary across all 7 Emirates</span>
+                <button class="d-inline-flex align-items-center gap-2 fw-semibold text-uppercase" style="font-size:0.68rem;letter-spacing:0.1em;color:var(--gold-light);background:none;border:none;cursor:pointer;" data-bs-toggle="modal" data-bs-target="#consultationModal">Book Survey <i class="fa-solid fa-arrow-right" style="font-size:0.6rem;"></i></button>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- RIGHT COLUMN (col-lg-4) -->
         <div class="col-lg-4 d-flex flex-column gap-3">
-
-          <!-- Card: Automation -->
-          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 d-flex flex-column flex-grow-1 transition-all shadow-sm"
-               data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <span class="text-gold fw-semibold text-uppercase" style="font-size: 0.58rem; letter-spacing: 0.1em;">Italian FAAC &amp; Somfy</span>
-              <div class="d-flex align-items-center justify-content-center rounded-1 text-gold"
-                   style="width: 34px; height: 34px; background: #FAF9F6; border: 1px solid #E8E0D0; flex-shrink: 0;">
-                <i class="fa-solid fa-microchip" style="font-size: 0.78rem;"></i>
-              </div>
-            </div>
-            <h3 class="font-display fw-medium text-charcoal mb-2" style="font-size: 1.05rem;">24V Brushless Automation</h3>
-            <p class="text-muted flex-grow-1 m-0" style="font-size: 0.78rem; line-height: 1.7;">
-              Heavy hydraulic mechanisms rated for up to 3,000kg gates with whisper-quiet operation and smart home integration.
-            </p>
-            <div class="d-flex justify-content-between align-items-center mt-3 pt-3" style="border-top: 1px solid #F0EBE3;">
-              <span class="text-muted" style="font-size: 0.65rem;">Apple Home ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Alexa ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Google</span>
-              <i class="fa-solid fa-bolt text-gold" style="font-size: 0.75rem;"></i>
-            </div>
+          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 d-flex flex-column flex-grow-1 transition-all shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex justify-content-between align-items-start mb-3"><span class="text-gold fw-semibold text-uppercase" style="font-size:0.58rem;letter-spacing:0.1em;">Italian FAAC and Somfy</span><div class="d-flex align-items-center justify-content-center rounded-1 text-gold" style="width:34px;height:34px;background:var(--ivory);border:1px solid var(--border);flex-shrink:0;"><i class="fa-solid fa-microchip" style="font-size:0.78rem;"></i></div></div>
+            <h3 class="font-display fw-medium text-charcoal mb-2" style="font-size:1.1rem;">24V Brushless Automation</h3>
+            <p class="text-muted flex-grow-1 m-0" style="font-size:0.78rem;line-height:1.7;">Heavy hydraulic mechanisms rated for 3,000kg gates with whisper-quiet operation and smart home integration.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-3" style="border-top:1px solid var(--border);"><span class="text-muted" style="font-size:0.65rem;">Apple Home - Alexa - Google</span><i class="fa-solid fa-bolt text-gold" style="font-size:0.75rem;"></i></div>
           </div>
-
-          <!-- Card: Coating -->
-          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 d-flex flex-column flex-grow-1 transition-all shadow-sm"
-               data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <span class="text-gold fw-semibold text-uppercase" style="font-size: 0.58rem; letter-spacing: 0.1em;">Qualicoat Class 2</span>
-              <div class="d-flex align-items-center justify-content-center rounded-1 text-gold"
-                   style="width: 34px; height: 34px; background: #FAF9F6; border: 1px solid #E8E0D0; flex-shrink: 0;">
-                <i class="fa-solid fa-shield-halved" style="font-size: 0.78rem;"></i>
-              </div>
-            </div>
-            <h3 class="font-display fw-medium text-charcoal mb-2" style="font-size: 1.05rem;">Anti-Salinity Armor</h3>
-            <p class="text-muted flex-grow-1 m-0" style="font-size: 0.78rem; line-height: 1.7;">
-              Multi-layer ceramic powder coat engineered for extreme Gulf coastal humidity and UV radiation.
-            </p>
-            <div class="d-flex justify-content-between align-items-center mt-3 pt-3" style="border-top: 1px solid #F0EBE3;">
-              <span class="text-muted" style="font-size: 0.65rem;">25-Year Structural Warranty</span>
-              <span class="text-gold fw-bold" style="font-size: 0.65rem;">100% Certified</span>
-            </div>
+          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 d-flex flex-column flex-grow-1 transition-all shadow-sm" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex justify-content-between align-items-start mb-3"><span class="text-gold fw-semibold text-uppercase" style="font-size:0.58rem;letter-spacing:0.1em;">Qualicoat Class 2</span><div class="d-flex align-items-center justify-content-center rounded-1 text-gold" style="width:34px;height:34px;background:var(--ivory);border:1px solid var(--border);flex-shrink:0;"><i class="fa-solid fa-shield-halved" style="font-size:0.78rem;"></i></div></div>
+            <h3 class="font-display fw-medium text-charcoal mb-2" style="font-size:1.1rem;">Anti-Salinity Armor</h3>
+            <p class="text-muted flex-grow-1 m-0" style="font-size:0.78rem;line-height:1.7;">Multi-layer ceramic powder coat engineered for extreme Gulf coastal humidity and UV radiation.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-3" style="border-top:1px solid var(--border);"><span class="text-muted" style="font-size:0.65rem;">25-Year Structural Warranty</span><span class="text-gold fw-bold" style="font-size:0.65rem;">100% Certified</span></div>
           </div>
         </div>
-
-        <!-- STATS STRIP (full width) -->
-        <div class="col-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
-          <div class="rounded-1 border border-luxury px-3 py-3 d-flex flex-wrap justify-content-around align-items-center gap-2"
-               style="background: #FAF9F6;">
-            <div class="text-center px-3 py-1">
-              <div class="font-display fw-semibold text-charcoal mb-0" style="font-size: 1rem;">45,000 ftÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â²</div>
-              <div class="text-muted text-uppercase" style="font-size: 0.55rem; letter-spacing: 0.1em; margin-top: 2px;">Al Quoz Factory</div>
-            </div>
-            <div class="d-none d-md-block" style="width: 1px; height: 28px; background: #E8E0D0;"></div>
-            <div class="text-center px-3 py-1">
-              <div class="font-display fw-semibold text-gold mb-0" style="font-size: 1rem;">&#177;0.5mm</div>
-              <div class="text-muted text-uppercase" style="font-size: 0.55rem; letter-spacing: 0.1em; margin-top: 2px;">Fabrication Tolerance</div>
-            </div>
-            <div class="d-none d-md-block" style="width: 1px; height: 28px; background: #E8E0D0;"></div>
-            <div class="text-center px-3 py-1">
-              <div class="font-display fw-semibold text-charcoal mb-0" style="font-size: 1rem;">72 hrs</div>
-              <div class="text-muted text-uppercase" style="font-size: 0.55rem; letter-spacing: 0.1em; margin-top: 2px;">LiDAR ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¾ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ CAD</div>
-            </div>
-            <div class="d-none d-md-block" style="width: 1px; height: 28px; background: #E8E0D0;"></div>
-            <div class="text-center px-3 py-1">
-              <div class="font-display fw-semibold text-gold mb-0" style="font-size: 1rem;">3,000 kg</div>
-              <div class="text-muted text-uppercase" style="font-size: 0.55rem; letter-spacing: 0.1em; margin-top: 2px;">Max Gate Load</div>
-            </div>
-            <div class="d-none d-md-block" style="width: 1px; height: 28px; background: #E8E0D0;"></div>
-            <div class="text-center px-3 py-1">
-              <div class="font-display fw-semibold text-charcoal mb-0" style="font-size: 1rem;">ISO 9001</div>
-              <div class="text-muted text-uppercase" style="font-size: 0.55rem; letter-spacing: 0.1em; margin-top: 2px;">Quality Certified</div>
-            </div>
+        <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="rounded-1 border border-luxury px-3 py-3 d-flex flex-wrap justify-content-around align-items-center gap-2" style="background:var(--ivory);">
+            <div class="text-center px-3 py-1"><div class="font-display fw-medium text-charcoal mb-0" style="font-size:1rem;">45,000 sqft</div><div class="text-muted text-uppercase" style="font-size:0.55rem;letter-spacing:0.1em;margin-top:2px;">Al Quoz Factory</div></div>
+            <div class="d-none d-md-block" style="width:1px;height:28px;background:var(--border);"></div>
+            <div class="text-center px-3 py-1"><div class="font-display fw-medium text-gold mb-0" style="font-size:1rem;">0.5mm</div><div class="text-muted text-uppercase" style="font-size:0.55rem;letter-spacing:0.1em;margin-top:2px;">Fabrication Tolerance</div></div>
+            <div class="d-none d-md-block" style="width:1px;height:28px;background:var(--border);"></div>
+            <div class="text-center px-3 py-1"><div class="font-display fw-medium text-charcoal mb-0" style="font-size:1rem;">72 hrs</div><div class="text-muted text-uppercase" style="font-size:0.55rem;letter-spacing:0.1em;margin-top:2px;">LiDAR to CAD</div></div>
+            <div class="d-none d-md-block" style="width:1px;height:28px;background:var(--border);"></div>
+            <div class="text-center px-3 py-1"><div class="font-display fw-medium text-gold mb-0" style="font-size:1rem;">3,000 kg</div><div class="text-muted text-uppercase" style="font-size:0.55rem;letter-spacing:0.1em;margin-top:2px;">Max Gate Load</div></div>
+            <div class="d-none d-md-block" style="width:1px;height:28px;background:var(--border);"></div>
+            <div class="text-center px-3 py-1"><div class="font-display fw-medium text-charcoal mb-0" style="font-size:1rem;">ISO 9001</div><div class="text-muted text-uppercase" style="font-size:0.55rem;letter-spacing:0.1em;margin-top:2px;">Quality Certified</div></div>
           </div>
         </div>
-
       </div>
     </section>
 
-
-    <!-- 3. STATISTICS SECTION -->
+    <!-- 6. FEATURED PROJECT SHOWCASE -->
     <section class="container-fluid px-4 px-lg-5 max-w-7xl py-4">
-      <div class="bg-white border border-luxury rounded-1 p-5 shadow-sm">
-        <div class="row g-4 text-center text-md-start">
-          <div class="col-6 col-md-3 border-end-md border-luxury">
-            <span class="font-display fw-light display-5 text-charcoal d-block mb-1">850<span class="text-gold">+</span></span>
-            <p class="fw-semibold text-uppercase text-muted tracking-wider mb-1" style="font-size: 0.7rem;">Completed Projects</p>
-            <p class="text-muted m-0" style="font-size: 0.65rem;">Palm, Hills &amp; Pearl Jumeirah</p>
-          </div>
-          <div class="col-6 col-md-3 border-end-md border-luxury ps-md-4">
-            <span class="font-display fw-light display-5 text-charcoal d-block mb-1">2,500<span class="text-gold">+</span></span>
-            <p class="fw-semibold text-uppercase text-muted tracking-wider mb-1" style="font-size: 0.7rem;">Distinguished Clients</p>
-            <p class="text-muted m-0" style="font-size: 0.65rem;">Villa Owners &amp; Architects</p>
-          </div>
-          <div class="col-6 col-md-3 border-end-md border-luxury ps-md-4">
-            <span class="font-display fw-light display-5 text-charcoal d-block mb-1">12<span class="text-gold">+</span></span>
-            <p class="fw-semibold text-uppercase text-muted tracking-wider mb-1" style="font-size: 0.7rem;">Years Experience</p>
-            <p class="text-muted m-0" style="font-size: 0.65rem;">Dubai Manufacturing Hub</p>
-          </div>
-          <div class="col-6 col-md-3 ps-md-4">
-            <span class="font-display fw-light display-5 text-charcoal d-block mb-1">100<span class="text-gold">%</span></span>
-            <p class="fw-semibold text-uppercase text-muted tracking-wider mb-1" style="font-size: 0.7rem;">Premium Materials</p>
-            <p class="text-muted m-0" style="font-size: 0.65rem;">Marine &amp; Aerospace Grade</p>
-          </div>
+      <div class="project-showcase-banner position-relative rounded-1 overflow-hidden border border-luxury cursor-pointer" onclick="window.location.href='projects.html'" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=85" class="w-100 h-100 object-fit-cover" alt="Palm Jumeirah Residence" style="transition:transform 1s ease;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.25) 50%,transparent 100%);"></div>
+        <div class="position-absolute bottom-0 start-0 p-3 p-md-5 w-100" style="max-width:600px;">
+          <span class="text-uppercase fw-semibold mb-2 d-block" style="font-size:0.7rem;letter-spacing:0.2em;color:var(--gold-light);">Featured Case Study - 2025 Handover</span>
+          <h3 class="font-display fw-light text-white mb-2" style="font-size:clamp(1.5rem,3vw,2.2rem);">PALM JUMEIRAH RESIDENCE</h3>
+          <p class="text-light mb-3 d-none d-md-block" style="font-size:0.85rem;opacity:0.72;">Custom 6-meter sliding gate, monumental 3.5m pivot entrance door, and 12-meter bioclimatic pool pergola.</p>
+          <span class="fw-semibold text-uppercase d-flex align-items-center gap-2" style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold-light);">View Project <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
     </section>
 
-    <!-- 4. CATEGORY DESIGN -->
+    <!-- 7. TESTIMONIALS -->
     <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
-      <div class="mb-5 border-bottom border-luxury pb-4">
-        <div class="eyebrow-label mb-3">CURATED COLLECTIONS</div>
-        <div class="row align-items-end">
-          <div class="col-md-7">
-            <h2 class="font-display fw-light display-6 text-charcoal">Architectural Systems by Category</h2>
-          </div>
-          <div class="col-md-5 text-md-end mt-2 mt-md-0">
-            <p class="text-muted m-0" style="font-size: 0.9rem;">
-              From monumental palace gates to zero-threshold panoramic sliding doors, explore our master-engineered collections.
-            </p>
-          </div>
-        </div>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4 border-bottom border-luxury pb-4 mb-5" data-aos="fade-up">
+        <div><div class="eyebrow-label mb-3">Client Experiences</div><h2 class="font-display m-0" style="font-size:clamp(2rem,4vw,3rem);font-weight:300;">Endorsed by Dubai's<br><em style="color:var(--gold);">Finest Villa Owners</em></h2></div>
+        <div class="d-flex align-items-center gap-2 flex-shrink-0" style="font-size:0.8rem;"><div class="d-flex gap-1" style="color:var(--gold);"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><span class="fw-bold text-charcoal">4.98 / 5.0</span><span class="text-muted">(180+ UAE Reviews)</span></div>
       </div>
-
       <div class="row g-4">
-        <div class="col-md-8">
-          <div class="d-block bg-white border border-luxury hover-border-gold rounded-1 overflow-hidden h-100 transition-all shadow-sm group">
-            <div class="position-relative aspect-21-9 overflow-hidden unmask-reveal" data-aos="fade">
-              
-              <!-- Carousel -->
-              <div id="catGatesCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item active h-100">
-                    <img src="https://images.unsplash.com/photo-1531257240678-d5b1922e672d?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Luxury Gates 1">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1615484398374-529a69c53a09?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Luxury Gates 2">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1774013825006-bc025e087839?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Luxury Gates 3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#catGatesCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catGatesCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <div class="position-absolute top-0 start-0 m-3 bg-white bg-opacity-75 text-charcoal fw-semibold text-uppercase px-2 py-1 rounded-1" style="font-size: 0.6rem; letter-spacing: 0.1em; z-index: 2;">10 Designs Available</div>
-            </div>
-            <div class="p-4 bg-white">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <a href="shop.html?category=gates" class="text-decoration-none">
-                  <h3 class="font-display fw-medium fs-4 text-charcoal group-hover-text-gold m-0">Luxury Gates</h3>
-                </a>
-                <a href="shop.html?category=gates" class="text-decoration-none text-gold fw-semibold d-flex align-items-center gap-1" style="font-size: 0.7rem;">Explore <i class="fa-solid fa-chevron-right"></i></a>
-              </div>
-              <p class="text-muted m-0" style="font-size: 0.8rem;">Elevate your grand entrance with custom architectural gates crafted from marine-grade aerospace aluminum, hand-forged wrought iron, solid bronze, and smart Italian motor integration.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-block bg-white border border-luxury hover-border-gold rounded-1 overflow-hidden h-100 transition-all shadow-sm group">
-            <div class="position-relative aspect-16-10 overflow-hidden unmask-reveal" data-aos="fade">
-              
-              <!-- Carousel -->
-              <div id="catDoorsCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4500">
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item active h-100">
-                    <img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Premium Doors 1">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1628744876657-abd5086695dc?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Premium Doors 2">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1617307074423-6344f18d357f?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Premium Doors 3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#catDoorsCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catDoorsCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <div class="position-absolute top-0 start-0 m-3 bg-white bg-opacity-75 text-charcoal fw-semibold text-uppercase px-2 py-1 rounded-1" style="font-size: 0.6rem; letter-spacing: 0.1em; z-index: 2;">8 Designs Available</div>
-            </div>
-            <div class="p-4 bg-white">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <a href="shop.html?category=doors" class="text-decoration-none">
-                  <h3 class="font-display fw-medium fs-4 text-charcoal group-hover-text-gold m-0">Premium Doors</h3>
-                </a>
-                <a href="shop.html?category=doors" class="text-decoration-none text-gold fw-semibold d-flex align-items-center gap-1" style="font-size: 0.7rem;">Explore <i class="fa-solid fa-chevron-right"></i></a>
-              </div>
-              <p class="text-muted m-0" style="font-size: 0.8rem;">Make an unforgettable first impression. Our monumental entrance doors combine ultra-secure thermal breaks, Italian pivot mechanisms, armored security glass, and bespoke finishes.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-block bg-white border border-luxury hover-border-gold rounded-1 overflow-hidden h-100 transition-all shadow-sm group">
-            <div class="position-relative aspect-16-10 overflow-hidden unmask-reveal" data-aos="fade">
-              
-              <!-- Carousel -->
-              <div id="catWindowsCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="5000">
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item active h-100">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Luxury Windows 1">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Luxury Windows 2">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Luxury Windows 3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#catWindowsCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catWindowsCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <div class="position-absolute top-0 start-0 m-3 bg-white bg-opacity-75 text-charcoal fw-semibold text-uppercase px-2 py-1 rounded-1" style="font-size: 0.6rem; letter-spacing: 0.1em; z-index: 2;">8 Designs Available</div>
-            </div>
-            <div class="p-4 bg-white">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <a href="shop.html?category=windows" class="text-decoration-none">
-                  <h3 class="font-display fw-medium fs-4 text-charcoal group-hover-text-gold m-0">Luxury Windows</h3>
-                </a>
-                <a href="shop.html?category=windows" class="text-decoration-none text-gold fw-semibold d-flex align-items-center gap-1" style="font-size: 0.7rem;">Explore <i class="fa-solid fa-chevron-right"></i></a>
-              </div>
-              <p class="text-muted m-0" style="font-size: 0.8rem;">Engineered specifically for Dubai high-ambient temperatures and dust-free acoustic isolation. Enjoy uninterrupted desert and skyline views with 20mm invisible sightline frames.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-block bg-white border border-luxury hover-border-gold rounded-1 overflow-hidden h-100 transition-all shadow-sm group">
-            <div class="position-relative aspect-16-10 overflow-hidden unmask-reveal" data-aos="fade">
-              
-              <!-- Carousel -->
-              <div id="catOutdoorCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4200">
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item active h-100">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Outdoor Living 1">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Outdoor Living 2">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Outdoor Living 3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#catOutdoorCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catOutdoorCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <div class="position-absolute top-0 start-0 m-3 bg-white bg-opacity-75 text-charcoal fw-semibold text-uppercase px-2 py-1 rounded-1" style="font-size: 0.6rem; letter-spacing: 0.1em; z-index: 2;">10 Designs Available</div>
-            </div>
-            <div class="p-4 bg-white">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <a href="shop.html?category=outdoor" class="text-decoration-none">
-                  <h3 class="font-display fw-medium fs-4 text-charcoal group-hover-text-gold m-0">Outdoor Living</h3>
-                </a>
-                <a href="shop.html?category=outdoor" class="text-decoration-none text-gold fw-semibold d-flex align-items-center gap-1" style="font-size: 0.7rem;">Explore <i class="fa-solid fa-chevron-right"></i></a>
-              </div>
-              <p class="text-muted m-0" style="font-size: 0.8rem;">Transform your villa gardens, pool decks, and rooftop terraces into 7-star resort sanctuaries with UV-resistant Sunbrella upholstery, teakwood joinery, and sculptural water elements.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-block bg-white border border-luxury hover-border-gold rounded-1 overflow-hidden h-100 transition-all shadow-sm group">
-            <div class="position-relative aspect-16-10 overflow-hidden unmask-reveal" data-aos="fade">
-              
-              <!-- Carousel -->
-              <div id="catPergolasCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4800">
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item active h-100">
-                    <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Pergolas 1">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Pergolas 2">
-                  </div>
-                  <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale" alt="Pergolas 3">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#catPergolasCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#catPergolasCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <div class="position-absolute top-0 start-0 m-3 bg-white bg-opacity-75 text-charcoal fw-semibold text-uppercase px-2 py-1 rounded-1" style="font-size: 0.6rem; letter-spacing: 0.1em; z-index: 2;">5 Designs Available</div>
-            </div>
-            <div class="p-4 bg-white">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <a href="shop.html?category=pergolas" class="text-decoration-none">
-                  <h3 class="font-display fw-medium fs-4 text-charcoal group-hover-text-gold m-0">Pergolas & Shades</h3>
-                </a>
-                <a href="shop.html?category=pergolas" class="text-decoration-none text-gold fw-semibold d-flex align-items-center gap-1" style="font-size: 0.7rem;">Explore <i class="fa-solid fa-chevron-right"></i></a>
-              </div>
-              <p class="text-muted m-0" style="font-size: 0.8rem;">Smart shading systems engineered for Dubai sunshine and wind resistance up to 140 km/h. Featuring automated rain sensors, perimeter LED illumination, and integrated cooling mist options.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4.5 FEATURED PORTFOLIO -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
-      <div class="mb-5 border-bottom border-luxury pb-4 d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4">
-        <div>
-          <div class="eyebrow-label mb-3">FEATURED PORTFOLIO</div>
-          <h2 class="font-display fw-light display-6 text-charcoal">Signature Architectural Products</h2>
-        </div>
-        
-        <!-- Collection Filter Tabs -->
-        <div class="d-flex flex-wrap gap-2 bg-ivory p-2 rounded-1 border border-luxury">
-<button class="btn btn-dark btn-sm text-uppercase fw-semibold px-4 index-cat-btn" data-filter="all" style="font-size: 0.7rem;">All Signatures</button>
-          <button class="btn btn-outline-luxury btn-sm text-uppercase fw-semibold px-4 text-muted border-0 index-cat-btn" data-filter="gates" style="font-size: 0.7rem;">Luxury Gates</button>
-          <button class="btn btn-outline-luxury btn-sm text-uppercase fw-semibold px-4 text-muted border-0 index-cat-btn" data-filter="doors" style="font-size: 0.7rem;">Premium Doors</button>
-          <button class="btn btn-outline-luxury btn-sm text-uppercase fw-semibold px-4 text-muted border-0 index-cat-btn" data-filter="windows" style="font-size: 0.7rem;">Luxury Windows</button>
-          <button class="btn btn-outline-luxury btn-sm text-uppercase fw-semibold px-4 text-muted border-0 index-cat-btn" data-filter="outdoor" style="font-size: 0.7rem;">Outdoor Living</button>
-          <button class="btn btn-outline-luxury btn-sm text-uppercase fw-semibold px-4 text-muted border-0 index-cat-btn" data-filter="pergolas" style="font-size: 0.7rem;">Pergolas & Shades</button>
-        </div>
-      </div>
-
-      <div class="row g-4" id="index-products-grid">
-        <!-- Product 1 -->
-        <div class="col-sm-6 col-lg-3 product-card" data-category="gates">
-          <div class="product-card-inner h-100">
-            <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Villa Gate">
-              <span class="product-badge">BESTSELLER</span>
-              <div class="product-overlay">
-                <button class="overlay-btn add-to-cart-btn" data-id="prod_gate_01" data-name="Royal Noir Sliding Gate" data-price="34500" data-category="gates" data-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">Quick Add</button>
-                <a href="product.html?id=gate-01" class="overlay-btn">Details</a>
-              </div>
-            </div>
-            <div class="product-body">
-              <span class="product-category-tag">Luxury Gates</span>
-              <h4 class="product-title">Royal Noir Sliding Gate</h4>
-              <p class="product-desc">High-speed automated sliding gate featuring matte black anodized finish.</p>
-              <div class="product-footer">
-                <div class="product-price"><small>Starting from</small>AED 34,500</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="col-sm-6 col-lg-3 product-card" data-category="doors">
-          <div class="product-card-inner h-100">
-            <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Pivot Door">
-              <span class="product-badge">SIGNATURE</span>
-              <div class="product-overlay">
-                <button class="overlay-btn add-to-cart-btn" data-id="prod_door_01" data-name="Monumental Pivot Door" data-price="42000" data-category="doors" data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">Quick Add</button>
-                <a href="product.html?id=door-01" class="overlay-btn">Details</a>
-              </div>
-            </div>
-            <div class="product-body">
-              <span class="product-category-tag">Premium Doors</span>
-              <h4 class="product-title">Monumental Pivot Door</h4>
-              <p class="product-desc">Custom CNC laser-cut architectural privacy door with illuminated accents.</p>
-              <div class="product-footer">
-                <div class="product-price"><small>Starting from</small>AED 42,000</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="col-sm-6 col-lg-3 product-card" data-category="pergolas">
-          <div class="product-card-inner h-100">
-            <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="Bioclimatic Pergola">
-              <span class="product-badge">NEW IN</span>
-              <div class="product-overlay">
-                <button class="overlay-btn add-to-cart-btn" data-id="prod_pergola_01" data-name="Bioclimatic Smart Pergola" data-price="68000" data-category="pergolas" data-image="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">Quick Add</button>
-                <a href="product.html?id=pergola-01" class="overlay-btn">Details</a>
-              </div>
-            </div>
-            <div class="product-body">
-              <span class="product-category-tag">Pergolas & Shades</span>
-              <h4 class="product-title">Bioclimatic Smart Pergola</h4>
-              <p class="product-desc">Automated louvers with integrated weather sensors and LED ambiance.</p>
-              <div class="product-footer">
-                <div class="product-price"><small>Starting from</small>AED 68,000</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="col-sm-6 col-lg-3 product-card" data-category="windows">
-          <div class="product-card-inner h-100">
-            <div class="product-img-wrap">
-              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Luxury Window">
-              <span class="product-badge">ULTRA-SLIM</span>
-              <div class="product-overlay">
-                <button class="overlay-btn add-to-cart-btn" data-id="prod_window_01" data-name="Panoramic Skyline Window" data-price="18000" data-category="windows" data-image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">Quick Add</button>
-                <a href="product.html?id=window-01" class="overlay-btn">Details</a>
-              </div>
-            </div>
-            <div class="product-body">
-              <span class="product-category-tag">Luxury Windows</span>
-              <h4 class="product-title">Panoramic Skyline Window</h4>
-              <p class="product-desc">Ultra-slim profile thermally broken aluminum windows with smart glass tinting.</p>
-              <div class="product-footer">
-                <div class="product-price"><small>Starting from</small>AED 18,000</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center pt-5">
-        <a href="shop.html" class="btn btn-outline-dark px-5 py-3 fw-semibold text-uppercase tracking-wider rounded-1" style="font-size: 0.75rem;">
-          View All 41+ Architectural Models <i class="fa-solid fa-arrow-right text-gold ms-2"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- 5. EDITORIAL STORYTELLING SECTION -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
-      <div class="bg-warm-beige border border-luxury rounded-1 p-4 p-md-5 p-lg-5" data-aos="fade-up" data-aos-duration="1000" position-relative overflow-hidden shadow-sm">
-        <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-lg-6">
-            <div class="position-relative aspect-4-3 rounded-1 overflow-hidden border border-luxury shadow-lg bg-white unmask-reveal" data-aos="fade">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80" class="w-100 h-100 object-fit-cover">
-            </div>
-          </div>
-          <div class="col-lg-6 ps-lg-4">
-            <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider mb-3" style="font-size: 0.75rem; letter-spacing: 0.25em;">
-              <i class="fa-solid fa-sparkles"></i>
-              <span>CRAFTSMANSHIP</span>
-            </div>
-            <h2 class="font-display fw-light fs-2 fs-lg-1 text-charcoal mb-3 mb-md-4">
-              Architecture Begins <br>
-              <span class="fw-normal fst-italic">at the Entrance.</span>
-            </h2>
-            <p class="text-muted mb-4" style="font-size: 0.95rem;">
-              Every detail is carefully considered to create a sophisticated first impression. We bridge the gap between monumental architectural vision and mechanical excellence.
-            </p>
-            <ul class="list-unstyled mb-5">
-              <li class="d-flex align-items-start gap-3 mb-3">
-                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
-                <span class="text-charcoal" style="font-size: 0.9rem;">Aircraft-grade structural aluminum profiles with zero thermal distortion</span>
-              </li>
-              <li class="d-flex align-items-start gap-3 mb-3">
-                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
-                <span class="text-charcoal" style="font-size: 0.9rem;">Somfy & FAAC German/Italian heavy-torque hydraulic automation</span>
-              </li>
-              <li class="d-flex align-items-start gap-3 mb-3">
-                <i class="fa-solid fa-circle-check text-gold mt-1"></i>
-                <span class="text-charcoal" style="font-size: 0.9rem;">Sub-millimeter 3D laser scanning on site before fabrication</span>
-              </li>
-            </ul>
-            <a href="about.html" class="btn btn-primary-luxury fw-semibold text-uppercase px-4 py-3" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-              Discover Our Craft <i class="fa-solid fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. LUXURY PROJECT SHOWCASE -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-4">
-      <div class="position-relative rounded-1 overflow-hidden border border-luxury group cursor-pointer project-showcase-banner" onclick="window.location.href='projects.html'">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=85" class="w-100 h-100 object-fit-cover transition-transform group-hover-scale-slow">
-        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);"></div>
-        <div class="position-absolute bottom-0 start-0 p-3 p-md-5 text-white w-100" style="max-width: 600px;">
-          <span class="text-uppercase fw-semibold mb-2 d-block text-gold" style="font-size: 0.7rem; letter-spacing: 0.25em;">Featured Case Study ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· 2025 Handover</span>
-          <h3 class="font-display fw-light fs-2 fs-md-1 display-lg-5 text-white mb-2">PALM JUMEIRAH RESIDENCE</h3>
-          <p class="text-light opacity-75 mb-3" style="font-size: 0.85rem;">Custom 6-meter sliding gate, monumental 3.5m pivot entrance door, and 12-meter bioclimatic pool pergola.</p>
-          <span class="fw-semibold text-uppercase text-gold group-hover-text-white d-flex align-items-center gap-2" style="font-size: 0.75rem; letter-spacing: 0.1em; transition: color 0.3s;">
-            View Project <i class="fa-solid fa-arrow-right"></i>
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. MATERIALS SECTION -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5">
-      <div class="text-center mb-5 mx-auto" style="max-width: 600px;">
-        <div class="d-flex align-items-center justify-content-center gap-2 text-gold fw-semibold text-uppercase tracking-wider mb-2" style="font-size: 0.75rem; letter-spacing: 0.25em;">
-          <span class="bg-gold" style="width: 16px; height: 1px;"></span>
-          <span>ENGINEERING & METALLURGY</span>
-        </div>
-        <h2 class="font-display fw-light display-5 text-charcoal mb-3">Crafted Without Compromise.</h2>
-        <p class="text-muted" style="font-size: 0.9rem;">Every gate, pivot leaf, and pergola beam is sculpted from selected materials certified to endure extreme Gulf summer heat and coastal humidity.</p>
-      </div>
-      <div class="row g-3">
-        <!-- Mat 1 -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="bg-white border border-luxury p-3 rounded-1 shadow-sm text-center h-100">
-            <div class="aspect-square rounded-1 overflow-hidden bg-ivory mb-3">
-              <img src="https://plus.unsplash.com/premium_photo-1756717306164-3d52f9bcb862?auto=format&fit=crop&w=400&q=80" class="w-100 h-100 object-fit-cover" alt="Aerospace Aluminum">
-            </div>
-            <span class="text-gold fw-bold text-uppercase d-block mb-1" style="font-size: 0.6rem; letter-spacing: 0.1em;">6063-T6 Marine Grade</span>
-            <h4 class="font-display fw-medium text-charcoal m-0" style="font-size: 0.8rem;">Aerospace Aluminum</h4>
-          </div>
-        </div>
-        <!-- Mat 2 -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="bg-white border border-luxury p-3 rounded-1 shadow-sm text-center h-100">
-            <div class="aspect-square rounded-1 overflow-hidden bg-ivory mb-3">
-              <img src="https://plus.unsplash.com/premium_photo-1746430498804-9bef88c154aa?auto=format&fit=crop&w=400&q=80" class="w-100 h-100 object-fit-cover" alt="Acoustic Glass">
-            </div>
-            <span class="text-gold fw-bold text-uppercase d-block mb-1" style="font-size: 0.6rem; letter-spacing: 0.1em;">Low-E Gulf Thermal</span>
-            <h4 class="font-display fw-medium text-charcoal m-0" style="font-size: 0.8rem;">Acoustic Glass</h4>
-          </div>
-        </div>
-        <!-- Mat 3 -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="bg-white border border-luxury p-3 rounded-1 shadow-sm text-center h-100">
-            <div class="aspect-square rounded-1 overflow-hidden bg-ivory mb-3">
-              <img src="https://plus.unsplash.com/premium_photo-1685656440548-d8cad874d5d8?auto=format&fit=crop&w=400&q=80" class="w-100 h-100 object-fit-cover" alt="Solid European Steel">
-            </div>
-            <span class="text-gold fw-bold text-uppercase d-block mb-1" style="font-size: 0.6rem; letter-spacing: 0.1em;">Galvanized Hot-Dip</span>
-            <h4 class="font-display fw-medium text-charcoal m-0" style="font-size: 0.8rem;">Solid European Steel</h4>
-          </div>
-        </div>
-        <!-- Mat 4 -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="bg-white border border-luxury p-3 rounded-1 shadow-sm text-center h-100">
-            <div class="aspect-square rounded-1 overflow-hidden bg-ivory mb-3">
-              <img src="https://plus.unsplash.com/premium_photo-1674048382856-aa9984d8b391?auto=format&fit=crop&w=400&q=80" class="w-100 h-100 object-fit-cover" alt="Burmese Teakwood">
-            </div>
-            <span class="text-gold fw-bold text-uppercase d-block mb-1" style="font-size: 0.6rem; letter-spacing: 0.1em;">Natural Kiln-Dried</span>
-            <h4 class="font-display fw-medium text-charcoal m-0" style="font-size: 0.8rem;">Burmese Teakwood</h4>
-          </div>
-        </div>
-        <!-- Mat 5 -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="bg-white border border-luxury p-3 rounded-1 shadow-sm text-center h-100">
-            <div class="aspect-square rounded-1 overflow-hidden bg-ivory mb-3">
-              <img src="https://plus.unsplash.com/premium_photo-1723586416242-642ab27644ca?auto=format&fit=crop&w=400&q=80" class="w-100 h-100 object-fit-cover" alt="Architectural Brass">
-            </div>
-            <span class="text-gold fw-bold text-uppercase d-block mb-1" style="font-size: 0.6rem; letter-spacing: 0.1em;">Aged Brushed Finishes</span>
-            <h4 class="font-display fw-medium text-charcoal m-0" style="font-size: 0.8rem;">Architectural Brass</h4>
-          </div>
-        </div>
-        <!-- Mat 6 -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="bg-white border border-luxury p-3 rounded-1 shadow-sm text-center h-100">
-            <div class="aspect-square rounded-1 overflow-hidden bg-ivory mb-3">
-              <img src="https://plus.unsplash.com/premium_photo-1674575954741-0f610c5dc2c0?auto=format&fit=crop&w=400&q=80" class="w-100 h-100 object-fit-cover" alt="Ceramic Coatings">
-            </div>
-            <span class="text-gold fw-bold text-uppercase d-block mb-1" style="font-size: 0.6rem; letter-spacing: 0.1em;">Qualicoat Class 2</span>
-            <h4 class="font-display fw-medium text-charcoal m-0" style="font-size: 0.8rem;">Ceramic Coatings</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-    <!-- TESTIMONIALS SECTION -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5" data-aos="fade-up" data-aos-duration="900">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4 border-bottom border-luxury pb-4 mb-5">
-        <div>
-          <div class="eyebrow-label mb-3">CLIENT EXPERIENCES</div>
-          <h2 class="font-display fw-light display-6 text-charcoal m-0">Endorsed by Dubai's Finest Villa Owners</h2>
-        </div>
-        <div class="d-flex align-items-center gap-2 text-charcoal" style="font-size: 0.8rem;">
-          <div class="text-gold d-flex gap-1">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <span class="fw-bold">4.98 / 5.0</span>
-          <span class="text-muted">(180+ Verified UAE Reviews)</span>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        <!-- Review 1 -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 p-md-5 d-flex flex-column h-100 shadow-sm transition-all">
-            <div class="text-gold d-flex gap-1 mb-3" style="font-size: 0.8rem;">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+          <div class="testimonial-card">
+            <div class="d-flex gap-1 mb-3" style="color:var(--gold);font-size:0.8rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
             <h4 class="font-display fw-medium text-charcoal fs-5 mb-3">"Flawless execution from survey to handover."</h4>
-            <p class="text-muted mb-4 flex-grow-1" style="font-size: 0.85rem;">The custom 7-meter sliding gate is a masterpiece. The laser survey ensured perfect fit without modifying our existing boundary wall in Emirates Hills.</p>
-            <div class="pt-3 border-top border-luxury d-flex justify-content-between align-items-center">
-              <div>
-                <h5 class="fw-semibold text-charcoal m-0" style="font-size: 0.75rem;">Ahmed Al-Maktoum</h5>
-                <span class="text-muted" style="font-size: 0.65rem;">Emirates Hills, Dubai</span>
-              </div>
-              <span class="bg-ivory border border-luxury text-gold fw-medium px-2 py-1 rounded-1" style="font-size: 0.6rem;">Verified Project</span>
-            </div>
+            <p class="text-muted mb-4 flex-grow-1" style="font-size:0.85rem;line-height:1.75;">The custom 7-meter sliding gate is a masterpiece. The laser survey ensured perfect fit without modifying our existing boundary wall in Emirates Hills.</p>
+            <div class="pt-3 border-top border-luxury d-flex justify-content-between align-items-center"><div><h5 class="fw-semibold text-charcoal m-0" style="font-size:0.75rem;">Ahmed Al-Maktoum</h5><span class="text-muted" style="font-size:0.65rem;">Emirates Hills, Dubai</span></div><span class="bg-ivory border border-luxury text-gold fw-medium px-2 py-1 rounded-1" style="font-size:0.6rem;">Verified</span></div>
           </div>
         </div>
-        <!-- Review 2 -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 p-md-5 d-flex flex-column h-100 shadow-sm transition-all">
-            <div class="text-gold d-flex gap-1 mb-3" style="font-size: 0.8rem;">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+          <div class="testimonial-card">
+            <div class="d-flex gap-1 mb-3" style="color:var(--gold);font-size:0.8rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
             <h4 class="font-display fw-medium text-charcoal fs-5 mb-3">"Silent, robust, and beautiful."</h4>
-            <p class="text-muted mb-4 flex-grow-1" style="font-size: 0.85rem;">The Somfy automation is whisper-quiet. The marine grade coating looks exactly as it did on day one, despite the harsh humidity of the Palm.</p>
-            <div class="pt-3 border-top border-luxury d-flex justify-content-between align-items-center">
-              <div>
-                <h5 class="fw-semibold text-charcoal m-0" style="font-size: 0.75rem;">Sarah Mitchell</h5>
-                <span class="text-muted" style="font-size: 0.65rem;">Palm Jumeirah</span>
-              </div>
-              <span class="bg-ivory border border-luxury text-gold fw-medium px-2 py-1 rounded-1" style="font-size: 0.6rem;">Verified Project</span>
-            </div>
+            <p class="text-muted mb-4 flex-grow-1" style="font-size:0.85rem;line-height:1.75;">The Somfy automation is whisper-quiet. The marine grade coating looks exactly as it did on day one, despite the harsh humidity of the Palm.</p>
+            <div class="pt-3 border-top border-luxury d-flex justify-content-between align-items-center"><div><h5 class="fw-semibold text-charcoal m-0" style="font-size:0.75rem;">Sarah Mitchell</h5><span class="text-muted" style="font-size:0.65rem;">Palm Jumeirah</span></div><span class="bg-ivory border border-luxury text-gold fw-medium px-2 py-1 rounded-1" style="font-size:0.6rem;">Verified</span></div>
           </div>
         </div>
-        <!-- Review 3 -->
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="bg-white border border-luxury hover-border-gold rounded-1 p-4 p-md-5 d-flex flex-column h-100 shadow-sm transition-all">
-            <div class="text-gold d-flex gap-1 mb-3" style="font-size: 0.8rem;">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
+          <div class="testimonial-card">
+            <div class="d-flex gap-1 mb-3" style="color:var(--gold);font-size:0.8rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
             <h4 class="font-display fw-medium text-charcoal fs-5 mb-3">"Outstanding architectural standard."</h4>
-            <p class="text-muted mb-4 flex-grow-1" style="font-size: 0.85rem;">As a lead architect in Dubai, finding contractors who deliver exact CAD specifications is rare. Al-Manzil's tolerances and finishes are unmatched.</p>
-            <div class="pt-3 border-top border-luxury d-flex justify-content-between align-items-center">
-              <div>
-                <h5 class="fw-semibold text-charcoal m-0" style="font-size: 0.75rem;">Tariq R. (Lead Architect)</h5>
-                <span class="text-muted" style="font-size: 0.65rem;">Dubai Hills Estate</span>
-              </div>
-              <span class="bg-ivory border border-luxury text-gold fw-medium px-2 py-1 rounded-1" style="font-size: 0.6rem;">Verified Project</span>
-            </div>
+            <p class="text-muted mb-4 flex-grow-1" style="font-size:0.85rem;line-height:1.75;">As a lead architect in Dubai, finding contractors who deliver exact CAD specifications is rare. Al-Manzil tolerances and finishes are unmatched.</p>
+            <div class="pt-3 border-top border-luxury d-flex justify-content-between align-items-center"><div><h5 class="fw-semibold text-charcoal m-0" style="font-size:0.75rem;">Tariq R. (Lead Architect)</h5><span class="text-muted" style="font-size:0.65rem;">Dubai Hills Estate</span></div><span class="bg-ivory border border-luxury text-gold fw-medium px-2 py-1 rounded-1" style="font-size:0.6rem;">Verified</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. QUOTE & CONSULTATION SECTION -->
+    <!-- 8. DARK CTA -->
     <section class="container-fluid px-4 px-lg-5 max-w-7xl py-5 mb-5">
-      <div class="bg-ivory border border-luxury rounded-1 p-3 p-md-4 p-lg-5 shadow-sm">
-        <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-lg-5">
-            <div class="d-flex align-items-center gap-2 text-gold fw-semibold text-uppercase tracking-wider mb-3" style="font-size: 0.75rem; letter-spacing: 0.25em;">
-              <i class="fa-solid fa-compass"></i>
-              <span>PRIVATE CONSULTATION</span>
-            </div>
-            <h2 class="font-display fw-light fs-2 fs-lg-1 text-charcoal mb-3 mb-md-4">
-              Let's Create Something <br>
-              <span class="fw-normal fst-italic">Extraordinary.</span>
-            </h2>
-            <p class="text-muted mb-4" style="font-size: 0.95rem;">
-              Tell us about your project and our Dubai team will help bring your architectural vision to life with precise CAD proposals and structural engineering guidance.
-            </p>
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center gap-2 mb-2 text-charcoal" style="font-size: 0.85rem;"><span class="bg-gold rounded-circle" style="width: 6px; height: 6px;"></span> Complimentary on-site laser dimension survey</li>
-              <li class="d-flex align-items-center gap-2 mb-2 text-charcoal" style="font-size: 0.85rem;"><span class="bg-gold rounded-circle" style="width: 6px; height: 6px;"></span> Architectural 3D shop drawing pack in 24 hours</li>
-              <li class="d-flex align-items-center gap-2 text-charcoal" style="font-size: 0.85rem;"><span class="bg-gold rounded-circle" style="width: 6px; height: 6px;"></span> Turnkey installation with Dubai Municipality permits</li>
+      <div class="rounded-1 overflow-hidden" style="background:var(--charcoal);" data-aos="fade-up">
+        <div class="row g-0">
+          <div class="col-lg-5 p-4 p-md-5 d-flex flex-column justify-content-center" style="border-right:1px solid rgba(255,255,255,0.08);">
+            <div class="d-flex align-items-center gap-2 mb-4" style="color:var(--gold-light);font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;"><i class="fa-solid fa-compass"></i> Private Consultation</div>
+            <h2 class="font-display text-white mb-4" style="font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;line-height:1.1;">Let's Create<br>Something<br><em style="color:var(--gold-light);">Extraordinary.</em></h2>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.58);line-height:1.75;margin-bottom:1.75rem;">Tell us about your project and our Dubai team will bring your architectural vision to life with precise CAD proposals.</p>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+              <li class="d-flex align-items-center gap-3" style="font-size:0.83rem;color:rgba(255,255,255,0.72);"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>Complimentary on-site laser dimension survey</li>
+              <li class="d-flex align-items-center gap-3" style="font-size:0.83rem;color:rgba(255,255,255,0.72);"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>Architectural 3D shop drawing pack in 24 hours</li>
+              <li class="d-flex align-items-center gap-3" style="font-size:0.83rem;color:rgba(255,255,255,0.72);"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>Turnkey installation with Dubai Municipality permits</li>
             </ul>
           </div>
-          <div class="col-lg-7">
-            <div class="bg-white p-3 p-md-5 rounded-1 border border-luxury shadow-sm">
-              <form>
-                <div class="row g-3 mb-3">
-                  <div class="col-sm-6">
-                    <label class="form-label text-charcoal fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em;">Full Name *</label>
-                    <input type="text" class="form-control bg-white border-luxury text-charcoal" required placeholder="e.g. Sheikh Mohammed">
-                  </div>
-                  <div class="col-sm-6">
-                    <label class="form-label text-charcoal fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em;">UAE Contact / WhatsApp *</label>
-                    <input type="tel" class="form-control bg-white border-luxury text-charcoal" required placeholder="+971 50 123 4567">
-                  </div>
-                  <div class="col-sm-6">
-                    <label class="form-label text-charcoal fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em;">Primary Interest</label>
-                    <select class="form-select bg-white border-luxury text-charcoal">
-                      <option>Luxury Automatic & Sliding Gates</option>
-                      <option>Monumental Pivot & Entrance Doors</option>
-                      <option>Ultra-Slim Architectural Windows</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6">
-                    <label class="form-label text-charcoal fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em;">Villa Project Location</label>
-                    <input type="text" class="form-control bg-white border-luxury text-charcoal" placeholder="e.g. Palm Jumeirah">
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label text-charcoal fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em;">Project Dimensions or Notes</label>
-                    <textarea class="form-control bg-white border-luxury text-charcoal" rows="3" placeholder="Provide approximate opening widths, heights..."></textarea>
-                  </div>
-                </div>
-                <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-                  <button type="submit" class="btn btn-primary-luxury flex-grow-1 text-uppercase fw-semibold py-3" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-                    Request My Private Quote <i class="fa-solid fa-arrow-right ms-2"></i>
-                  </button>
-                  <button type="button" class="btn btn-success text-uppercase fw-semibold py-3 px-4" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-                    <i class="fa-brands fa-whatsapp me-2"></i> WhatsApp
-                  </button>
-                </div>
-              </form>
-            </div>
+          <div class="col-lg-7 p-4 p-md-5 bg-white">
+            <form>
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6"><label class="form-label fw-semibold text-charcoal" style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;">Full Name *</label><input type="text" class="form-control" required placeholder="e.g. Sheikh Mohammed"></div>
+                <div class="col-sm-6"><label class="form-label fw-semibold text-charcoal" style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;">UAE Contact *</label><input type="tel" class="form-control" required placeholder="+971 50 123 4567"></div>
+                <div class="col-sm-6"><label class="form-label fw-semibold text-charcoal" style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;">Primary Interest</label><select class="form-select"><option>Luxury Automatic and Sliding Gates</option><option>Monumental Pivot and Entrance Doors</option><option>Ultra-Slim Architectural Windows</option><option>Bioclimatic Pergolas</option></select></div>
+                <div class="col-sm-6"><label class="form-label fw-semibold text-charcoal" style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;">Villa Location</label><input type="text" class="form-control" placeholder="e.g. Palm Jumeirah"></div>
+                <div class="col-12"><label class="form-label fw-semibold text-charcoal" style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;">Project Notes</label><textarea class="form-control" rows="3" placeholder="Approximate opening widths, heights..."></textarea></div>
+              </div>
+              <div class="d-flex flex-column flex-sm-row gap-3 mt-2">
+                <button type="submit" class="btn-primary-luxury flex-grow-1 justify-content-center">REQUEST MY PRIVATE QUOTE</button>
+                <button type="button" class="whatsapp-btn btn d-flex align-items-center justify-content-center gap-2 fw-bold text-uppercase rounded-1 flex-shrink-0" style="background:#25D366;color:white;border:none;font-size:0.75rem;letter-spacing:0.06em;padding:0.8rem 1.25rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
   </main>
-
-<!-- ============ SEARCH OVERLAY ============ -->
 <div id="searchOverlay" style="
   position: fixed; inset: 0; z-index: 10001;
   background: rgba(8, 8, 10, 0.92);
@@ -1413,7 +512,7 @@
       <div class="row align-items-center border-bottom border-luxury pb-5 mb-5">
         <div class="col-lg-8 mb-4 mb-lg-0">
           <span class="text-gold text-uppercase fw-semibold d-flex align-items-center gap-2 mb-3" style="font-size: 0.75rem; letter-spacing: 0.2em;">
-            <i class="fa-solid fa-sparkles"></i> Bespoke Architectural Solutions ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Dubai
+            <i class="fa-solid fa-sparkles"></i> Bespoke Architectural Solutions ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Dubai
           </span>
           <h2 class="font-display fw-light display-5 mb-3 text-charcoal">Let's Build Something Beautiful.</h2>
           <p class="text-muted" style="max-width: 600px; font-size: 0.9rem;">Whether you are designing an ultra-prime Palm Jumeirah villa or an expansive Emirates Hills estate, our master craftsmen and structural engineers are at your service.</p>
@@ -1428,7 +527,7 @@
       <div class="row g-4 pb-4 border-bottom border-luxury">
         <div class="col-lg-4">
           <h3 class="font-display fw-light fs-4 mb-3">Al-Manzil Luxe <span class="text-gold">.</span></h3>
-          <p class="text-muted" style="font-size: 0.8rem;">The United Arab EmiratesÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¾ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ premier manufacturer of bespoke architectural gates, monumental pivot entrance doors, ultra-slim thermal glass systems, and high-end outdoor living spaces.</p>
+          <p class="text-muted" style="font-size: 0.8rem;">The United Arab EmiratesÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¾ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ premier manufacturer of bespoke architectural gates, monumental pivot entrance doors, ultra-slim thermal glass systems, and high-end outdoor living spaces.</p>
         </div>
         <div class="col-6 col-lg-2">
           <h5 class="footer-heading font-display">Collections</h5>
@@ -1458,7 +557,7 @@
       
       <!-- Copyright -->
       <div class="pt-4 text-center text-muted" style="font-size: 0.75rem;">
-        &copy; 2026 Al-Manzil Luxe Architectural Systems LLC ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Dubai, UAE.
+        &copy; 2026 Al-Manzil Luxe Architectural Systems LLC ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Dubai, UAE.
       </div>
     </div>
   </footer>
