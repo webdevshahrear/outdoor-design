@@ -1,9 +1,9 @@
 /* ============================================================
-   AL-MANZIL LUXE — DESIGN SYSTEM v5.0
+   AL-MANZIL LUXE â€” DESIGN SYSTEM v5.0
    Editorial Luxury | Cormorant + Inter | Premium Architecture
    ============================================================ */
 
-/* Google Fonts — Cormorant Garamond for editorial headings + Inter for body */
+/* Google Fonts â€” Cormorant Garamond for editorial headings + Inter for body */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ============================================================
@@ -24,16 +24,16 @@
   --muted:         #6B6B6B;
   --subtle:        #9A9A9A;
 
-  /* Gold System — warm, rich, Dubai-inspired */
-  --gold:          #B8962E;
-  --gold-light:    #D4B45A;
-  --gold-deep:     #8B6E1B;
-  --gold-pale:     #F5EDD8;
-  --gold-glow:     rgba(184, 150, 46, 0.15);
+  /* Gold System â€” warm, rich, Dubai-inspired */
+  --gold:          #A8A8A0;
+  --gold-light:    #D4D0C8;
+  --gold-deep:     #787872;
+  --gold-pale:     #F0EEE8;
+  --gold-glow:     rgba(168, 168, 160, 0.15);
 
   /* Borders */
   --border:        #E8E2D8;
-  --border-gold:   rgba(184, 150, 46, 0.3);
+  --border-gold:   rgba(168, 168, 160, 0.3);
   --border-strong: #C8C2B8;
 
   /* Backgrounds */
@@ -47,7 +47,7 @@
   --shadow-sm:     0 2px 12px rgba(0,0,0,0.06);
   --shadow-md:     0 8px 28px rgba(0,0,0,0.08);
   --shadow-lg:     0 20px 60px rgba(0,0,0,0.12);
-  --shadow-gold:   0 8px 32px rgba(184, 150, 46, 0.2);
+  --shadow-gold:   0 8px 32px rgba(168, 168, 160, 0.2);
 
   /* Radius */
   --radius-xs:     4px;
@@ -112,7 +112,7 @@ img, video { max-width: 100%; height: auto; display: block; }
    3. TYPOGRAPHY SYSTEM
    ============================================================ */
 
-/* Editorial Display Headings — Cormorant Garamond */
+/* Editorial Display Headings â€” Cormorant Garamond */
 h1, h2, h3, h4, h5, h6,
 .font-display {
   font-family: var(--font-display);
@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6,
 .hr-luxury { border: none; border-top: 1px solid var(--border); margin: 0; }
 
 /* ============================================================
-   6. LOGO — SVG Wordmark
+   6. LOGO â€” SVG Wordmark
    ============================================================ */
 .brand-logo {
   display: inline-flex;
@@ -673,7 +673,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .form-control:focus, .form-select:focus {
   border-color: var(--gold) !important;
-  box-shadow: 0 0 0 3px rgba(184,150,46,0.12) !important;
+  box-shadow: 0 0 0 3px rgba(168,168,160,0.12) !important;
   outline: none;
 }
 
@@ -725,7 +725,7 @@ body.hide-native, body.hide-native * { cursor: none !important; }
   width: 44px; height: 44px;
   background: var(--gold-glow); border-color: var(--gold); border-width: 1.5px;
 }
-#custom-cursor.click-state { transform: scale(0.6); background: rgba(184,150,46,0.2); border-color: var(--gold); }
+#custom-cursor.click-state { transform: scale(0.6); background: rgba(168,168,160,0.2); border-color: var(--gold); }
 #custom-cursor.text-mode { width: 3px; height: 26px; border-radius: 2px; border-color: rgba(26,26,26,0.4); }
 #custom-cursor.hidden { opacity: 0 !important; }
 
@@ -741,7 +741,7 @@ body.hide-native, body.hide-native * { cursor: none !important; }
 .cursor-ripple {
   position: fixed; border-radius: 50%; pointer-events: none;
   z-index: 999996; width: 6px; height: 6px;
-  border: 1.5px solid rgba(184, 150, 46, 0.7);
+  border: 1.5px solid rgba(168, 168, 160, 0.7);
   transform: translate(-50%, -50%) scale(1); opacity: 1;
   animation: cursorRipple 0.55s var(--ease-out) forwards;
 }
@@ -752,7 +752,7 @@ body.hide-native, body.hide-native * { cursor: none !important; }
 
 .cursor-trail {
   position: fixed; width: 5px; height: 5px; border-radius: 50%;
-  background: rgba(184, 150, 46, 0.45); pointer-events: none; z-index: 999995;
+  background: rgba(168, 168, 160, 0.45); pointer-events: none; z-index: 999995;
   transform: translate(-50%, -50%);
   animation: cursorTrailFade 0.4s ease-out forwards;
 }
@@ -837,13 +837,13 @@ input[type=range].form-range { -webkit-appearance: none; width: 100%; background
 input[type=range].form-range::-webkit-slider-thumb {
   -webkit-appearance: none; height: 18px; width: 18px; border-radius: 50%;
   background: var(--gold); cursor: pointer; margin-top: -7px;
-  box-shadow: 0 2px 6px rgba(184,150,46,0.35); transition: transform 0.2s;
+  box-shadow: 0 2px 6px rgba(168,168,160,0.35); transition: transform 0.2s;
 }
 input[type=range].form-range::-webkit-slider-thumb:hover { transform: scale(1.2); }
 input[type=range].form-range::-webkit-slider-runnable-track {
   height: 4px; background: var(--border); border-radius: 2px;
 }
-.custom-range-gold::-webkit-slider-thumb { background: var(--gold) !important; box-shadow: 0 0 10px rgba(184,150,46,0.4) !important; }
+.custom-range-gold::-webkit-slider-thumb { background: var(--gold) !important; box-shadow: 0 0 10px rgba(168,168,160,0.4) !important; }
 .custom-range-gold::-moz-range-thumb { background: var(--gold) !important; }
 
 .hover-glow:hover {
@@ -892,7 +892,7 @@ input[type=range].form-range::-webkit-slider-runnable-track {
 }
 
 /* ============================================================
-   HOMEPAGE v5.2 � ENHANCED COMPONENTS
+   HOMEPAGE v5.2 — ENHANCED COMPONENTS
    ============================================================ */
 
 /* Image cards hover zoom */
@@ -955,8 +955,8 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   background: var(--charcoal);
   overflow: hidden;
   padding: 0.85rem 0;
-  border-top: 1px solid rgba(184,150,46,0.2);
-  border-bottom: 1px solid rgba(184,150,46,0.2);
+  border-top: 1px solid rgba(168,168,160,0.2);
+  border-bottom: 1px solid rgba(168,168,160,0.2);
 }
 .gold-ticker-inner {
   display: flex;
@@ -1014,8 +1014,8 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
 
 /* Pulse animation (hero badge) */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(184,150,46,0.4); }
-  50% { box-shadow: 0 0 0 6px rgba(184,150,46,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(168,168,160,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(168,168,160,0); }
 }
 .pulse-anim { animation: pulse-glow 2.5s ease infinite; }
 
@@ -1040,7 +1040,7 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
 .btn-ghost-luxury:hover {
   border-color: var(--gold);
   color: var(--gold);
-  background: var(--gold-pale, #F5EDD8);
+  background: var(--gold-pale, #F0EEE8);
 }
 
 /* Footer fix */
@@ -1105,7 +1105,7 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   transform: scale(1.0);
 }
 
-/* Hero Gradient Overlay � Royal Blue + Black */
+/* Hero Gradient Overlay — Royal Blue + Black */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1145,7 +1145,7 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   background: var(--gold-light);
   color: var(--charcoal);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184,150,46,0.4);
+  box-shadow: 0 8px 24px rgba(168,168,160,0.4);
 }
 
 .hero-btn-outline {
@@ -1220,7 +1220,7 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   50% { opacity: 0.4; transform: scaleY(0.6); }
 }
 
-/* Primary Button � Royal Blue (site-wide) */
+/* Primary Button — Royal Blue (site-wide) */
 .btn-primary-luxury {
   background: var(--royal-blue) !important;
   color: white !important;
@@ -1231,7 +1231,7 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   box-shadow: 0 8px 24px rgba(27,58,107,0.35) !important;
 }
 
-/* Outline button � Royal Blue */
+/* Outline button — Royal Blue */
 .btn-outline-luxury {
   border: 1px solid var(--royal-blue) !important;
   color: var(--royal-blue) !important;
@@ -1240,11 +1240,11 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   background: var(--royal-blue-pale) !important;
 }
 
-/* Navbar active link � Royal Blue */
+/* Navbar active link — Royal Blue */
 .navbar .nav-link.active { color: var(--royal-blue) !important; }
 .navbar .nav-link:hover { color: var(--royal-blue-mid) !important; }
 
-/* Gold accent stays gold � only primary changes to blue */
+/* Gold accent stays gold — only primary changes to blue */
 .text-gold, .text-primary-gold { color: var(--gold) !important; }
 .bg-gold { background: var(--gold) !important; }
 
@@ -1254,3 +1254,58 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   .hero-fullscreen h1 { font-size: clamp(2.5rem,11vw,4rem) !important; }
   .hero-nav-btn { display: none !important; }
 }
+
+/* ============================================================
+   CHAMPAGNE SILVER COLOR SYSTEM v5.4
+   Royal Blue #1B3A6B + Champagne Silver #A8A8A0
+   ============================================================ */
+
+/* Override all gold references to Champagne Silver */
+:root {
+  --gold:          #A8A8A0;   /* Champagne Silver main */
+  --gold-light:    #D4D0C8;   /* Silver light */
+  --gold-deep:     #787872;   /* Silver deep */
+  --gold-pale:     #F0EEE8;   /* Silver pale background */
+  --gold-glow:     rgba(168, 168, 160, 0.12);
+
+  /* Accent aliases */
+  --silver:        #A8A8A0;
+  --silver-light:  #D4D0C8;
+  --silver-deep:   #787872;
+  --silver-pale:   #F0EEE8;
+  --champagne:     #E8E4DC;
+}
+
+/* text-gold class -> silver */
+.text-gold { color: var(--silver) !important; }
+.bg-gold   { background: var(--silver) !important; }
+
+/* Ticker diamonds silver */
+.gold-ticker { border-color: rgba(168,168,160,0.2) !important; }
+
+/* Gold border -> silver */
+.border-gold-luxury, .hover-border-gold:hover { border-color: var(--silver) !important; }
+
+/* Hero dots -> silver */
+.hero-dot.active, .hero-dot:hover { background: var(--silver-light) !important; }
+
+/* Eyebrow label -> silver */
+.eyebrow-label { color: var(--silver-deep) !important; }
+.eyebrow-label::before { background: var(--silver-deep) !important; }
+
+/* Primary button stays Royal Blue, accent stays Silver */
+.btn-primary-luxury {
+  background: var(--royal-blue) !important;
+  color: white !important;
+}
+
+/* Scroll line -> silver */
+.scroll-line {
+  background: linear-gradient(to bottom, var(--silver-light), transparent) !important;
+}
+
+/* Pulse dot -> silver */
+.pulse-anim { background: var(--silver) !important; }
+
+/* Star ratings, verified badges -> royal blue instead of gold */
+.fa-star { color: var(--royal-blue) !important; }
