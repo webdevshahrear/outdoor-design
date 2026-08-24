@@ -2,51 +2,280 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta name="description" content="Al-Manzil Luxe is Dubai's leading manufacturer of bespoke architectural gates, monumental pivot doors, ultra-slim windows, and bioclimatic pergolas for UAE villas.">
+  <meta name="description" content="Al-Manzil Luxe 3D Studio - Design your bespoke architectural gates, monumental pivot doors, ultra-slim windows, and bioclimatic pergolas in real-time.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Design Studio | Al-Manzil Luxe</title>
-  
+
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css?v=5.4">
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Three.js Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+  <style>
+    /* Configurator Specific Styles */
+    .config-panel {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+    
+    .config-section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Product Tabs (Segmented Control Style) */
+    .product-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 0.25rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+      background: var(--ivory);
+      color: var(--muted);
+      height: 100%;
+    }
+    .product-tab i {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      transition: color 0.3s;
+    }
+    .product-tab span {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .product-tab:hover {
+      background: rgba(27, 58, 107, 0.05);
+      color: var(--charcoal);
+    }
+    .product-tab.active {
+      border-color: var(--royal-blue);
+      background: #fff;
+      color: var(--royal-blue);
+      box-shadow: 0 4px 15px rgba(27, 58, 107, 0.08);
+    }
+
+    /* Range Sliders */
+    .custom-range {
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      outline: none;
+      border-radius: 2px;
+      -webkit-appearance: none;
+    }
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--royal-blue);
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Color Swatches */
+    .color-swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .color-swatch:hover {
+      transform: scale(1.1);
+    }
+    .color-swatch.active {
+      border-color: var(--royal-blue);
+      transform: scale(1.1);
+    }
+    .color-swatch.active::after {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    /* Hardware Cards */
+    .hardware-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hardware-card:hover {
+      border-color: var(--silver);
+      background: var(--ivory);
+    }
+    .hardware-card.selected {
+      border-color: var(--royal-blue);
+      background: rgba(27, 58, 107, 0.03);
+    }
+    .hardware-card .check-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .hardware-card.selected .check-circle {
+      border-color: var(--royal-blue);
+      background: var(--royal-blue);
+    }
+    .hardware-card.selected .check-circle::after {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: white;
+      font-size: 0.6rem;
+    }
+
+    /* 3D Canvas Area */
+    .canvas-container {
+      background: radial-gradient(circle at center, #FDFDFB 0%, #F0F0EE 100%);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      transition: background 0.5s;
+    }
+    .canvas-container.night-mode {
+      background: radial-gradient(circle at center, #1a1a24 0%, #08080c 100%);
+    }
+    
+    #dragHint { pointer-events: none; transition: opacity 0.4s ease; }
+    
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--silver); border-radius: 4px; }
+    
+    .color-option { transition: all 0.2s; border-color: var(--border)!important; }
+    .color-option:hover { background: var(--ivory); }
+    .color-option.active { border-color: var(--royal-blue)!important; background: rgba(27, 58, 107, 0.04); }
+    
+    #three-container {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      cursor: grab;
+    }
+    #three-container:active {
+      cursor: grabbing;
+    }
+
+    /* Floating Action Bar */
+    .canvas-action-bar {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      display: flex;
+      gap: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
+    .canvas-container.night-mode .canvas-action-bar {
+      background: rgba(30, 30, 35, 0.8);
+      border-color: rgba(255,255,255,0.1);
+    }
+    
+    .view-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+    .canvas-container.night-mode .view-btn { color: var(--silver); }
+    .view-btn.active {
+      background: var(--charcoal);
+      color: white;
+    }
+    .canvas-container.night-mode .view-btn.active {
+      background: var(--silver);
+      color: var(--charcoal);
+    }
+
+    /* Environment toggle */
+    .env-toggle {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 10;
+    }
+  </style>
 </head>
 <body class="bg-ivory text-charcoal">
-  <!-- V2 PRELOADER -->
+
+  <!-- PRELOADER -->
   <div id="pagePreloader" class="preloader">
     <div class="preloader-inner">
-      <div class="preloader-brand">
-        Al-Manzil <span class="accent">&#9670;</span> Luxe
-      </div>
+      <div class="preloader-brand">Al-Manzil <span class="accent">&#9670;</span> Luxe</div>
       <div class="preloader-line"></div>
     </div>
   </div>
-  <!-- UI UX Pro Max Elements -->
+
+  <!-- UI Pro Elements -->
   <div id="scroll-progress"></div>
   <div id="noise"></div>
   <div id="custom-cursor"></div>
 
-  
-  
-  
-
-    
-
-  <!-- ================= TOP BAR ================= -->
-  <div class="bg-ivory border-bottom border-luxury py-2 d-none d-md-block" style="font-size: 0.75rem; color: var(--text-muted);">
+  <!-- ===== TOP BAR ===== -->
+  <div class="bg-ivory border-bottom border-luxury py-2 d-none d-md-block" style="font-size:0.75rem;">
     <div class="container-fluid px-4 px-lg-5 max-w-7xl">
       <div class="d-flex align-items-center justify-content-between">
-        <!-- Left -->
         <div class="d-flex align-items-center gap-4">
           <div class="d-flex align-items-center gap-2 bg-white px-3 py-1 rounded-pill border border-luxury shadow-sm">
-            <span class="text-success" style="font-size: 0.5rem;"><i class="fa-solid fa-circle text-success"></i></span>
-            <span class="font-monospace fw-medium text-charcoal" style="font-size: 0.65rem;">Dubai Hub: Live Fabrication</span>
+            <i class="fa-solid fa-circle text-success" style="font-size:0.5rem;"></i>
+            <span class="font-monospace fw-medium text-charcoal" style="font-size:0.65rem;">Dubai Hub: Live Fabrication</span>
           </div>
           <div class="d-none d-xl-flex align-items-center gap-2 text-charcoal">
             <i class="fa-solid fa-location-dot text-gold"></i>
@@ -54,72 +283,66 @@
           </div>
           <div class="d-flex align-items-center gap-2">
             <i class="fa-solid fa-phone text-gold"></i>
-            <a href="tel:+97148005893" class="fw-medium text-decoration-none text-charcoal hover-gold">+971 4 800 LUXE</a>
+            <a href="tel:+97148005893" class="fw-medium text-decoration-none text-charcoal">+971 4 800 LUXE</a>
           </div>
           <div class="d-none d-lg-flex align-items-center gap-2">
             <i class="fa-solid fa-envelope text-gold"></i>
-            <a href="mailto:concierge@almanzil-luxe.ae" class="text-decoration-none text-muted-luxury hover-gold">concierge@almanzil-luxe.ae</a>
+            <a href="mailto:concierge@almanzil-luxe.ae" class="text-decoration-none text-muted">concierge@almanzil-luxe.ae</a>
           </div>
         </div>
-        <!-- Right -->
         <div class="d-flex align-items-center gap-3">
-          <button class="whatsapp-btn btn btn-link text-success text-decoration-none fw-medium p-0 d-none d-lg-flex align-items-center gap-2" style="font-size: 0.75rem;">
+          <button class="whatsapp-btn btn btn-link text-success p-0 d-none d-lg-flex align-items-center gap-2 fw-medium" style="font-size:0.75rem;">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp VIP
           </button>
           <span class="text-muted d-none d-lg-inline">|</span>
-          <button class="btn btn-sm bg-white border border-luxury rounded-pill d-flex align-items-center gap-2 hover-border-gold shadow-sm" style="font-size: 0.7rem;" data-bs-toggle="modal" data-bs-target="#consultationModal">
-            <i class="fa-solid fa-sparkles text-gold"></i> Free Laser Villa Survey
+          <button class="btn btn-sm bg-white border border-luxury rounded-pill d-flex align-items-center gap-2 shadow-sm hover-border-gold" style="font-size:0.7rem;" data-bs-toggle="modal" data-bs-target="#consultationModal">
+            <i class="fa-solid fa-star text-gold"></i> Free Laser Villa Survey
           </button>
         </div>
       </div>
     </div>
   </div>
 
-    <!-- ================= NAVBAR ================= -->
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar navbar-expand-lg sticky-top py-3">
     <div class="container-fluid px-4 px-lg-5 max-w-7xl">
-      
+
       <!-- Mobile Toggle -->
       <button class="navbar-toggler border-0 shadow-none d-lg-none p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-        <i class="fa-solid fa-bars" style="font-size: 1.1rem;"></i>
+        <i class="fa-solid fa-bars" style="font-size:1.1rem;"></i>
       </button>
 
       <!-- Brand -->
-        <a class="brand-logo navbar-brand" href="index.html">
-          <svg class="brand-logo-icon" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 43V20C5 11.163 11.716 4 20 4C28.284 4 35 11.163 35 20V43" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="5" y1="43" x2="35" y2="43" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="12" y1="43" x2="12" y2="28" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="28" y1="43" x2="28" y2="28" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="20" cy="22" r="2" fill="#A8A8A0"/>
-          </svg>
-          <div class="brand-logo-text">
-            <span class="brand-logo-name">Al-Manzil</span>
-            <span class="brand-logo-sub">&#9670; Luxe</span>
-          </div>
-        </a>
-<a 
+      <a class="brand-logo navbar-brand" href="index.html">
+        <svg class="brand-logo-icon" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 43V20C5 11.163 11.716 4 20 4C28.284 4 35 11.163 35 20V43" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="5" y1="43" x2="35" y2="43" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="12" y1="43" x2="12" y2="28" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="28" y1="43" x2="28" y2="28" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="20" cy="22" r="2" fill="#A8A8A0"/>
+        </svg>
+        <div class="brand-logo-text">
+          <span class="brand-logo-name">Al-Manzil</span>
+          <span class="brand-logo-sub">&#9670; Luxe</span>
+        </div>
+      </a>
 
       <!-- Desktop Nav -->
       <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex">
         <ul class="navbar-nav gap-2 gap-xl-3">
-          <li class="nav-item">
-            <a class="nav-link active text-gold" href="index.html">Home</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Collections
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Collections</a>
             <ul class="dropdown-menu mt-2">
               <li><a class="dropdown-item py-2" href="shop.html">Luxury Gates &amp; Automation</a></li>
               <li><a class="dropdown-item py-2" href="shop.html">Monumental Pivot Doors</a></li>
               <li><a class="dropdown-item py-2" href="shop.html">Slim-Profile Windows</a></li>
               <li><a class="dropdown-item py-2" href="shop.html">Bioclimatic Pergolas</a></li>
               <li><hr class="dropdown-divider my-1"></li>
-              <li><a class="dropdown-item py-2 fw-semibold" style="color: var(--gold) !important;" href="shop.html">View All Collections &rarr;</a></li>
+              <li><a class="dropdown-item py-2 fw-semibold" style="color:var(--gold)!important;" href="shop.html">View All Collections &rarr;</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link text-gold fw-semibold text-nowrap" href="custom-design.html"><i class="fa-solid fa-cube me-1"></i> 3D Studio</a></li>
+          <li class="nav-item"><a class="nav-link text-gold fw-semibold text-nowrap active fw-bold" href="custom-design.html"><i class="fa-solid fa-cube me-1"></i>3D Studio</a></li>
           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -129,187 +352,301 @@
 
       <!-- Right Actions -->
       <div class="d-flex align-items-center gap-1 gap-md-2 ms-auto">
-        <button class="btn btn-link text-charcoal p-2" style="font-size: 0.95rem;" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search">
+        <button class="btn btn-link text-charcoal p-2 search-trigger-btn" style="font-size:0.95rem;" title="Search">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <a href="account.html" class="btn btn-link text-charcoal p-2" style="font-size: 0.95rem;" title="Account">
-          <i class="fa-regular fa-user"></i>
-        </a>
-        <a href="wishlist.html" class="btn btn-link text-charcoal p-2" style="font-size: 0.95rem;" title="Wishlist">
-          <i class="fa-regular fa-heart"></i>
-        </a>
-        <button class="btn btn-link text-charcoal p-2 position-relative" style="font-size: 0.95rem;" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" title="Cart">
+        <a href="account.html" class="btn btn-link text-charcoal p-2" style="font-size:0.95rem;"><i class="fa-regular fa-user"></i></a>
+        <a href="wishlist.html" class="btn btn-link text-charcoal p-2" style="font-size:0.95rem;"><i class="fa-regular fa-heart"></i></a>
+        <button class="btn btn-link text-charcoal p-2 position-relative" style="font-size:0.95rem;" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="cart-badge">0</span>
         </button>
-                <div class="lang-toggle ms-1">
-          <i class="fa-solid fa-globe"></i>
-          <span>EN</span>
-        </div>
-        <div class="vr mx-1 d-none d-sm-block" style="height: 20px; opacity: 0.15;"></div>
-        <button class="btn btn-primary-luxury d-none d-sm-flex align-items-center gap-2 ms-1" data-bs-toggle="modal" data-bs-target="#consultationModal" style="padding: 0.6rem 1.25rem; font-size: 0.65rem;">
-          <i class="fa-solid fa-sparkles" style="color: var(--gold);"></i> Book Survey
+        <div class="lang-toggle ms-1"><i class="fa-solid fa-globe"></i><span>EN</span></div>
+        <div class="vr mx-1 d-none d-sm-block" style="height:20px;opacity:0.15;"></div>
+        <button class="btn btn-primary-luxury d-none d-sm-flex align-items-center gap-2 ms-1" data-bs-toggle="modal" data-bs-target="#consultationModal" style="padding:0.6rem 1.25rem;font-size:0.65rem;">
+          <i class="fa-solid fa-star" style="color:var(--gold);"></i> Book Survey
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ================= MOBILE OFFCANVAS MENU ================= -->
+  <!-- ===== MOBILE OFFCANVAS MENU ===== -->
   <div class="offcanvas offcanvas-start bg-ivory border-end border-luxury" tabindex="-1" id="mobileMenu">
     <div class="offcanvas-header border-bottom border-luxury bg-white">
-      <h5 class="offcanvas-title d-flex align-items-center gap-2"><svg width="22" height="24" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 43V20C5 11.163 11.716 4 20 4C28.284 4 35 11.163 35 20V43" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="43" x2="35" y2="43" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="43" x2="12" y2="28" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/><line x1="28" y1="43" x2="28" y2="28" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="22" r="2" fill="#A8A8A0"/></svg><span style="font-family: var(--font-display); font-weight:500; letter-spacing:0.06em; font-size:1rem;">Al-Manzil <span style="color:var(--gold)">&#9670;</span> Luxe</span></h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <h5 class="offcanvas-title d-flex align-items-center gap-2">
+        <svg width="22" height="24" viewBox="0 0 40 44" fill="none"><path d="M5 43V20C5 11.163 11.716 4 20 4C28.284 4 35 11.163 35 20V43" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="43" x2="35" y2="43" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="43" x2="12" y2="28" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/><line x1="28" y1="43" x2="28" y2="28" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="22" r="2" fill="#A8A8A0"/></svg>
+        <span style="font-family:var(--font-display);font-weight:500;letter-spacing:0.06em;font-size:1rem;">Al-Manzil <span style="color:var(--gold)">&#9670;</span> Luxe</span>
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <ul class="nav flex-column gap-2 text-uppercase fw-semibold" style="font-size: 0.8rem; letter-spacing: 0.05em;">
-        <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 shadow-sm border border-luxury" href="index.html">Home</a></li>
+      <ul class="nav flex-column gap-2 text-uppercase fw-semibold" style="font-size:0.8rem;letter-spacing:0.05em;">
+        <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="shop.html">All Collections</a></li>
-        <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="custom-design.html"><i class="fa-solid fa-cube text-gold me-2"></i> 3D Studio</a></li>
-        <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="projects.html">Portfolio & Projects</a></li>
+        <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury fw-bold" style="color:var(--royal-blue);" href="custom-design.html"><i class="fa-solid fa-cube text-gold me-2"></i>3D Studio</a></li>
+        <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="projects.html">Portfolio &amp; Projects</a></li>
         <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="services.html">Engineering</a></li>
         <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="about.html">About Us</a></li>
         <li class="nav-item"><a class="nav-link text-charcoal bg-white rounded-1 py-2 px-3 border border-luxury" href="contact.html">Contact</a></li>
       </ul>
       <div class="mt-4 pt-4 border-top border-luxury d-flex flex-column gap-3">
         <button class="btn btn-primary-luxury w-100 d-flex align-items-center justify-content-center gap-2" data-bs-toggle="modal" data-bs-target="#consultationModal">
-          <i class="fa-solid fa-sparkles text-gold"></i> Book Free Villa Survey
+          <i class="fa-solid fa-star text-gold"></i> Book Free Villa Survey
         </button>
-        <button class="whatsapp-btn btn btn-success w-100 d-flex align-items-center justify-content-center gap-2 rounded-1 fw-bold text-uppercase tracking-wider" style="font-size: 0.75rem;">
+        <button class="whatsapp-btn btn btn-success w-100 d-flex align-items-center justify-content-center gap-2 rounded-1 fw-bold text-uppercase" style="font-size:0.75rem;">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp VIP
         </button>
       </div>
     </div>
   </div>
 
-    <!-- ================= MAIN CONTENT (CUSTOM DESIGN 3D) ================= -->
-  <main class="flex-grow-1" style="background:#0a0a0c;"> <!-- Extremely dark charcoal/black -->
-    
+  <main class="flex-grow-1 bg-ivory">
+
     <!-- 3D Studio Header -->
-    <section class="position-relative overflow-hidden" style="background:var(--royal-blue);padding-top:100px;padding-bottom:120px;">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background:radial-gradient(circle at center, rgba(27,58,107,0.8) 0%, #0a0a0c 100%);"></div>
-      
-      <div class="container-fluid px-4 px-lg-5 max-w-7xl position-relative text-center" style="z-index:2;">
-        <div class="d-inline-flex align-items-center gap-2 mb-4" data-aos="fade-up">
-          <span style="width:20px;height:1px;background:var(--silver);display:block;"></span>
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--silver);">Interactive Architecture</span>
-          <span style="width:20px;height:1px;background:var(--silver);display:block;"></span>
+    <section class="container-fluid px-4 px-lg-5 max-w-7xl pt-4 pb-4">
+      <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-4 border-bottom border-luxury pb-4 mb-4" data-aos="fade-in">
+        <div>
+          <div class="d-inline-flex align-items-center gap-2 mb-2">
+            <i class="fa-solid fa-cube text-gold"></i>
+            <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--royal-blue);">Interactive Configurator</span>
+          </div>
+          <h1 class="font-display text-charcoal m-0" style="font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;">Build Your<br>Masterpiece.</h1>
         </div>
-        <h1 class="font-display text-white mx-auto mb-4" style="font-size:clamp(2.5rem,6vw,4.5rem);line-height:1;font-weight:300;max-width:800px;" data-aos="fade-up" data-aos-delay="100">Configure Your <em style="color:var(--silver);">Masterpiece.</em></h1>
-        <p class="text-white mx-auto mb-0" style="font-size:1rem;opacity:0.6;max-width:550px;line-height:1.8;" data-aos="fade-up" data-aos-delay="200">Design bespoke gates, pivot doors, and bioclimatic pergolas in real-time. Select dimensions, premium finishes, and receive instant CAD proposals.</p>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-luxury bg-white d-inline-flex align-items-center gap-2 shadow-sm" style="font-size:0.75rem;" id="btnShareDesign">
+            <i class="fa-brands fa-whatsapp text-success"></i> Share to WhatsApp
+          </button>
+          <button class="btn btn-primary-luxury d-inline-flex align-items-center gap-2 shadow-sm" style="font-size:0.75rem;" data-bs-toggle="modal" data-bs-target="#quoteModal">
+            <i class="fa-solid fa-file-invoice text-gold"></i> Request Quote
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- The Configurator UI -->
-    <section class="container-fluid px-4 px-lg-5 max-w-7xl position-relative" style="margin-top:-60px; z-index:10; padding-bottom:100px;" data-aos="fade-up" data-aos-delay="300">
-      
-      <div class="row g-0 rounded-2 overflow-hidden shadow-lg" style="border:1px solid rgba(255,255,255,0.1); background:#111114;">
+    <!-- Configurator Main Area -->
+    <section class="container-fluid px-4 px-lg-5 max-w-7xl pb-5 mb-5">
+      <div class="row g-4 h-100">
         
         <!-- Left: 3D Canvas Area -->
-        <div class="col-lg-8 position-relative border-end" style="border-color:rgba(255,255,255,0.05) !important;">
-          <!-- Toolbar -->
-          <div class="position-absolute top-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-between align-items-start" style="z-index:5;">
-            <div class="badge bg-royal-blue text-white fw-medium" style="font-size:0.65rem;letter-spacing:0.1em;padding:0.4rem 0.8rem;">Live 3D Render</div>
-            <div class="d-flex gap-2">
-              <button class="btn btn-sm btn-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.2);"><i class="fa-solid fa-expand"></i></button>
-              <button class="btn btn-sm btn-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.2);"><i class="fa-solid fa-cube"></i></button>
+        <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+          <div class="canvas-container h-100 position-relative shadow-sm" id="mainCanvas">
+            
+            <!-- Env Toggle -->
+            <button class="btn btn-sm btn-white border border-luxury rounded-pill env-toggle shadow-sm d-flex align-items-center gap-2" id="envToggleBtn">
+              <i class="fa-solid fa-moon"></i> <span>Night View</span>
+            </button>
+
+            <!-- ThreeJS WebGL Container -->
+            <div id="three-container"></div>
+            
+            <!-- Drag Hint Overlay -->
+            <div id="dragHint" class="position-absolute top-50 start-50 translate-middle text-center">
+              <i class="fa-solid fa-hand-pointer fa-beat-fade fa-2x text-charcoal mb-2 opacity-50"></i>
+              <div class="text-charcoal fw-bold text-uppercase opacity-50" style="letter-spacing: 0.1em; font-size: 0.75rem;">Drag to Rotate 360&deg;</div>
             </div>
-          </div>
-          
-          <!-- Mock 3D Model Image -->
-          <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4 p-md-5" style="min-height:500px; background: radial-gradient(circle at center, #1c1c21 0%, #111114 100%);">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="3D Model Gate" class="img-fluid rounded-1 shadow-lg" style="max-height:60vh; object-fit:contain; filter:drop-shadow(0 20px 40px rgba(0,0,0,0.5));">
-          </div>
-          
-          <!-- Bottom Controls -->
-          <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 d-flex justify-content-center gap-3" style="z-index:5;">
-            <button class="btn btn-sm text-white px-3 py-2" style="background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;">Day View</button>
-            <button class="btn btn-sm text-white px-3 py-2" style="background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;">Night View</button>
+
+            <!-- Action Bar -->
+            <div class="canvas-action-bar">
+              <button class="view-btn active d-flex align-items-center gap-2" data-view="front"><i class="fa-solid fa-border-all"></i> Front</button>
+              <button class="view-btn d-flex align-items-center gap-2" data-view="side"><i class="fa-solid fa-cube"></i> Side</button>
+              <button class="view-btn d-flex align-items-center gap-2" data-view="top"><i class="fa-solid fa-plane"></i> Top</button>
+            </div>
+            
           </div>
         </div>
 
-        <!-- Right: Configurator Controls -->
-        <div class="col-lg-4 p-4 p-md-5" style="background:#16161a;">
-          <h2 class="font-display text-white mb-4" style="font-size:1.5rem;font-weight:400;">Titan Sliding Gate</h2>
-          
-          <!-- Dimensions -->
-          <div class="mb-4">
-            <label class="d-block text-uppercase text-silver mb-3 fw-bold" style="font-size:0.65rem;letter-spacing:0.15em;">Dimensions (Meters)</label>
-            <div class="row g-2">
-              <div class="col-6">
-                <div class="p-2 border rounded-1" style="border-color:rgba(255,255,255,0.1) !important;background:#111114;">
-                  <span class="d-block text-muted mb-1" style="font-size:0.6rem;text-transform:uppercase;">Width</span>
-                  <input type="number" class="form-control form-control-sm bg-transparent border-0 text-white p-0 shadow-none" value="4.5" step="0.1">
+        <!-- Right: Config Panel -->
+        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200" style="position: sticky; top: 100px; height: calc(100vh - 120px); z-index: 50;">
+          <div class="config-panel h-100 d-flex flex-column overflow-hidden position-relative bg-white border border-luxury rounded-3 shadow-sm">
+            
+            <!-- Scrollable Body -->
+            <div class="p-3 overflow-auto flex-grow-1 custom-scrollbar" style="padding-bottom: 110px !important;">
+              
+              <!-- Category Selection -->
+            <div class="mb-3">
+              <div class="config-section-title"><i class="fa-solid fa-list-check text-gold"></i> System Type</div>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="product-tab active" data-product="gate">
+                    <i class="fa-solid fa-door-closed"></i>
+                    <span>Luxury Gate</span>
+                  </div>
                 </div>
-              </div>
-              <div class="col-6">
-                <div class="p-2 border rounded-1" style="border-color:rgba(255,255,255,0.1) !important;background:#111114;">
-                  <span class="d-block text-muted mb-1" style="font-size:0.6rem;text-transform:uppercase;">Height</span>
-                  <input type="number" class="form-control form-control-sm bg-transparent border-0 text-white p-0 shadow-none" value="2.2" step="0.1">
+                <div class="col-6">
+                  <div class="product-tab" data-product="door">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span>Pivot Door</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="product-tab" data-product="pergola">
+                    <i class="fa-solid fa-tree"></i>
+                    <span>Bioclimatic Pergola</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="product-tab" data-product="window">
+                    <i class="fa-regular fa-window-maximize"></i>
+                    <span>Slim Window</span>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Finishes -->
-          <div class="mb-4 border-top pt-4" style="border-color:rgba(255,255,255,0.05) !important;">
-            <label class="d-block text-uppercase text-silver mb-3 fw-bold" style="font-size:0.65rem;letter-spacing:0.15em;">Premium Finish</label>
-            <div class="d-flex gap-3">
-              <div class="rounded-circle cursor-pointer border border-2" style="width:36px;height:36px;background:#2A2A2A;border-color:var(--royal-blue) !important;" title="Matte Black"></div>
-              <div class="rounded-circle cursor-pointer border border-2 border-transparent" style="width:36px;height:36px;background:#5C5C5C;" title="Gunmetal Grey"></div>
-              <div class="rounded-circle cursor-pointer border border-2 border-transparent" style="width:36px;height:36px;background:#8B4513;" title="Corten Steel"></div>
-              <div class="rounded-circle cursor-pointer border border-2 border-transparent" style="width:36px;height:36px;background:#E8E4DC;" title="Champagne Silver"></div>
+            <!-- Design Style -->
+            <div class="mb-3 border-top border-luxury pt-3">
+              <div class="config-section-title"><i class="fa-solid fa-pen-ruler text-gold"></i> Design Style</div>
+              <select id="styleSelector" class="form-select bg-white border-luxury text-charcoal rounded-1 shadow-sm" style="font-size:0.8rem; cursor:pointer;">
+                <option value="Vertical Slats">Vertical Slats</option>
+                <option value="Horizontal Louvers">Horizontal Louvers</option>
+                <option value="Solid Panel">Solid Panel</option>
+              </select>
             </div>
-          </div>
 
-          <!-- Automation -->
-          <div class="mb-5 border-top pt-4" style="border-color:rgba(255,255,255,0.05) !important;">
-            <label class="d-block text-uppercase text-silver mb-3 fw-bold" style="font-size:0.65rem;letter-spacing:0.15em;">Automation Engine</label>
-            <select class="form-select text-white border-0 shadow-none px-3 py-2" style="background:#111114; font-size:0.85rem;">
-              <option>BFT Deimos (Standard)</option>
-              <option>BFT Ares (Heavy Duty) + AED 1,200</option>
-              <option>Somfy Pro (Smart WiFi) + AED 2,500</option>
-            </select>
-          </div>
+            <!-- Dimensions -->
+            <div class="mb-3 border-top border-luxury pt-3">
+              <div class="config-section-title"><i class="fa-solid fa-ruler-combined text-gold"></i> Dimensions (Meters)</div>
+              
+              <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted" style="font-size:0.75rem;">Width</span>
+                  <span class="fw-bold text-charcoal" style="font-size:0.75rem;" id="widthVal">4.5m</span>
+                </div>
+                <input type="range" class="custom-range dim-slider" id="sliderWidth" min="1.0" max="8.0" step="0.1" value="4.5">
+              </div>
 
-          <!-- Price & CTA -->
-          <div class="bg-royal-blue p-4 rounded-2 text-center mt-auto shadow-lg" style="background:var(--royal-blue);">
-            <div class="text-uppercase text-white opacity-75 mb-1" style="font-size:0.65rem;letter-spacing:0.1em;">Estimated Price</div>
-            <div class="font-display text-white mb-4" style="font-size:1.8rem;">AED 16,500</div>
-            <button class="btn w-100 fw-bold text-charcoal py-3" style="background:var(--silver); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase;">Download CAD Proposal</button>
-            <p class="text-white opacity-50 mt-3 mb-0" style="font-size:0.65rem;">*Includes installation across UAE</p>
-          </div>
+              <div class="mb-2">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted" style="font-size:0.75rem;">Height</span>
+                  <span class="fw-bold text-charcoal" style="font-size:0.75rem;" id="heightVal">2.2m</span>
+                </div>
+                <input type="range" class="custom-range dim-slider" id="sliderHeight" min="1.0" max="4.0" step="0.1" value="2.2">
+              </div>
+            </div>
 
+            <!-- Finishes -->
+            <div class="mb-3 border-top border-luxury pt-3">
+              <div class="config-section-title"><i class="fa-solid fa-palette text-gold"></i> Premium Finish</div>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="d-flex align-items-center gap-2 p-2 border rounded-1 color-option active" style="cursor:pointer;" data-name="Matte Black" data-hex="#1A1A1A" data-metal="0.5" data-rough="0.8">
+                    <div style="background:#1A1A1A; width:20px; height:20px; border-radius:50%; border:1px solid rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:0.7rem; font-weight:600;" class="text-charcoal text-truncate">Matte Black</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center gap-2 p-2 border rounded-1 color-option" style="cursor:pointer;" data-name="Gunmetal Grey" data-hex="#4A4E53" data-metal="0.7" data-rough="0.5">
+                    <div style="background:#4A4E53; width:20px; height:20px; border-radius:50%; border:1px solid rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:0.7rem; font-weight:600;" class="text-charcoal text-truncate">Gunmetal</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center gap-2 p-2 border rounded-1 color-option" style="cursor:pointer;" data-name="Corten Steel" data-hex="#7F4324" data-metal="0.3" data-rough="0.9">
+                    <div style="background:#7F4324; width:20px; height:20px; border-radius:50%; border:1px solid rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:0.7rem; font-weight:600;" class="text-charcoal text-truncate">Corten Steel</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center gap-2 p-2 border rounded-1 color-option" style="cursor:pointer;" data-name="Champagne" data-hex="#E1DACD" data-metal="0.9" data-rough="0.3">
+                    <div style="background:#E1DACD; width:20px; height:20px; border-radius:50%; border:1px solid rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:0.7rem; font-weight:600;" class="text-charcoal text-truncate">Champagne</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center gap-2 p-2 border rounded-1 color-option" style="cursor:pointer;" data-name="Wood Grain" data-hex="#9E6B48" data-metal="0.1" data-rough="0.8">
+                    <div style="background:#9E6B48; width:20px; height:20px; border-radius:50%; border:1px solid rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:0.7rem; font-weight:600;" class="text-charcoal text-truncate">Wood Grain</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="d-flex align-items-center gap-2 p-2 border rounded-1 color-option" style="cursor:pointer;" data-name="Pure White" data-hex="#F5F5F5" data-metal="0.2" data-rough="0.4">
+                    <div style="background:#F5F5F5; width:20px; height:20px; border-radius:50%; border:1px solid rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:0.7rem; font-weight:600;" class="text-charcoal text-truncate">Pure White</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hardware & Accessories -->
+            <div class="mb-3 border-top border-luxury pt-3">
+              <div class="config-section-title"><i class="fa-solid fa-microchip text-gold"></i> Hardware &amp; Smart Tech</div>
+              <div class="d-flex flex-column gap-2">
+                
+                <div class="hardware-card selected" data-addon="automation" data-price="2500">
+                  <div class="check-circle"></div>
+                  <div class="flex-grow-1">
+                    <div class="fw-bold text-charcoal" style="font-size:0.8rem;">BFT Smart Automation</div>
+                    <div class="text-muted" style="font-size:0.65rem;">Wi-Fi enabled heavy-duty motors</div>
+                  </div>
+                  <div class="fw-bold text-charcoal" style="font-size:0.75rem;">+AED 2,500</div>
+                </div>
+                
+                <div class="hardware-card" data-addon="smartlock" data-price="1200">
+                  <div class="check-circle"></div>
+                  <div class="flex-grow-1">
+                    <div class="fw-bold text-charcoal" style="font-size:0.8rem;">Biometric Smart Lock</div>
+                    <div class="text-muted" style="font-size:0.65rem;">Fingerprint &amp; PIN access</div>
+                  </div>
+                  <div class="fw-bold text-charcoal" style="font-size:0.75rem;">+AED 1,200</div>
+                </div>
+
+                <div class="hardware-card" data-addon="led" data-price="850">
+                  <div class="check-circle"></div>
+                  <div class="flex-grow-1">
+                    <div class="fw-bold text-charcoal" style="font-size:0.8rem;">Integrated LED Ambience</div>
+                    <div class="text-muted" style="font-size:0.65rem;">Concealed warm white lighting strip</div>
+                  </div>
+                  <div class="fw-bold text-charcoal" style="font-size:0.75rem;">+AED 850</div>
+                </div>
+
+              </div>
+            </div>
+
+            </div> <!-- End Scrollable Body -->
+
+            <!-- Sticky Price Footer -->
+            <div class="position-absolute bottom-0 start-0 w-100 bg-white p-3" style="z-index: 10; box-shadow: 0 -5px 15px rgba(0,0,0,0.02); border-top: 1px solid var(--border);">
+              <div class="d-flex justify-content-between align-items-end mb-2">
+                <span class="text-uppercase fw-bold text-muted" style="font-size:0.65rem;letter-spacing:0.1em;">Total Estimate</span>
+                <span class="font-display text-charcoal" style="font-size:1.5rem;line-height:1;" id="totalPrice">AED 16,500</span>
+              </div>
+              <button class="btn btn-primary-luxury w-100 py-2 d-flex justify-content-center align-items-center gap-2" style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                <i class="fa-solid fa-file-signature text-gold"></i> Save &amp; Request Quote
+              </button>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
+  </main>
 
-  </main><!-- ================= FOOTER ================= -->
-  <footer class="footer-luxury pt-5 pb-4">
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-luxury pt-5 pb-4 bg-white border-top border-luxury">
     <div class="container px-4 px-lg-5 max-w-7xl">
-      <!-- Grounding Manifesto -->
       <div class="row align-items-center border-bottom border-luxury pb-5 mb-5">
         <div class="col-lg-8 mb-4 mb-lg-0">
-          <span class="text-gold text-uppercase fw-semibold d-flex align-items-center gap-2 mb-3" style="font-size: 0.75rem; letter-spacing: 0.2em;">
-            <i class="fa-solid fa-sparkles"></i> Bespoke Architectural Solutions &middot; Dubai
+          <span class="text-gold text-uppercase fw-semibold d-flex align-items-center gap-2 mb-3" style="font-size:0.75rem;letter-spacing:0.2em;">
+            <i class="fa-solid fa-star"></i> Bespoke Architectural Solutions &middot; Dubai
           </span>
           <h2 class="font-display fw-light display-5 mb-3 text-charcoal">Let's Build Something Beautiful.</h2>
-          <p class="text-muted" style="max-width: 600px; font-size: 0.9rem;">Whether you are designing an ultra-prime Palm Jumeirah villa or an expansive Emirates Hills estate, our master craftsmen and structural engineers are at your service.</p>
+          <p class="text-muted" style="max-width:600px;font-size:0.9rem;">Whether you are designing an ultra-prime Palm Jumeirah villa or an expansive Emirates Hills estate, our master craftsmen and structural engineers are at your service.</p>
         </div>
         <div class="col-lg-4 text-lg-end">
-          <button class="btn-gold-solid rounded-1 mb-2 w-100 w-sm-auto" style="font-size: 0.75rem; letter-spacing: 0.1em; padding: 1rem 2rem;" data-bs-toggle="modal" data-bs-target="#consultationModal">Start Your Project &rarr;</button>
-          <button class="whatsapp-btn btn btn-success rounded-1 text-uppercase fw-bold w-100 w-sm-auto text-white" style="font-size: 0.75rem; letter-spacing: 0.1em; padding: 1rem 2rem;"><i class="fa-brands fa-whatsapp text-success"></i> WhatsApp Concierge</button>
+          <button class="btn-gold-solid rounded-1 mb-2 w-100 w-sm-auto" style="font-size:0.75rem;letter-spacing:0.1em;padding:1rem 2rem;" data-bs-toggle="modal" data-bs-target="#consultationModal">Start Your Project &rarr;</button>
+          <button class="whatsapp-btn btn btn-success rounded-1 text-uppercase fw-bold w-100 w-sm-auto text-white" style="font-size:0.75rem;letter-spacing:0.1em;padding:1rem 2rem;"><i class="fa-brands fa-whatsapp text-white"></i> WhatsApp Concierge</button>
         </div>
       </div>
-      
-      <!-- Footer Links -->
       <div class="row g-4 pb-4 border-bottom border-luxury">
         <div class="col-lg-4">
           <h3 class="font-display fw-light fs-4 mb-3">Al-Manzil Luxe <span class="text-gold">.</span></h3>
-          <p class="text-muted" style="font-size: 0.8rem;">The UAE's premier manufacturer of bespoke architectural gates, monumental pivot entrance doors, ultra-slim thermal glass systems, and high-end outdoor living spaces.</p>
+          <p class="text-muted" style="font-size:0.8rem;">The UAE's premier manufacturer of bespoke architectural gates, monumental pivot entrance doors, ultra-slim thermal glass systems, and high-end outdoor living spaces.</p>
         </div>
         <div class="col-6 col-lg-2">
           <h5 class="footer-heading font-display">Collections</h5>
-          <ul class="list-unstyled text-muted d-flex flex-column gap-2" style="font-size: 0.8rem;">
+          <ul class="list-unstyled text-muted d-flex flex-column gap-2" style="font-size:0.8rem;">
             <li><a href="shop.html" class="text-decoration-none text-muted hover-gold">Luxury Gates</a></li>
             <li><a href="shop.html" class="text-decoration-none text-muted hover-gold">Pivot Doors</a></li>
             <li><a href="shop.html" class="text-decoration-none text-muted hover-gold">Windows</a></li>
@@ -317,7 +654,7 @@
         </div>
         <div class="col-6 col-lg-2">
           <h5 class="footer-heading font-display">Company</h5>
-          <ul class="list-unstyled text-muted d-flex flex-column gap-2" style="font-size: 0.8rem;">
+          <ul class="list-unstyled text-muted d-flex flex-column gap-2" style="font-size:0.8rem;">
             <li><a href="about.html" class="text-decoration-none text-muted hover-gold">About Us</a></li>
             <li><a href="projects.html" class="text-decoration-none text-muted hover-gold">Portfolio</a></li>
             <li><a href="contact.html" class="text-decoration-none text-muted hover-gold">Contact</a></li>
@@ -325,190 +662,695 @@
         </div>
         <div class="col-lg-4">
           <h5 class="footer-heading font-display">Dubai Showroom</h5>
-          <ul class="list-unstyled text-muted d-flex flex-column gap-2" style="font-size: 0.8rem;">
-            <li><i class="fa-solid fa-location-dot text-gold me-2"></i> Building 4, Al Manara St, Al Quoz 1, Dubai</li>
-            <li><i class="fa-solid fa-clock text-gold me-2"></i> Sat - Thu: 09:00 AM - 08:00 PM</li>
-            <li><i class="fa-solid fa-phone text-gold me-2"></i> +971 4 800 LUXE</li>
+          <ul class="list-unstyled text-muted d-flex flex-column gap-2" style="font-size:0.8rem;">
+            <li><i class="fa-solid fa-location-dot text-gold me-2"></i>Building 4, Al Manara St, Al Quoz 1, Dubai</li>
+            <li><i class="fa-solid fa-clock text-gold me-2"></i>Sat - Thu: 09:00 AM - 08:00 PM</li>
+            <li><i class="fa-solid fa-phone text-gold me-2"></i>+971 4 800 LUXE</li>
           </ul>
         </div>
       </div>
-      
-      <!-- Copyright -->
-      <div class="pt-4 text-center text-muted" style="font-size: 0.75rem;">
+      <div class="pt-4 text-center text-muted" style="font-size:0.75rem;">
         &copy; 2026 Al-Manzil Luxe Architectural Systems LLC &middot; Dubai, UAE.
       </div>
     </div>
   </footer>
 
-  
-<!-- SEARCH MODAL -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content border-luxury rounded-1 shadow-lg">
-      <div class="modal-header bg-warm-beige border-bottom border-luxury py-3">
-        <i class="fa-solid fa-magnifying-glass text-gold me-3 fs-5"></i>
-        <input type="text" class="form-control bg-transparent border-0 shadow-none p-0 fs-6 text-charcoal" placeholder="Search gates, pivot doors, acoustic windows, bioclimatic pergolas, materials..." id="searchInput">
-        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4 p-md-5 bg-white">
-        <span class="text-uppercase fw-bold text-gold d-block mb-3" style="font-size: 0.65rem; letter-spacing: 0.1em;">Popular Architectural Queries</span>
-        <div class="d-flex flex-wrap gap-2 mb-4">
-          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Automatic Gate</button>
-          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Villa Gate</button>
-          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Pivot Door</button>
-          <button class="btn btn-sm btn-outline-luxury bg-ivory rounded-1 text-charcoal" style="font-size: 0.75rem;">Bioclimatic Pergola</button>
-        </div>
-        
-        <hr class="border-luxury my-4">
-        
-        <span class="text-uppercase fw-bold text-gold d-block mb-3" style="font-size: 0.65rem; letter-spacing: 0.1em;">Explore by Architectural Category</span>
-        <div class="row g-2">
-          <div class="col-6 col-sm-3">
-            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Gates & Automation &rarr;</a>
-          </div>
-          <div class="col-6 col-sm-3">
-            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Pivot & Sliding Doors &rarr;</a>
-          </div>
-          <div class="col-6 col-sm-3">
-            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Slim Windows &rarr;</a>
-          </div>
-          <div class="col-6 col-sm-3">
-            <a href="shop.html" class="d-block p-3 bg-ivory border border-luxury text-decoration-none text-charcoal fw-semibold rounded-1" style="font-size: 0.75rem;">Bioclimatic Pergolas &rarr;</a>
-          </div>
-        </div>
+  <!-- ===== SEARCH OVERLAY ===== -->
+  <div id="searchOverlay" style="position:fixed;inset:0;z-index:10001;background:rgba(8,8,10,0.92);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;padding:6rem 1.5rem 2rem;opacity:0;pointer-events:none;transition:opacity 0.4s;">
+    <style>
+      #searchOverlay.active { opacity:1!important;pointer-events:all!important; }
+      #searchOverlay .search-box { width:100%;max-width:720px; }
+      #searchInput { background:transparent;border:0;border-bottom:1px solid rgba(168,168,160,0.4);color:#FAF9F6;font-size:clamp(1.5rem,4vw,2.5rem);outline:none;font-family:var(--font-display);width:100%;padding-bottom:0.75rem; }
+      #searchInput::placeholder { color:rgba(250,249,246,0.3); }
+    </style>
+    <button class="search-close-btn position-absolute top-0 end-0 m-4 btn btn-link text-muted fs-3 p-0" style="z-index:2;"><i class="fa-solid fa-xmark"></i></button>
+    <div class="search-box">
+      <p class="text-uppercase fw-bold mb-3" style="font-size:0.65rem;letter-spacing:0.3em;color:var(--silver);">Search Architectural Collections</p>
+      <input type="text" id="searchInput" autocomplete="off" placeholder="e.g. Gates, Pivot Doors, Pergolas...">
+      <div id="searchResults" class="mt-5 overflow-auto" style="max-height:50vh;">
+        <p class="text-muted text-center py-4" style="font-size:0.8rem;">Type to search architectural collections...</p>
       </div>
     </div>
   </div>
-</div>
 
-<!-- CONSULTATION MODAL -->
-<div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-luxury rounded-1 shadow-lg">
-      <div class="modal-header bg-ivory border-bottom border-luxury">
-        <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
-          <i class="fa-solid fa-sparkles text-gold"></i> Book Complimentary Villa Site Survey
-        </h5>
-        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4">
-        <p class="text-muted mb-4" style="font-size: 0.8rem;">Includes sub-millimeter 3D laser opening scans, load-bearing verification, Dubai Municipality regulation checks, and material finish swatches.</p>
-        
-        <form id="consultationForm">
-          <div class="mb-3">
-            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
-            <input type="text" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;" required placeholder="e.g. Dr. Rashid Al-Nuaimi">
-          </div>
-          <div class="mb-3">
-            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">UAE Mobile / WhatsApp *</label>
-            <input type="tel" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;" required value="+971 ">
-          </div>
-          <div class="row g-3 mb-3">
-            <div class="col-sm-6">
-              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Villa Community</label>
-              <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
-                <option>Palm Jumeirah</option>
-                <option>Emirates Hills</option>
-                <option>Dubai Hills Estate</option>
-                <option>Al Barari</option>
+  <!-- ===== CONSULTATION MODAL ===== -->
+  <div class="modal fade" id="consultationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-luxury rounded-1 shadow-lg">
+        <div class="modal-header bg-ivory border-bottom border-luxury">
+          <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
+            <i class="fa-solid fa-star text-gold"></i> Book Complimentary Villa Site Survey
+          </h5>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted mb-4" style="font-size:0.8rem;">Includes sub-millimeter 3D laser opening scans, load-bearing verification, Dubai Municipality regulation checks, and material finish swatches.</p>
+          <form id="consultationForm">
+            <div class="mb-3">
+              <label class="form-label fw-semibold text-charcoal" style="font-size:0.75rem;">Full Name *</label>
+              <input type="text" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size:0.8rem;" required placeholder="e.g. Dr. Rashid Al-Nuaimi">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold text-charcoal" style="font-size:0.75rem;">UAE Mobile / WhatsApp *</label>
+              <input type="tel" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size:0.8rem;" required value="+971 ">
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label class="form-label fw-semibold text-charcoal" style="font-size:0.75rem;">Villa Community</label>
+                <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size:0.8rem;">
+                  <option>Palm Jumeirah</option>
+                  <option>Emirates Hills</option>
+                  <option>Dubai Hills Estate</option>
+                  <option>Al Barari</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label fw-semibold text-charcoal" style="font-size:0.75rem;">Preferred Date</label>
+                <input type="date" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size:0.8rem;">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-semibold text-charcoal" style="font-size:0.75rem;">Preferred Time Window</label>
+              <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size:0.8rem;">
+                <option>Morning (09:00 - 12:00)</option>
+                <option>Afternoon (12:00 - 15:00)</option>
+                <option>Evening (15:00 - 18:00)</option>
               </select>
             </div>
-            <div class="col-sm-6">
-              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Preferred Date</label>
-              <input type="date" class="form-control bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
+            <div class="d-flex justify-content-between align-items-center">
+              <button type="button" class="btn btn-link text-muted text-decoration-none" data-bs-dismiss="modal" style="font-size:0.8rem;">Cancel</button>
+              <button type="submit" class="btn btn-primary-luxury">Confirm Appointment</button>
             </div>
-          </div>
-          <div class="mb-4">
-            <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Preferred Time Window</label>
-            <select class="form-select bg-white border-luxury text-charcoal rounded-1" style="font-size: 0.8rem;">
-              <option>Morning (09:00 - 12:00)</option>
-              <option>Afternoon (12:00 - 15:00)</option>
-              <option>Evening (15:00 - 18:00)</option>
-            </select>
-          </div>
-          
-          <div class="d-flex justify-content-between align-items-center">
-            <button type="button" class="btn btn-link text-muted text-decoration-none" data-bs-dismiss="modal" style="font-size: 0.8rem;">Cancel</button>
-            <button type="submit" class="btn btn-primary-luxury">Confirm Appointment</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- CART DRAWER (OFFCANVAS) -->
-<div class="offcanvas offcanvas-end bg-ivory" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
-  <div class="offcanvas-header bg-white border-bottom border-luxury py-3">
-    <div class="d-flex align-items-center gap-3">
-      <div class="d-flex align-items-center justify-content-center bg-ivory border border-luxury rounded-1 text-gold" style="width: 32px; height: 32px;">
-        <i class="fa-solid fa-bag-shopping"></i>
+  <!-- ===== CART DRAWER ===== -->
+  <div class="offcanvas offcanvas-end bg-ivory" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
+    <div class="offcanvas-header bg-white border-bottom border-luxury py-3">
+      <div class="d-flex align-items-center gap-3">
+        <div class="d-flex align-items-center justify-content-center bg-ivory border border-luxury rounded-1 text-gold" style="width:32px;height:32px;"><i class="fa-solid fa-bag-shopping"></i></div>
+        <div>
+          <h5 class="font-display fw-semibold m-0 text-charcoal fs-6" id="cartDrawerLabel">Architectural Cart</h5>
+          <span class="text-muted" style="font-size:0.65rem;">0 Commissions in Specification</span>
+        </div>
       </div>
-      <div>
-        <h5 class="font-display fw-semibold m-0 text-charcoal fs-6" id="cartDrawerLabel">Architectural Cart</h5>
-        <span class="text-muted" style="font-size: 0.65rem;">0 Commissions in Specification</span>
+      <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-4 d-flex flex-column h-100">
+      <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="d-flex align-items-center justify-content-center bg-white border border-luxury rounded-circle text-gold mb-3" style="width:64px;height:64px;"><i class="fa-solid fa-bag-shopping fs-4"></i></div>
+        <h3 class="font-display fw-medium text-charcoal fs-5 mb-2">Your Cart is Empty</h3>
+        <p class="text-muted mb-4" style="font-size:0.8rem;max-width:250px;">Select from our bespoke gates, monumental pivot doors, or bioclimatic pergolas.</p>
+        <div class="w-100 d-flex flex-column gap-2">
+          <a href="shop.html" class="btn btn-primary-luxury w-100">Browse Collections</a>
+          <a href="custom-design.html" class="btn btn-outline-luxury w-100">Open 3D Configurator</a>
+        </div>
       </div>
     </div>
-    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  
-  <div class="offcanvas-body p-4 d-flex flex-column h-100">
-    <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
-      <div class="d-flex align-items-center justify-content-center bg-white border border-luxury rounded-circle text-gold mb-3" style="width: 64px; height: 64px;">
-        <i class="fa-solid fa-bag-shopping fs-4"></i>
+
+  <!-- ===== QUOTE MODAL ===== -->
+  <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-luxury rounded-1 shadow-lg">
+        <div class="modal-header bg-ivory border-bottom border-luxury py-3">
+          <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
+            <i class="fa-solid fa-file-invoice text-gold"></i> Request Official Project Quotation
+          </h5>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <p class="text-muted mb-4" style="font-size: 0.85rem;">Our Senior Estimator & CAD Engineering Team will provide a bespoke proposal based on your 3D configuration.</p>
+          
+          <form id="quoteModalForm">
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
+                <input type="text" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Phone / WhatsApp *</label>
+                <input type="tel" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required value="+971 ">
+              </div>
+              <div class="col-md-12">
+                <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Project Details & Location</label>
+                <textarea class="form-control bg-white border-luxury rounded-1" rows="3" style="font-size: 0.8rem;" placeholder="e.g. Palm Jumeirah villa, need this gate with the smart lock..."></textarea>
+              </div>
+            </div>
+            
+            <div class="bg-ivory border border-luxury rounded-1 p-3 mb-4">
+              <span class="d-block fw-bold text-charcoal mb-1" style="font-size:0.75rem;">Attached Configuration:</span>
+              <ul class="text-muted m-0 ps-3" style="font-size:0.7rem;" id="quoteConfigDetails">
+                <li>Type: Luxury Gate</li>
+                <li>Dimensions: 4.5m x 2.2m</li>
+                <li>Finish: Matte Black</li>
+                <li>Total Estimate: AED 16,500</li>
+              </ul>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top border-luxury">
+              <div class="d-flex align-items-center gap-2 text-muted" style="font-size: 0.75rem;">
+                <i class="fa-solid fa-shield-check text-gold"></i> Complimentary Laser Survey Included
+              </div>
+              <button type="submit" class="btn btn-primary-luxury px-4 py-2 text-uppercase fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.1em;">Submit Request</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <h3 class="font-display fw-medium text-charcoal fs-5 mb-2">Your Cart is Empty</h3>
-      <p class="text-muted mb-4" style="font-size: 0.8rem; max-width: 250px;">Select from our bespoke gates, monumental pivot doors, or bioclimatic pergolas.</p>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js?v=4.0"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+  <!-- App Bottom Nav (Mobile) -->
+  <div class="app-bottom-nav d-lg-none">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="shop.html"><i class="fa-solid fa-border-all"></i><span>Shop</span></a>
+    <a href="#" class="book-btn" data-bs-toggle="modal" data-bs-target="#consultationModal"><i class="fa-solid fa-star"></i><span>Book</span></a>
+    <a href="projects.html"><i class="fa-solid fa-images"></i><span>Portfolio</span></a>
+    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"><i class="fa-solid fa-bars"></i><span>Menu</span></a>
+  </div>
+
+  <script>
+    // Preloader
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const preloader = document.getElementById('pagePreloader');
+        if (preloader) {
+          preloader.classList.add('hidden');
+          setTimeout(() => preloader.style.display = 'none', 600);
+        }
+      }, 800);
+    });
+
+    // --- THREE.JS CONFIGURATOR LOGIC ---
+    
+    // Global Three.js Variables
+    let scene, camera, renderer, controls, productGroup;
+    let currentMaterial, glassMaterial;
+    let dirLight, ambientLight, ledLight;
+
+    function initThree() {
+      const container = document.getElementById('three-container');
       
-      <div class="w-100 d-flex flex-column gap-2">
-        <a href="shop.html" class="btn btn-primary-luxury w-100">Browse Collections</a>
-        <a href="custom-design.html" class="btn btn-outline-luxury w-100">Open 3D Configurator</a>
-      </div>
-    </div>
-  </div>
-</div>
+      scene = new THREE.Scene();
+      
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 1.5, 7);
+      
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      container.appendChild(renderer.domElement);
+      
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.maxPolarAngle = Math.PI / 2 + 0.1; // Don't go below ground
+      controls.target.set(0, 1.5, 0);
+      
+      // Lights
+      ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+      scene.add(ambientLight);
+      
+      dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 7);
+      dirLight.castShadow = true;
+      dirLight.shadow.mapSize.width = 2048;
+      dirLight.shadow.mapSize.height = 2048;
+      scene.add(dirLight);
+      
+      // LED Glow Light (hidden initially)
+      ledLight = new THREE.PointLight(0xffdd88, 0, 8); 
+      ledLight.position.set(0, 0.2, 0.5);
+      scene.add(ledLight);
+      
+      // Materials
+      currentMaterial = new THREE.MeshStandardMaterial({
+        color: 0x1A1A1A,
+        metalness: 0.5,
+        roughness: 0.8
+      });
+      
+      glassMaterial = new THREE.MeshPhysicalMaterial({
+        color: 0x88bbff,
+        metalness: 0.1,
+        roughness: 0.1,
+        transmission: 0.9,
+        transparent: true,
+        opacity: 0.5
+      });
+      
+      // Group for the product meshes
+      productGroup = new THREE.Group();
+      scene.add(productGroup);
+      
+      // Floor (invisible shadow catcher)
+      const floorGeo = new THREE.PlaneGeometry(20, 20);
+      const floorMat = new THREE.ShadowMaterial({ opacity: 0.1 });
+      const floor = new THREE.Mesh(floorGeo, floorMat);
+      floor.rotation.x = -Math.PI / 2;
+      floor.receiveShadow = true;
+      scene.add(floor);
+      
+      window.addEventListener('resize', onWindowResize);
+      
+      animate();
+    }
 
-<!-- QUOTE MODAL -->
-<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content border-luxury rounded-1 shadow-lg">
-      <div class="modal-header bg-ivory border-bottom border-luxury py-3">
-        <h5 class="modal-title font-display fs-5 fw-medium text-charcoal d-flex align-items-center gap-2">
-          <i class="fa-solid fa-file-invoice text-gold"></i> Request Official Project Quotation
-        </h5>
-        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4 p-md-5">
-        <p class="text-muted mb-4" style="font-size: 0.85rem;">Our Senior Estimator & CAD Engineering Team will provide a bespoke proposal within 24 hours.</p>
+    function onWindowResize() {
+      const container = document.getElementById('three-container');
+      if(container) {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      }
+    }
+
+    function animate(time) {
+      requestAnimationFrame(animate);
+      TWEEN.update(time);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    // --- Procedural Geometry Builders ---
+    
+    function buildGate(w, h, style) {
+      productGroup.clear();
+      const frameThick = 0.1;
+      const frameGeoV = new THREE.BoxGeometry(frameThick, h, frameThick);
+      const frameGeoH = new THREE.BoxGeometry(w, frameThick, frameThick);
+      
+      const left = new THREE.Mesh(frameGeoV, currentMaterial); left.position.set(-w/2, h/2, 0); left.castShadow = true; left.receiveShadow = true;
+      const right = new THREE.Mesh(frameGeoV, currentMaterial); right.position.set(w/2, h/2, 0); right.castShadow = true; right.receiveShadow = true;
+      const top = new THREE.Mesh(frameGeoH, currentMaterial); top.position.set(0, h - frameThick/2, 0); top.castShadow = true; top.receiveShadow = true;
+      const bottom = new THREE.Mesh(frameGeoH, currentMaterial); bottom.position.set(0, frameThick/2, 0); bottom.castShadow = true; bottom.receiveShadow = true;
+      
+      productGroup.add(left, right, top, bottom);
+      
+      const innerW = w - frameThick*2;
+      const innerH = h - frameThick*2;
+
+      if (style === 'Solid Panel') {
+        const panelGeo = new THREE.BoxGeometry(innerW, innerH, 0.05);
+        const panel = new THREE.Mesh(panelGeo, currentMaterial);
+        panel.position.set(0, h/2, 0);
+        panel.castShadow = true; panel.receiveShadow = true;
+        productGroup.add(panel);
+      } else if (style === 'Horizontal Louvers') {
+        const slatSpacing = 0.15;
+        const slatHeight = 0.08;
+        const numSlats = Math.floor(innerH / slatSpacing);
+        const actualSpacing = innerH / numSlats;
         
-        <form>
-          <div class="row g-3 mb-4">
-            <div class="col-md-6">
-              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Full Name *</label>
-              <input type="text" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Phone / WhatsApp *</label>
-              <input type="tel" class="form-control bg-white border-luxury rounded-1" style="font-size: 0.8rem;" required value="+971 ">
-            </div>
-            <div class="col-md-12">
-              <label class="form-label fw-semibold text-charcoal" style="font-size: 0.75rem;">Project Requirements & Dimensions</label>
-              <textarea class="form-control bg-white border-luxury rounded-1" rows="3" style="font-size: 0.8rem;" placeholder="e.g. Need a 5x2m sliding gate for a villa in Palm Jumeirah..."></textarea>
-            </div>
-          </div>
-          
-          <div class="d-flex justify-content-between align-items-center pt-3 border-top border-luxury">
-            <div class="d-flex align-items-center gap-2 text-muted" style="font-size: 0.75rem;">
-              <i class="fa-solid fa-shield-check text-gold"></i> Complimentary Laser Survey Included
-            </div>
-            <button type="submit" class="btn btn-primary-luxury px-4 py-2 text-uppercase fw-semibold" style="font-size: 0.75rem; letter-spacing: 0.1em;">Submit Request</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+        const slatGeo = new THREE.BoxGeometry(innerW, slatHeight, 0.02);
+        for(let i=1; i<numSlats; i++) {
+          const slat = new THREE.Mesh(slatGeo, currentMaterial);
+          slat.position.set(0, frameThick + (i * actualSpacing), 0);
+          slat.rotation.x = Math.PI / 8; // Slight angle for louver
+          slat.castShadow = true; slat.receiveShadow = true;
+          productGroup.add(slat);
+        }
+      } else { // Vertical Slats
+        const slatSpacing = 0.15;
+        const slatWidth = 0.08;
+        const numSlats = Math.floor(innerW / slatSpacing);
+        const actualSpacing = innerW / numSlats;
+        
+        const slatGeo = new THREE.BoxGeometry(slatWidth, innerH, 0.02);
+        for(let i=1; i<numSlats; i++) {
+          const slat = new THREE.Mesh(slatGeo, currentMaterial);
+          slat.position.set(-w/2 + frameThick + (i * actualSpacing), h/2, 0);
+          slat.castShadow = true; slat.receiveShadow = true;
+          productGroup.add(slat);
+        }
+      }
+    }
 
+    function buildDoor(w, h, style) {
+      productGroup.clear();
+      const frameThick = 0.05;
+      const frameGeoV = new THREE.BoxGeometry(frameThick, h, 0.15);
+      const frameGeoH = new THREE.BoxGeometry(w, frameThick, 0.15);
+      
+      const left = new THREE.Mesh(frameGeoV, currentMaterial); left.position.set(-w/2, h/2, 0);
+      const right = new THREE.Mesh(frameGeoV, currentMaterial); right.position.set(w/2, h/2, 0);
+      const top = new THREE.Mesh(frameGeoH, currentMaterial); top.position.set(0, h - frameThick/2, 0);
+      
+      const handleGeo = new THREE.CylinderGeometry(0.02, 0.02, h * 0.6, 16);
+      const handleMat = new THREE.MeshStandardMaterial({color: 0xcccccc, metalness: 0.9, roughness: 0.1});
+      const handle = new THREE.Mesh(handleGeo, handleMat);
+      handle.position.set(w/2 - 0.2, h/2, 0.1);
+      handle.castShadow = true;
+      
+      productGroup.add(left, right, top, handle);
+      
+      const innerW = w - frameThick*2;
+      const innerH = h - frameThick*2;
+
+      if (style === 'Vertical Vision Glass') {
+        const slabLeftGeo = new THREE.BoxGeometry(innerW * 0.6, innerH, 0.1);
+        const slabRightGeo = new THREE.BoxGeometry(innerW * 0.2, innerH, 0.1);
+        const glassGeo = new THREE.BoxGeometry(innerW * 0.2, innerH, 0.02);
+        
+        const slabL = new THREE.Mesh(slabLeftGeo, currentMaterial); slabL.position.set(-innerW/2 + (innerW*0.3), h/2 - frameThick/2, 0);
+        const slabR = new THREE.Mesh(slabRightGeo, currentMaterial); slabR.position.set(innerW/2 - (innerW*0.1), h/2 - frameThick/2, 0);
+        const glass = new THREE.Mesh(glassGeo, glassMaterial); glass.position.set(innerW*0.1, h/2 - frameThick/2, 0);
+        
+        slabL.castShadow=true; slabL.receiveShadow=true;
+        slabR.castShadow=true; slabR.receiveShadow=true;
+        productGroup.add(slabL, slabR, glass);
+      } else if (style === 'Horizontal Grooves') {
+        const numPanels = 5;
+        const panelH = (innerH / numPanels) - 0.02; // 2cm gap
+        const panelGeo = new THREE.BoxGeometry(innerW, panelH, 0.1);
+        
+        for(let i=0; i<numPanels; i++) {
+          const p = new THREE.Mesh(panelGeo, currentMaterial);
+          p.position.set(0, frameThick/2 + (panelH/2) + i*(panelH + 0.02), 0);
+          p.castShadow=true; p.receiveShadow=true;
+          productGroup.add(p);
+        }
+      } else { // Minimalist Solid
+        const slabGeo = new THREE.BoxGeometry(innerW, innerH, 0.1);
+        const slab = new THREE.Mesh(slabGeo, currentMaterial);
+        slab.position.set(0, h/2 - frameThick/2, 0);
+        slab.castShadow = true; slab.receiveShadow = true;
+        productGroup.add(slab);
+      }
+    }
+
+    function buildPergola(w, h, style) {
+      productGroup.clear();
+      const depth = w * 0.8; 
+      
+      const pillarThick = 0.15;
+      const pillarGeo = new THREE.BoxGeometry(pillarThick, h, pillarThick);
+      
+      let px = w/2;
+      let pz = depth/2;
+      
+      if (style === 'Overhang Canopy') {
+        px = w/2 - 0.5;
+        pz = depth/2 - 0.5;
+      }
+      
+      const p1 = new THREE.Mesh(pillarGeo, currentMaterial); p1.position.set(-px, h/2, -pz); p1.castShadow=true; p1.receiveShadow=true;
+      const p2 = new THREE.Mesh(pillarGeo, currentMaterial); p2.position.set(px, h/2, -pz); p2.castShadow=true; p2.receiveShadow=true;
+      const p3 = new THREE.Mesh(pillarGeo, currentMaterial); p3.position.set(-px, h/2, pz); p3.castShadow=true; p3.receiveShadow=true;
+      const p4 = new THREE.Mesh(pillarGeo, currentMaterial); p4.position.set(px, h/2, pz); p4.castShadow=true; p4.receiveShadow=true;
+      
+      productGroup.add(p1, p2, p3, p4);
+
+      if (style === 'Double Pillar') {
+        const p1b = new THREE.Mesh(pillarGeo, currentMaterial); p1b.position.set(-px + 0.2, h/2, -pz); p1b.castShadow=true;
+        const p2b = new THREE.Mesh(pillarGeo, currentMaterial); p2b.position.set(px - 0.2, h/2, -pz); p2b.castShadow=true;
+        const p3b = new THREE.Mesh(pillarGeo, currentMaterial); p3b.position.set(-px + 0.2, h/2, pz); p3b.castShadow=true;
+        const p4b = new THREE.Mesh(pillarGeo, currentMaterial); p4b.position.set(px - 0.2, h/2, pz); p4b.castShadow=true;
+        productGroup.add(p1b, p2b, p3b, p4b);
+      }
+      
+      const beamW = new THREE.BoxGeometry(w + pillarThick, 0.2, pillarThick);
+      const beamD = new THREE.BoxGeometry(pillarThick, 0.2, depth + pillarThick);
+      
+      const b1 = new THREE.Mesh(beamW, currentMaterial); b1.position.set(0, h + 0.1, -depth/2); b1.castShadow=true; b1.receiveShadow=true;
+      const b2 = new THREE.Mesh(beamW, currentMaterial); b2.position.set(0, h + 0.1, depth/2); b2.castShadow=true; b2.receiveShadow=true;
+      const b3 = new THREE.Mesh(beamD, currentMaterial); b3.position.set(-w/2, h + 0.1, 0); b3.castShadow=true; b3.receiveShadow=true;
+      const b4 = new THREE.Mesh(beamD, currentMaterial); b4.position.set(w/2, h + 0.1, 0); b4.castShadow=true; b4.receiveShadow=true;
+      
+      productGroup.add(b1, b2, b3, b4);
+      
+      const numLouvers = Math.floor(depth / 0.2);
+      const louverSpacing = depth / numLouvers;
+      const louverGeo = new THREE.BoxGeometry(w, 0.05, 0.15);
+      for(let i=1; i<numLouvers; i++) {
+        const louver = new THREE.Mesh(louverGeo, currentMaterial);
+        louver.position.set(0, h + 0.1, -depth/2 + (i * louverSpacing));
+        louver.rotation.x = Math.PI / 4; 
+        louver.castShadow = true;
+        louver.receiveShadow = true;
+        productGroup.add(louver);
+      }
+    }
+
+    function buildWindow(w, h, style) {
+      productGroup.clear();
+      
+      const frameThick = 0.08;
+      const frameGeoV = new THREE.BoxGeometry(frameThick, h, 0.1);
+      const frameGeoH = new THREE.BoxGeometry(w, frameThick, 0.1);
+      
+      const left = new THREE.Mesh(frameGeoV, currentMaterial); left.position.set(-w/2, h/2, 0); left.castShadow=true; left.receiveShadow=true;
+      const right = new THREE.Mesh(frameGeoV, currentMaterial); right.position.set(w/2, h/2, 0); right.castShadow=true; right.receiveShadow=true;
+      const top = new THREE.Mesh(frameGeoH, currentMaterial); top.position.set(0, h - frameThick/2, 0); top.castShadow=true; top.receiveShadow=true;
+      const bottom = new THREE.Mesh(frameGeoH, currentMaterial); bottom.position.set(0, frameThick/2, 0); bottom.castShadow=true; bottom.receiveShadow=true;
+      
+      productGroup.add(left, right, top, bottom);
+
+      if (style === 'Single Pane') {
+        const glassGeo = new THREE.PlaneGeometry(w - frameThick, h - frameThick);
+        const glass = new THREE.Mesh(glassGeo, glassMaterial); glass.position.set(0, h/2, 0);
+        productGroup.add(glass);
+      } else if (style === 'Horizontal Split') {
+        const midH = new THREE.Mesh(frameGeoH, currentMaterial); midH.position.set(0, h/2, 0); midH.castShadow=true; midH.receiveShadow=true;
+        
+        const glassGeo = new THREE.PlaneGeometry(w - frameThick, h/2 - frameThick);
+        const g1 = new THREE.Mesh(glassGeo, glassMaterial); g1.position.set(0, h/4*3, 0);
+        const g2 = new THREE.Mesh(glassGeo, glassMaterial); g2.position.set(0, h/4, 0);
+        
+        productGroup.add(midH, g1, g2);
+      } else { // French Grid
+        const midV = new THREE.Mesh(frameGeoV, currentMaterial); midV.position.set(0, h/2, 0); midV.castShadow=true; midV.receiveShadow=true;
+        const midH = new THREE.Mesh(frameGeoH, currentMaterial); midH.position.set(0, h/2, 0); midH.castShadow=true; midH.receiveShadow=true;
+        
+        const glassGeo = new THREE.PlaneGeometry(w/2 - frameThick, h/2 - frameThick);
+        const g1 = new THREE.Mesh(glassGeo, glassMaterial); g1.position.set(-w/4, h/4*3, 0);
+        const g2 = new THREE.Mesh(glassGeo, glassMaterial); g2.position.set(w/4, h/4*3, 0);
+        const g3 = new THREE.Mesh(glassGeo, glassMaterial); g3.position.set(-w/4, h/4, 0);
+        const g4 = new THREE.Mesh(glassGeo, glassMaterial); g4.position.set(w/4, h/4, 0);
+        
+        productGroup.add(midV, midH, g1, g2, g3, g4);
+      }
+    }
+
+    // --- Core Logic Binding ---
+    $(document).ready(function() {
+      
+      // Initialize 3D Engine
+      initThree();
+
+      let basePrice = 14000;
+      let addonPrice = 2500;
+
+      const formatPrice = (price) => 'AED ' + price.toLocaleString('en-US');
+
+      const calculatePrice = () => {
+        const w = parseFloat($('#sliderWidth').val());
+        const h = parseFloat($('#sliderHeight').val());
+        const areaMultiplier = (w * h) / (4.5 * 2.2); 
+        const total = Math.round((basePrice * areaMultiplier) + addonPrice);
+        $('#totalPrice').text(formatPrice(total));
+        updateQuoteDetails(total);
+      };
+
+      const updateQuoteDetails = (total) => {
+        const type = $('.product-tab.active span').text();
+        const style = $('#styleSelector').val();
+        const w = $('#sliderWidth').val();
+        const h = $('#sliderHeight').val();
+        const color = $('.color-option.active').data('name');
+        
+        let addons = [];
+        $('.hardware-card.selected').each(function() {
+          addons.push($(this).find('.fw-bold').first().text());
+        });
+
+        $('#quoteConfigDetails').html(`
+          <li>Type: ${type}</li>
+          <li>Style: ${style}</li>
+          <li>Dimensions: ${w}m x ${h}m</li>
+          <li>Finish: ${color}</li>
+          ${addons.length > 0 ? `<li>Add-ons: ${addons.join(', ')}</li>` : ''}
+          <li class="mt-1 fw-bold text-charcoal">Total Estimate: ${formatPrice(total)}</li>
+        `);
+      };
+
+      const update3DModel = () => {
+        const type = $('.product-tab.active').data('product');
+        const style = $('#styleSelector').val();
+        const w = parseFloat($('#sliderWidth').val());
+        const h = parseFloat($('#sliderHeight').val());
+
+        // Adjust camera target slightly based on height
+        new TWEEN.Tween(controls.target)
+            .to({ x: 0, y: h/2, z: 0 }, 500)
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .start();
+
+        if (type === 'gate') buildGate(w, h, style);
+        else if (type === 'door') buildDoor(w, h, style);
+        else if (type === 'pergola') buildPergola(w, h, style);
+        else buildWindow(w, h, style);
+      };
+
+      const updateLightingAndLED = () => {
+        const isNight = $('#mainCanvas').hasClass('night-mode');
+        let ledActive = false;
+        $('.hardware-card.selected').each(function() {
+          if($(this).data('addon') === 'led') ledActive = true;
+        });
+
+        if (isNight) {
+          ambientLight.intensity = 0.2;
+          dirLight.intensity = 0.1;
+          ledLight.intensity = ledActive ? 1.5 : 0;
+        } else {
+          ambientLight.intensity = 0.7;
+          dirLight.intensity = 0.8;
+          ledLight.intensity = ledActive ? 0.8 : 0;
+        }
+      };
+
+      // 1. Product Tabs Toggle
+      $('.product-tab').on('click', function() {
+        $('.product-tab').removeClass('active');
+        $(this).addClass('active');
+        
+        const type = $(this).data('product');
+        const styleSel = $('#styleSelector');
+        styleSel.empty();
+
+        if (type === 'gate') {
+          basePrice = 14000;
+          styleSel.append('<option value="Vertical Slats">Vertical Slats</option><option value="Horizontal Louvers">Horizontal Louvers</option><option value="Solid Panel">Solid Panel</option>');
+        }
+        else if (type === 'door') {
+          basePrice = 18500;
+          styleSel.append('<option value="Minimalist Solid">Minimalist Solid</option><option value="Vertical Vision Glass">Vertical Vision Glass</option><option value="Horizontal Grooves">Horizontal Grooves</option>');
+        }
+        else if (type === 'pergola') {
+          basePrice = 35000;
+          styleSel.append('<option value="Standard Bioclimatic">Standard Bioclimatic</option><option value="Overhang Canopy">Overhang Canopy</option><option value="Double Pillar">Double Pillar</option>');
+        }
+        else {
+          basePrice = 9000;
+          styleSel.append('<option value="French Grid">French Grid</option><option value="Single Pane">Single Pane</option><option value="Horizontal Split">Horizontal Split</option>');
+        }
+        
+        calculatePrice();
+        update3DModel();
+      });
+
+      // Style Selector Change
+      $('#styleSelector').on('change', function() {
+        calculatePrice();
+        update3DModel();
+      });
+
+      // 2. Sliders
+      $('.dim-slider').on('input', function() {
+        if ($(this).attr('id') === 'sliderWidth') {
+          $('#widthVal').text($(this).val() + 'm');
+        } else {
+          $('#heightVal').text($(this).val() + 'm');
+        }
+        calculatePrice();
+        update3DModel();
+      });
+
+      // 3. Color Swatches
+      $('.color-option').on('click', function() {
+        $('.color-option').removeClass('active');
+        $(this).addClass('active');
+        
+        const name = $(this).data('name');
+        const hex = $(this).data('hex');
+        const metal = parseFloat($(this).data('metal'));
+        const rough = parseFloat($(this).data('rough'));
+        
+        // Update Three.js Material
+        currentMaterial.color.set(hex);
+        currentMaterial.metalness = metal;
+        currentMaterial.roughness = rough;
+
+        updateQuoteDetails(parseFloat($('#totalPrice').text().replace(/[^0-9]/g, '')));
+      });
+
+      // Hide drag hint on interaction
+      $('#three-container').on('mousedown touchstart', function() {
+        $('#dragHint').css('opacity', '0');
+      });
+
+      // 4. Hardware Cards (Toggle)
+      $('.hardware-card').on('click', function() {
+        $(this).toggleClass('selected');
+        
+        addonPrice = 0;
+        $('.hardware-card.selected').each(function() {
+          addonPrice += parseInt($(this).data('price'));
+        });
+        
+        calculatePrice();
+        updateLightingAndLED();
+      });
+
+      // 5. Environment Toggle (Day/Night)
+      $('#envToggleBtn').on('click', function() {
+        const canvas = $('#mainCanvas');
+        canvas.toggleClass('night-mode');
+        
+        if (canvas.hasClass('night-mode')) {
+          $(this).html('<i class="fa-solid fa-sun"></i> <span>Day View</span>');
+        } else {
+          $(this).html('<i class="fa-solid fa-moon"></i> <span>Night View</span>');
+        }
+        
+        updateLightingAndLED();
+      });
+
+      // 6. View Buttons (Camera Animation)
+      $('.view-btn').on('click', function() {
+        $('.view-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        const view = $(this).data('view');
+        let targetPos = { x: 0, y: 1.5, z: 7 }; // Front
+        
+        if (view === 'side') {
+          targetPos = { x: 7, y: 1.5, z: 0 };
+        } else if (view === 'top') {
+          targetPos = { x: 0, y: 8, z: 0.1 };
+        }
+
+        new TWEEN.Tween(camera.position)
+            .to(targetPos, 1000)
+            .easing(TWEEN.Easing.Cubic.InOut)
+            .start();
+      });
+
+      // WhatsApp Share
+      $('#btnShareDesign').on('click', function() {
+        const text = encodeURIComponent(`Hi, I designed a custom product on Al-Manzil Luxe 3D Studio:\n\n${$('#quoteConfigDetails').text().replace(/\s+/g, ' ').trim()}\n\nCan you assist me with this?`);
+        window.open(`https://wa.me/97148005893?text=${text}`, '_blank');
+      });
+
+      // Init
+      calculatePrice();
+      update3DModel();
+      updateLightingAndLED();
+    });
+  </script>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -518,25 +1360,15 @@
   <script src="assets/js/main.js?v=4.0"></script>
   <!-- AOS Animation JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
-  <!-- Mobile Sticky CTA Bar -->
-  <div class="mobile-cta-bar" id="mobileCTABar">
-    <button class="btn-mobile-main" data-bs-toggle="modal" data-bs-target="#consultationModal">
-      <i class="fa-solid fa-sparkles" style="color:#A8A8A0;"></i> Book Free Survey
-    </button>
-    <button class="btn-mobile-wa whatsapp-btn">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </button>
-  </div>
   <!-- V2 FLOATING WHATSAPP -->
-  <a href="https://wa.me/971500000000" class="float-wa" target="_blank" aria-label="WhatsApp Us">
+  <a href="https://wa.me/97148005893" class="float-wa" target="_blank" aria-label="WhatsApp Us">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <!-- V2 APP BOTTOM NAV (Mobile Only) -->
   <div class="app-bottom-nav d-lg-none">
-    <a href="index.html" class="active">
+    <a href="index.html">
       <i class="fa-solid fa-house"></i>
       <span>Home</span>
     </a>
@@ -545,12 +1377,12 @@
       <span>Shop</span>
     </a>
     <a href="#" class="book-btn" data-bs-toggle="modal" data-bs-target="#consultationModal">
-      <i class="fa-solid fa-sparkles"></i>
+      <i class="fa-solid fa-star"></i>
       <span>Book</span>
     </a>
-    <a href="projects.html">
-      <i class="fa-solid fa-images"></i>
-      <span>Portfolio</span>
+    <a href="custom-design.html" class="active">
+      <i class="fa-solid fa-cube"></i>
+      <span>3D Studio</span>
     </a>
     <a href="#" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
       <i class="fa-solid fa-bars"></i>
@@ -558,18 +1390,5 @@
     </a>
   </div>
 
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const preloader = document.getElementById('pagePreloader');
-        if(preloader) {
-          preloader.classList.add('hidden');
-          setTimeout(() => preloader.style.display = 'none', 600);
-        }
-      }, 800);
-    });
-  </script>
 </body>
 </html>
-
-

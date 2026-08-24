@@ -1089,6 +1089,7 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
   --royal-blue-light: #3B6EA8;
   --royal-blue-pale:  #E8EEF7;
   --royal-blue-glow:  rgba(27, 58, 107, 0.15);
+  --ivory-deep:       #F5F3EE;
 
   /* Override primary to Royal Blue */
   --primary:          #1B3A6B;
@@ -1247,6 +1248,15 @@ img.object-fit-cover { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.
 /* Gold accent stays gold — only primary changes to blue */
 .text-gold, .text-primary-gold { color: var(--gold) !important; }
 .bg-gold { background: var(--gold) !important; }
+
+/* Navbar hidden on scroll-down (Smart Navbar) */
+.nav-hidden {
+  transform: translateY(-100%) !important;
+  transition: transform 0.3s ease !important;
+}
+.navbar.sticky-top {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 /* Mobile hero responsive */
 @media (max-width: 767.98px) {

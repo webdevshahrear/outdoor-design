@@ -44,6 +44,19 @@ $(document).ready(function() {
     $('#consultationModal').modal('hide');
   });
 
+  // Inline quote form & quote modal form submit handler
+  $(document).on('submit', '#inlineQuoteForm, #quoteModalForm, #contactPageForm', function(e) {
+    e.preventDefault();
+    if (window.showToast) {
+      window.showToast('Quote Request Received!', 'Our senior architectural estimator will contact you within 2 hours.');
+    } else {
+      alert('Quote Request Received!\nOur estimator will contact you within 2 hours.');
+    }
+    this.reset();
+    const modal = $(this).closest('.modal');
+    if (modal.length) modal.modal('hide');
+  });
+
   // Initialize Carousel explicitly
   const heroCarousel = document.getElementById('heroCarousel');
   let bsCarousel = null;
@@ -127,7 +140,7 @@ $(document).ready(function() {
   $('.whatsapp-btn').on('click', function(e) {
     e.preventDefault();
     const message = encodeURIComponent($(this).data('message') || "Hello Al-Manzil Luxe, I want to discuss a new villa project quotation.");
-    window.open('https://wa.me/971501234567?text=' + message, '_blank');
+    window.open('https://wa.me/97148005893?text=' + message, '_blank');
   });
   
   // Navbar Sticky behavior
